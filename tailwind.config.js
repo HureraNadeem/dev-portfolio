@@ -85,8 +85,25 @@ module.exports = {
         '27px': '27px',
         '28px': '28px',
         '29px': '29px',
-        '30px': '30px'
-      }
+        '30px': '30px',
+        '40px':'40px',
+        '50px':'50px',
+        '55px':'55px',
+        '60px':'60px'
+      },
+      width: {
+        '27rem': '27rem',
+        '432px': '432px',
+        '50%': '50%',
+        '80vw': '80vw',
+        '65vw': '65vw'
+      },
+      height: {
+        '27rem': '27rem',
+        '432px': '432px',
+        '80vw': '80vw',
+        '65vw': '65vw'
+      },
     },
     screens: {
       // mobile:
