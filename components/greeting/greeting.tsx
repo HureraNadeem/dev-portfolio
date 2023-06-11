@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import Link from 'next/link';
+import styles from './greeting.module.css';
 
 import React, { FC, ReactNode } from 'react';
 import Wrapper from '../wrapper/wrapper';
@@ -48,8 +49,8 @@ export default function Greeting() {
             <Wrapper>
                 <div className="header flex flex-row sm:flex-col-reverse md:flex-col-reverse justify-around items-center bg-main-bg-color">
                     <div className="info-div lg:w-50% xl:w-50% 2xl:w-50% 2xl:ml-6 sm:flex sm:flex-col sm:justify-center sm:items-center md:flex md:flex-col md:justify-center md:items-center">
-                        <h1 className='sm:text-30px sm:text-center md:text-40px md:text-center lg:text-50px xl:text-50px 2xl:text-55px font-medium mb-4'>Wasup! this is Hurera</h1>
-                        <h3 className='sm:text-20px sm:text-center md:text-25px md:text-center lg:text-20px xl:text-27px 2xl:text-30px font-GoogleSans-Regular my-4'>A Full-stack developer (MERN) 💻 - DevOps and Cloud Enthusiast ☁️</h3>
+                        <h1 className='primary-heading'>Wassup! this is Hurera</h1>
+                        <h3 className='primary-text'>A Full-stack developer (MERN) 💻 - DevOps and Cloud Enthusiast ☁️</h3>
                         <div className="socials flex flex-row gap-1 mt-5 mb-4 sm:justify-center md:justify-center">
                             <Link href="https://github.com/HureraNadeem" passHref={true} target='_blank'>
                                 <SocialIconWrappper bgcolor={"black"}>
@@ -77,23 +78,8 @@ export default function Greeting() {
                                 </SocialIconWrappper>
                             </Link>
                         </div>
-                        <div className="resume-div bg-text-color text-main-bg-color " style={{
-                            color: 'rgb(245, 245, 245)',
-                            border: '1px solid rgb(51, 50, 68)',
-                            lineHeight: '1.1',
-                            width: 'max-content',
-                            padding: '13px 22px',
-                            marginRight: 0,
-                            borderRadius: '6px',
-                            textAlign: 'center',
-                            textDecoration: 'none',
-                            display: 'block',
-                            marginTop: '20px',
-                            fontSize: '18px',
-                            cursor: 'pointer',
-                            letterSpacing: '2px',
-                        }}>
-                            <Link href="/">
+                        <div className={`resume-div bg-text-color text-main-bg-color font-GoogleSans-Regular ${styles.resumeButton}`}>
+                            <Link href="/" className='font-GoogleSans-Regular'>
                                 Resume 📄
                             </Link>
                         </div>

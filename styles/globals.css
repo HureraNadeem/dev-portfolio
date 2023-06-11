@@ -50,27 +50,20 @@ a {
   font-family: 'GoogleSans-Regular', sans-serif;
 }
 
-.main-heading-2xl {
-  font-size: 55px;
+.primary-heading {
+  @apply sm:text-30px sm:text-center md:text-40px md:text-center lg:text-50px xl:text-50px 2xl:text-55px font-medium mb-4;
 }
-
-.main-heading-xl {
-  font-size: 50px;
+.secondary-heading {
+  @apply sm:text-30px sm:text-center md:text-35px md:text-center lg:text-45px xl:text-45px 2xl:text-50px font-normal mb-4;
 }
-
-.main-heading-lg {
-  font-size: 50px;
+.primary-text {
+  @apply sm:text-20px sm:text-center md:text-25px md:text-center lg:text-20px xl:text-27px 2xl:text-30px font-GoogleSans-Regular my-4;
 }
-
-.main-heading-md {
-  font-size: 30px;
+.secondary-text {
+  @apply sm:text-17px sm:text-center md:text-20px md:text-center lg:text-23px xl:text-25px 2xl:text-25px font-GoogleSans-Regular my-2;
 }
-
-.main-heading-sm {
-  font-size: 30px;
-}
-.main-heading {
-  font-size: 30px;
+.tertiary-text {
+  @apply sm:text-17px md:text-17px lg:text-17px xl:text-18px 2xl:text-19px font-GoogleSans-Regular;
 }
 
 h1, h2, h3, h4, h5, h6, p {

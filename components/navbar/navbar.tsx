@@ -77,11 +77,26 @@ export default function Navbar() {
                         }}
                             className="nav-links mt-5">
                             <ul className='flex flex-col items-start justify-around sm:gap-4 md:gap-4'>
-                                <li className='sm:text-17px md:text-17px'>Home</li>
+                                {/* <li className='sm:text-17px md:text-17px'>Home</li>
                                 <li className='sm:text-17px md:text-17px'>Education</li>
                                 <li className='sm:text-17px md:text-17px'>Experience</li>
                                 <li className='sm:text-17px md:text-17px'>Projects</li>
-                                <li className='sm:text-17px md:text-17px'>Contact Me</li>
+                                <li className='sm:text-17px md:text-17px'>Contact Me</li> */}
+                                <Link href="/">
+                                    <li className='sm:text-17px md:text-17px'>Home</li>
+                                </Link>
+                                <Link href="/education">
+                                    <li className='sm:text-17px md:text-17px'>Education</li>
+                                </Link>
+                                <Link href="/experience">
+                                    <li className='sm:text-17px md:text-17px'>Experience</li>
+                                </Link>
+                                <Link href="/projects">
+                                    <li className='sm:text-17px md:text-17px'>Projects</li>
+                                </Link>
+                                <Link href="/contact">
+                                    <li className='sm:text-17px md:text-17px'>Contact Me</li>
+                                </Link>
                             </ul>
                         </div>
                     )

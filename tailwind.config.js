@@ -86,7 +86,9 @@ module.exports = {
         '28px': '28px',
         '29px': '29px',
         '30px': '30px',
+        '35px': '35px',
         '40px':'40px',
+        '45px':'45px',
         '50px':'50px',
         '55px':'55px',
         '60px':'60px'
@@ -96,14 +98,17 @@ module.exports = {
         '432px': '432px',
         '50%': '50%',
         '80vw': '80vw',
-        '65vw': '65vw'
+        '65vw': '65vw',
+        '100%':'100%'
       },
       height: {
         '27rem': '27rem',
         '432px': '432px',
         '80vw': '80vw',
-        '65vw': '65vw'
+        '65vw': '65vw',
+        '100%':'100%'
       },
+      textColor: ['hover']
     },
     screens: {
       // mobile:
