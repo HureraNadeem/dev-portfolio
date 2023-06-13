@@ -3,104 +3,6 @@ import { FullStackDevSVG } from '@/public/assets/svgs/tech-stack-svgs'
 import React, { FC } from 'react'
 import { Icon } from '@iconify/react';
 
-// const skillsArray = [
-//     {
-//         name: "react",
-//         svg: <ReactSVG />
-//     },
-//     {
-//         name: "mongodb",
-//         svg: <MongoDBSVG />
-//     },
-//     {
-//         name: "mongodb",
-//         svg: <JavascriptSVG />
-
-//     },
-//     {
-//         name: "mongodb",
-//         svg: <TypescriptSVG />
-//     },
-//     {
-//         name: "react",
-//         svg: <ReactSVG />
-//     },
-//     {
-//         name: "mongodb",
-//         svg: <MongoDBSVG />
-//     },
-//     {
-//         name: "mongodb",
-//         svg: <JavascriptSVG />
-
-//     },
-//     {
-//         name: "mongodb",
-//         svg: <TypescriptSVG />
-//     },
-//     {
-//         name: "react",
-//         svg: <ReactSVG />
-//     },
-//     {
-//         name: "mongodb",
-//         svg: <MongoDBSVG />
-//     },
-//     {
-//         name: "mongodb",
-//         svg: <JavascriptSVG />
-
-//     },
-//     {
-//         name: "mongodb",
-//         svg: <TypescriptSVG />
-//     },
-//     {
-//         name: "react",
-//         svg: <ReactSVG />
-//     },
-//     {
-//         name: "mongodb",
-//         svg: <MongoDBSVG />
-//     },
-//     {
-//         name: "mongodb",
-//         svg: <JavascriptSVG />
-
-//     },
-//     {
-//         name: "mongodb",
-//         svg: <TypescriptSVG />
-//     },
-//     {
-//         name: "mongodb",
-//         svg: <TypescriptSVG />
-//     },
-//     {
-//         name: "react",
-//         svg: <ReactSVG />
-//     },
-//     {
-//         name: "mongodb",
-//         svg: <MongoDBSVG />
-//     },
-//     {
-//         name: "mongodb",
-//         svg: <JavascriptSVG />
-
-//     }
-// ]
-
-// const descriptionArr = [
-//     'Building responsive websites using React-Redux.js | HTML/CSS | TailwindCSS | Bootstrap | Scemantic UI | Theme UI | Material UI | Core UI',
-//     'Writing smart contracts using Solidity (Polygon, Ethereum) | Moralis | Web 3.0',
-//     'Creating Single page rendering applications using Redux and HooksJs',
-//     'Developing cross-platform mobile applications using React Native and Flutter',
-//     'Creating optimized application backends in Node.js, Express.js and PHP',
-//     'Experience in usage of Rest APIs in modern programming practices',
-//     'Building secure authentication using JWT, Passport, Cognito, Auth0'
-// ];
-
 interface Props {
     key: number;
     skillName: string;
@@ -126,22 +28,20 @@ const WhatIDoCard: FC<Props> = ({ skillName, MainSVG, iconsArr, descriptionArr }
                             iconsArr.map((element, index) => {
                                 return (
                                     <>
-                                        <span className=''>
-
+                                        <span key={index} className=''>
                                             {element.svg}
                                         </span>
                                     </>
                                 );
                             })
                         }
-
                     </div>
                     <div className='stack-description my-4'>
                         {
                             descriptionArr.map((element, index) => {
                                 return (
                                     <>
-                                        <p className='tertiary-text my-3'>
+                                        <p key={index} className='tertiary-text my-3'>
                                             📌 {element}
                                             {/* ⚡ {element} */}
                                         </p>
@@ -149,13 +49,9 @@ const WhatIDoCard: FC<Props> = ({ skillName, MainSVG, iconsArr, descriptionArr }
                                 );
                             })
                         }
-
                     </div>
                 </div>
-
             </div>
-
-
         </>
     )
 }

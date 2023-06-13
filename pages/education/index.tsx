@@ -1,0 +1,115 @@
+import Navbar from '@/components/navbar/navbar'
+import Wrapper from '@/components/wrapper/wrapper'
+import EducationPageSvg from '@/public/assets/svgs/eduction-page-svg'
+import Image from 'next/image'
+import React from 'react'
+import NustLogo from "../../public/assets/images/nust-logo.png"
+import CourseCard from '@/components/course-card/course-card'
+import Footer from '@/components/footer/footer'
+import Head from 'next/head'
+
+function Education() {
+    const coursesData = [
+        {
+            name: "Next.js & React - The Complete Guide (incl. Two Paths!)",
+            instructor: "Maximilian Schwarzmüller",
+            imgsrc: "udemy_light_mode.png"
+        },
+        {
+            name: "Supervised Machine Learning: Regression and Classification",
+            instructor: "Andrew Ng",
+            imgsrc: "coursera.png"
+        },
+        {
+            name: "Node.js, Express, MongoDB & More: The Complete Bootcamp",
+            instructor: "Jonas Schmedtmann",
+            imgsrc: "udemy_light_mode.png"
+        },
+
+        {
+            name: "Understanding TypeScript",
+            instructor: "Maximilian Schwarzmüller",
+            imgsrc: "udemy_light_mode.png"
+        },
+        {
+            name: "Front-End Web Development with React",
+            instructor: "The Hong Kong University of Science and Technology",
+            imgsrc: "coursera.png"
+        },
+    ]
+    return (
+        <>
+            <Head>
+                <title>Eudcation - Hurera</title>
+                <meta name="description" content="This is the education page of hurera'a dev portfolio." />
+            </Head>
+
+            <Navbar />
+
+            <Wrapper>
+                <div className="py-7 sm:px-0 md:px-0 lg:px-0 sm:py-5 md:py-5 lg:py-5 flex flex-row sm:flex-col md:flex-col lg:flex-col justify-around items-start sm:items-center md:items-center lg:items-center bg-main-bg-color xl:gap-5 2xl:gap-5 2xl:justify-center 2xl:items-center">
+                    <div className="svg-div w-100% xl:w-50% 2xl:w-50% 2xl:ml-6 sm:flex sm:flex-col sm:justify-center sm:items-center md:flex md:flex-col md:justify-center md:items-center lg:flex lg:flex-col lg:justify-center lg:items-center self-start mt-4">
+                        <EducationPageSvg />
+                    </div>
+                    <div className="sm:mb-2 md:mb-2 lg:mb-2 xl:w-50% 2xl:w-50% flex flex-col items-center justify-center pt-14 xl:pt-12 2xl:pt-0">
+                        <h4 className='primary-heading justify-self-center text-center'>Education</h4>
+                        <h5 className='primary-text justify-self-center text-center'>My Qualifications and Certifications</h5>
+                        <p className='tertiary-text justify-self-center text-center py-1'>Here's what you need to know about my qualification and background 😉</p>
+                    </div>
+                </div>
+            </Wrapper>
+
+            <Wrapper>
+                <h4 style={{ marginBottom: "50px" }} className='primary-heading justify-self-center text-center'>Degree Received</h4>
+                <div className='degree-card flex flex-row justify-between items-center sm:flex-col md:flex-col lg:flex-col sm:gap-7 md:gap-7 lg:gap-3 xl:gap-3 2xl:gap-3'>
+                    <div style={{ borderRadius: '50%' }} className='sm:w-50vw md:w-35vw lg:w-30vw degree-logo-div border-solid border-2 border-dee2e6 rounded-50% p-10px shadow-lg'>
+                        <Image style={{
+                            maxWidth: '100%',
+                            maxHeight: '100%',
+                            transform: "scale(80%, 80%)"
+                        }} src={NustLogo} alt='NUST logo' />
+                    </div>
+                    <div className="degree-details-div border-solid border-2 border-dee2e6 rounded-lg shadow-lg">
+                        <div className='border bg-secondary-bg-color lg:p-20px xl:p-20px 2xl:p-20px sm:p-15px md:p-15px  flex flex-row justify-between sm:flex-col md:flex-col gap-2'>
+                            <div className='flex flex-col justify-between'>
+                                <h3 className='text-23px font-semibold mt-2 mb-4'>National University of Sciences and Technology, Islamabad</h3>
+                                <h6 className='text-18px font-semibold'>Bachelor's in Software Engineering</h6>
+                            </div>
+                            <div>
+                                <p className='text-16px font-normal my-4'>Oct 2020 - Jun 2024 (expected)</p>
+                            </div>
+                        </div>
+                        <div className=' lg:p-20px xl:p-20px 2xl:p-20px sm:p-15px md:p-15px pr-20px'>
+                            <h2 className='my-3'>📌 Lorem Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate accusamus, laborum consequuntur inventore fugalaboriosam enim a fugit, quasi ex rerum nisi. ipsum dolor sit amet consectetur adipisicing elit. Earum, pariatur.</h2>
+                            <h2 className='my-3'>📌 Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, pariatur.</h2>
+                            <h2 className='my-3'>📌 Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, pariatur.</h2>
+                            <h2 className='my-3'>📌 Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, pariatur.</h2>
+                            <h2 className='my-3'>📌 Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, pariatur.</h2>
+                            <h2 className='my-3'>📌 Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, pariatur.</h2>
+                            <h2 className='my-3'>📌 Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, pariatur.</h2>
+                            <h2 className='my-3'>📌 Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, pariatur.</h2>
+                        </div>
+                    </div>
+                </div>
+            </Wrapper>
+
+            <Wrapper>
+                <h4 style={{ marginBottom: "50px" }} className='primary-heading justify-self-center text-center'>Online Courses</h4>
+                <div className="certificates-container flex flex-row items-center justify-center flex-wrap gap-10">
+                    {
+                        coursesData.map((element, index) => {
+                            return (
+                                <>
+                                    <CourseCard key={index} name={element.name} instructor={element.instructor} imgsrc={element.imgsrc} />
+                                </>
+                            );
+                        })
+                    }
+                </div>
+            </Wrapper>
+            <Footer />
+        </>
+    )
+}
+
+export default Education

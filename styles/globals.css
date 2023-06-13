@@ -5,7 +5,8 @@
 
 :root {
   --text-color: '#313638';
-  --main-bg-color: "#f5f5f5"
+  --main-bg-color: "#f5f5f5";
+  --secondary-bg-color: '#F2F2F2'
 }
 
 * {
@@ -53,6 +54,9 @@ a {
 .primary-heading {
   @apply sm:text-30px sm:text-center md:text-40px md:text-center lg:text-50px xl:text-50px 2xl:text-55px font-medium mb-4;
 }
+/* .primary-heading-2 {
+  @apply sm:text-25px sm:text-center md:text-35px md:text-center lg:text-45px xl:text-45px 2xl:text-50px font-medium mb-4;
+} */
 .secondary-heading {
   @apply sm:text-30px sm:text-center md:text-35px md:text-center lg:text-45px xl:text-45px 2xl:text-50px font-normal mb-4;
 }
@@ -70,3 +74,54 @@ h1, h2, h3, h4, h5, h6, p {
   /* font-family: 'GoogleSans-Regular', sans-serif; */
   @apply text-text-color;
 }
+
+.ActiveLink {
+
+}
+
+.underline-transition {
+  transition: all 0.3s ease-in-out;
+}
+
+.hover\:underline:hover {
+  text-decoration: underline;
+  @apply transition-all duration-200 ease-in-out
+}
+
+/* Sliding from right side */
+@keyframes slide-in-from-right {
+  0% {
+    transform: translateX(100%);
+    opacity: 4;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in-from-right {
+  animation: slide-in-from-right 1s ease-out forwards;
+}
+/* -------- */
+
+/* Sliding from bottom */
+@keyframes fade-in {
+  0% {
+    opacity: 0.4;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-bottom {
+  opacity: 0;
+  animation: fade-in 0.3s ease-in-out forwards;
+}
+/* ------------ */
+
+
+

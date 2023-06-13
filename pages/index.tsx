@@ -12,8 +12,13 @@ import Footer from '@/components/footer/footer'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+
   return (
     <>
+      <Head>
+        <title>Hurera Nadeem</title>
+        <meta name="description" content="This is the home page of hurera'a dev portfolio." />
+      </Head>
       <Navbar />
       <Greeting />
       <WhatIDo />

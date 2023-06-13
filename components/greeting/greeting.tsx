@@ -7,40 +7,41 @@ import styles from './greeting.module.css';
 import React, { FC, ReactNode } from 'react';
 import Wrapper from '../wrapper/wrapper';
 import { GithubSVG, LinkedInSVG, InstagramSVG, TwitterSVG, FacebookSVG } from '@/public/assets/svgs/socials-svg';
-import ProfilePicture from "@/public/assets/images/cropped-profile-pic.jpg"
+import ProfilePicture from "@/public/assets/images/cropped-profile-pic.jpg";
+import SocialIconWrappper from '@/components/social-media-icons-wrapper/social-media-icons-wrapper'
 
-interface SocialIconWrappperProps {
-    children: ReactNode
-    bgcolor: String
-}
+// interface SocialIconWrappperProps {
+//     children: ReactNode
+//     bgcolor: String
+// }
 
-const SocialIconWrappper: FC<SocialIconWrappperProps> = ({ children, bgcolor }: SocialIconWrappperProps) => {
-    return (
-        <>
-            <span style={{
-                borderRadius: '2.6rem',
-                cursor: 'pointer',
-                fontSize: '1.3rem',
-                lineHeight: '2.9rem',
-                position: 'relative',
-                textAlign: 'center',
-                WebkitUserSelect: 'none',
-                MozUserSelect: 'none',
-                msUserSelect: 'none',
-                userSelect: 'none',
-                width: '42px',
-                height: '42px',
-                margin: '0 5px 10px',
-                backgroundColor: `${bgcolor}`,
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center'
-            }}>
-                {children}
-            </span>
-        </>
-    );
-}
+// export const SocialIconWrappper: FC<SocialIconWrappperProps> = ({ children, bgcolor }: SocialIconWrappperProps) => {
+//     return (
+//         <>
+//             <span style={{
+//                 borderRadius: '2.6rem',
+//                 cursor: 'pointer',
+//                 fontSize: '1.3rem',
+//                 lineHeight: '2.9rem',
+//                 position: 'relative',
+//                 textAlign: 'center',
+//                 WebkitUserSelect: 'none',
+//                 MozUserSelect: 'none',
+//                 msUserSelect: 'none',
+//                 userSelect: 'none',
+//                 width: '42px',
+//                 height: '42px',
+//                 margin: '0 5px 10px',
+//                 backgroundColor: `${bgcolor}`,
+//                 display: 'flex',
+//                 justifyContent: 'center',
+//                 alignItems: 'center'
+//             }}>
+//                 {children}
+//             </span>
+//         </>
+//     );
+// }
 
 export default function Greeting() {
 
@@ -78,7 +79,7 @@ export default function Greeting() {
                                 </SocialIconWrappper>
                             </Link>
                         </div>
-                        <div className={`resume-div bg-text-color text-main-bg-color font-GoogleSans-Regular ${styles.resumeButton}`}>
+                        <div className={`resume-div bg-text-color text-main-bg-color font-GoogleSans-Regular font-medium leading-tight max-w-max px-6 py-3 mr-0 rounded-md text-center no-underline font-sans block mt-5 text-lg cursor-pointer tracking-wide`}>
                             <Link href="/" className='font-GoogleSans-Regular'>
                                 Resume 📄
                             </Link>

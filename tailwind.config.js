@@ -10,7 +10,8 @@ module.exports = {
     extend: {
       colors: {
         'text-color': '#313638',
-        'main-bg-color': "#f5f5f5"
+        'main-bg-color': "#f5f5f5",
+        'secondary-bg-color': '#dee2e6'
       },
       fontFamily: {
         'main-font': ['GoogleSans-Regular', 'sans-serif'],
@@ -37,6 +38,7 @@ module.exports = {
         '18px': '18px',
         '19px': '19px',
         '20px': '20px',
+        '50px': '50px'
       },
       padding: {
         '1px': '1px',
@@ -59,6 +61,7 @@ module.exports = {
         '18px': '18px',
         '19px': '19px',
         '20px': '20px',
+        '55px': '55px'
       },
       fontSize: {
         '6px': '6px',
@@ -98,15 +101,44 @@ module.exports = {
         '432px': '432px',
         '50%': '50%',
         '80vw': '80vw',
+        '70vw': '70vw',
         '65vw': '65vw',
-        '100%':'100%'
+        '10vw': '10vw',
+        '30vw': '30vw',
+        '35vw': '35vw',
+        '25vw': '25vw',
+        '20vw': '20vw',
+        '37vw': '37vw',
+        '50vw': '50vw',
+        '74%': '74%',
+        '65%':'65%',
+        '55%':'55%',
+        '20%':'20%',
+        '80%':'80%',
+        '100%':'100%',
+        '660px':'660px',
+        '200px':'200px',
+        '385px':'385px',
+        '70px':'70px',
+        '6%':'6%',
+        '94%':'94%'
+
       },
       height: {
         '27rem': '27rem',
         '432px': '432px',
         '80vw': '80vw',
         '65vw': '65vw',
-        '100%':'100%'
+        '100%':'100%',
+        '20%':'20%',
+        '350px':'350px',
+        '215px':'215px',
+        '50px':'50px',
+        '70px':'70px'
+
+      },
+      boxShadow: {
+        'degreediv': '5px 5px 5px #d9dbdf',
       },
       textColor: ['hover']
     },
@@ -124,7 +156,7 @@ module.exports = {
       'xl': {'min': '1025px', 'max': '1200px'},
 
       // Extra large screens
-      '2xl': {'min': '1201px'},
+      '2xl': {'min': '1201px'}
     },
 
   },
