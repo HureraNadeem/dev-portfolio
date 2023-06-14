@@ -1,6 +1,6 @@
 import React from 'react'
 import Wrapper from '../wrapper/wrapper';
-import WhatIDoCard from '../whatido-card/whatido-card';
+import { WhatIDoCard } from '../whatido-card/whatido-card';
 import { ReactSVG, MongoDBSVG, JavascriptSVG, TypescriptSVG, HtmlSVG, CssSVG, NodeSVG, TailwindSVG, BootstrapSVG, JwtSVG, NextSVG, ReduxSVG, ReduxSagaSVG, ExpressJsSVG, MongooseSVG, JiraSVG, GitSVG, PostmanSVG, FigmaSVG, MaterialUI } from '@/public/assets/svgs/tech-skills-svgs'
 import { FullStackDevSVG, FullStackDevSVGAlt } from '@/public/assets/svgs/tech-stack-svgs'
 
@@ -9,7 +9,6 @@ function WhatIDo() {
 
     const Data = [
         {
-            id: 0,
             skillName: "Full-stack Web Developement",
             MainSVG: <FullStackDevSVGAlt />,
             iconsArr: [
@@ -74,7 +73,7 @@ function WhatIDo() {
                     name: "Mongoose",
                     svg: <MongooseSVG />
                 },
-                
+
                 {
                     name: "JWT",
                     svg: <JwtSVG />
@@ -118,7 +117,7 @@ function WhatIDo() {
                 {
                     Data.map((element, index) => {
                         return (
-                            <WhatIDoCard key={element.id} MainSVG={element.MainSVG} skillName={element.skillName} iconsArr={element.iconsArr} descriptionArr={element.descriptionArr} />
+                            <WhatIDoCard key={index} MainSVG={element.MainSVG} skillName={element.skillName} iconsArr={element.iconsArr} descriptionArr={element.descriptionArr} />
                         );
                     })
 

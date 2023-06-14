@@ -13,7 +13,8 @@ export default function Greeting() {
         <>
             <Wrapper>
                 <div className="header flex flex-row sm:flex-col-reverse md:flex-col-reverse justify-around items-center bg-main-bg-color">
-                    <div className="info-div lg:w-50% xl:w-50% 2xl:w-50% 2xl:ml-6 sm:flex sm:flex-col sm:justify-center sm:items-center md:flex md:flex-col md:justify-center md:items-center">
+
+                    <div className="animate-slide-in-from-left  info-div lg:w-50% xl:w-50% 2xl:w-50% 2xl:ml-6 sm:flex sm:flex-col sm:justify-center sm:items-center md:flex md:flex-col md:justify-center md:items-center">
                         <h1 className='primary-heading'>Wassup! this is Hurera</h1>
                         <h3 className='primary-text'>A Full-stack developer (MERN) 💻 - DevOps and Cloud Enthusiast ☁️</h3>
                         <div className="socials flex flex-row gap-1 mt-5 mb-4 sm:justify-center md:justify-center">
@@ -50,11 +51,14 @@ export default function Greeting() {
                         </div>
 
                     </div>
-                    <div className="sm:mb-8 md:mb-8 lg:w-50% xl:w-50% 2xl:w-50% flex items-center justify-center">
+
+                    {/* <Fade> */}
+                    <div className="animate-fade-in sm:mb-8 md:mb-8 lg:w-50% xl:w-50% 2xl:w-50% flex items-center justify-center">
                         <div className="img-div sm:w-80vw sm:h-80vw md:w-65vw md:h-65vw lg:w-432px lg:h-432px xl:w-432px xl:h-432px 2xl:w-432px 2xl:h-432px flex items-center">
                             <Image src={ProfilePicture} alt="hurera.jpeg" style={{ borderRadius: '50%' }} />
                         </div>
                     </div>
+                    {/* </Fade> */}
                 </div>
 
             </Wrapper>

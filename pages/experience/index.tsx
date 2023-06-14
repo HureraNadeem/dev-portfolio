@@ -7,6 +7,8 @@ import Footer from '@/components/footer/footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
 import Head from 'next/head';
+import { Slide } from "react-awesome-reveal";
+
 
 function Experience() {
 
@@ -109,13 +111,15 @@ function Experience() {
 
             <Wrapper>
                 <div className="py-7 sm:px-0 md:px-0 lg:px-0 sm:py-5 md:py-5 lg:py-5 flex flex-row sm:flex-col md:flex-col lg:flex-col justify-around items-start sm:items-center md:items-center lg:items-center bg-main-bg-color xl:gap-5 2xl:gap-5 2xl:justify-center 2xl:items-center">
-                    <div className="svg-div w-100% xl:w-50% 2xl:w-50% 2xl:ml-6 sm:flex sm:flex-col sm:justify-center sm:items-center md:flex md:flex-col md:justify-center md:items-center lg:flex lg:flex-col lg:justify-center lg:items-center self-start mt-4">
+                    <Slide triggerOnce direction="left" className="svg-div w-100% xl:w-50% 2xl:w-50% 2xl:ml-6 sm:flex sm:flex-col sm:justify-center sm:items-center md:flex md:flex-col md:justify-center md:items-center lg:flex lg:flex-col lg:justify-center lg:items-center self-start mt-4">
                         <ExperiencePageSVG />
-                    </div>
+                    </Slide>
                     <div className="sm:mb-2 md:mb-2 lg:mb-2 xl:w-50% 2xl:w-50% flex flex-col items-center justify-center pt-14 xl:pt-12 2xl:pt-0">
-                        <h4 className='primary-heading justify-self-center text-center'>Experience</h4>
-                        <h5 className='primary-text justify-self-center text-center'>Work, Internship and Volunteership</h5>
-                        <p className='tertiary-text justify-self-center text-center py-1'>I am working as a Senior Software Engineer as a Full Stack Developer, Designer and a Software Architect. Its been 3 years of dedication that has made me capable of building solutions at scale. I am in Love with building research driven innovative solutions from scratch. Having the urge of giving back to people I teach students in my freetime, and raise funds for the deserving lads. From personally conducting hackathons to mentoring students as a Developer Advocate I have built empowering tech communities benefitting thousands of people across Pakistan</p>
+                        <Slide triggerOnce direction="right" >
+                            <h4 className='primary-heading justify-self-center text-center'>Experience</h4>
+                            <h5 className='primary-text justify-self-center text-center'>Work, Internship and Volunteership</h5>
+                            <p className='tertiary-text justify-self-center text-center py-1'>I am working as a Senior Software Engineer as a Full Stack Developer, Designer and a Software Architect. Its been 3 years of dedication that has made me capable of building solutions at scale. I am in Love with building research driven innovative solutions from scratch. Having the urge of giving back to people I teach students in my freetime, and raise funds for the deserving lads. From personally conducting hackathons to mentoring students as a Developer Advocate I have built empowering tech communities benefitting thousands of people across Pakistan</p>
+                        </Slide>
                     </div>
                 </div>
             </Wrapper>

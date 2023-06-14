@@ -8,6 +8,8 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { Fade } from 'react-awesome-reveal';
+
 
 
 
@@ -73,7 +75,7 @@ export default function Navbar() {
 
                     {
                         dropDownOpen ? (
-                            <span >
+                            <span  >
                                 <FontAwesomeIcon style={{ fontSize: '25px' }} icon={faTimes} onClick={toggleDropdown} />
                             </span>
                         ) : (
@@ -84,34 +86,37 @@ export default function Navbar() {
                     }
 
                 </div >
-                {
+                {/* {
                     dropDownOpen && (
-                        <div style={{
-                            maxHeight: dropDownOpen ? '1000px' : '0',
-                            transition: 'max-height 0.3s ease',
-                            overflow: 'hidden',
-                        }}
-                            className="nav-links mt-5">
-                            <ul className='flex flex-col items-start justify-around sm:gap-4 md:gap-4'>
-                                <Link href="/">
-                                    <li className={`sm:text-17px md:text-17px ${activeLink('/') == "activeLink" ? styles.activeLink : ""} ${styles.underlineTransition}`}>Home</li>
-                                </Link>
-                                <Link href="/education">
-                                    <li className={`sm:text-17px md:text-17px ${activeLink('/education') == "activeLink" ? styles.activeLink : ""}  ${styles.underlineTransition}`}>Education</li>
-                                </Link>
-                                <Link href="/experience">
-                                    <li className={`sm:text-17px md:text-17px ${activeLink('/experience') == "activeLink" ? styles.activeLink : ""} ${styles.underlineTransition}`}>Experience</li>
-                                </Link>
-                                <Link href="/projects">
-                                    <li className={`sm:text-17px md:text-17px ${activeLink('/projects') == "activeLink" ? styles.activeLink : ""} ${styles.underlineTransition}`}>Projects</li>
-                                </Link>
-                                <Link href="/contact">
-                                    <li className={`sm:text-17px md:text-17px ${activeLink('/contact') == "activeLink" ? styles.activeLink : ""} ${styles.underlineTransition}`}>Contact Me</li>
-                                </Link>
-                            </ul>
-                        </div>
-                    )
-                }
+                <Fade direction='down'> */}
+                <div style={{
+                    maxHeight: dropDownOpen ? '1000px' : '0',
+                    transition: 'max-height 0.7s ease-in-out',
+                    overflow: 'hidden',
+                }}
+                    className="nav-links mt-5">
+                    <ul className='flex flex-col items-start justify-around'>
+                        <Link href="/">
+                            <li className={`sm:text-17px md:text-17px ${activeLink('/') == "activeLink" ? styles.activeLink : ""} ${styles.underlineTransition}`}>Home</li>
+                        </Link>
+                        <Link href="/education">
+                            <li className={`sm:text-17px md:text-17px ${activeLink('/education') == "activeLink" ? styles.activeLink : ""}  ${styles.underlineTransition}`}>Education</li>
+                        </Link>
+                        <Link href="/experience">
+                            <li className={`sm:text-17px md:text-17px ${activeLink('/experience') == "activeLink" ? styles.activeLink : ""} ${styles.underlineTransition}`}>Experience</li>
+                        </Link>
+                        <Link href="/projects">
+                            <li className={`sm:text-17px md:text-17px ${activeLink('/projects') == "activeLink" ? styles.activeLink : ""} ${styles.underlineTransition}`}>Projects</li>
+                        </Link>
+                        <Link href="/contact">
+                            <li className={`sm:text-17px md:text-17px ${activeLink('/contact') == "activeLink" ? styles.activeLink : ""} ${styles.underlineTransition}`}>Contact Me</li>
+                        </Link>
+                    </ul>
+
+                </div>
+                {/* // </Fade>
+                )
+                } */}
 
             </nav >
 
