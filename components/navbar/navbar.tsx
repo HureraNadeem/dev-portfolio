@@ -30,7 +30,6 @@ export default function Navbar() {
 
     }, [])
 
-
     return (
         <>
             <nav className="sm:hidden md:hidden navbar py-2 lg:px-14 xl:px-24 2xl:px-36 h-28 flex flex-row items-center justify-between bg-main-bg-color">
@@ -65,10 +64,13 @@ export default function Navbar() {
             <nav className="lg:hidden xl:hidden 2xl:hidden navbar py-10 sm:px-10 md:px-10 flex flex-col bg-main-bg-color">
                 <div className="logo-div flex flex-row items-center justify-between">
                     <div className="logo-div-1">
-                        <span className='sm:text-xl md:text-2xl underline'>&lt;</span>
-                        <span className='font-AgustinaRegular sm:text-xl md:text-2xl pr-1 pl-1 underline'> Hurera Nadeem </span>
-                        <span className='sm:text-xl md:text-2xl underline'>/&gt;</span>
+                        <Link href='/'>
+                            <span className='sm:text-xl md:text-2xl underline'>&lt;</span>
+                            <span className='font-AgustinaRegular sm:text-xl md:text-2xl pr-1 pl-1 underline'> Hurera Nadeem </span>
+                            <span className='sm:text-xl md:text-2xl underline'>/&gt;</span>
+                        </Link>
                     </div>
+
                     {
                         dropDownOpen ? (
                             <span >
@@ -81,7 +83,7 @@ export default function Navbar() {
                         )
                     }
 
-                </div>
+                </div >
                 {
                     dropDownOpen && (
                         <div style={{
@@ -92,26 +94,26 @@ export default function Navbar() {
                             className="nav-links mt-5">
                             <ul className='flex flex-col items-start justify-around sm:gap-4 md:gap-4'>
                                 <Link href="/">
-                                    <li className='sm:text-17px md:text-17px'>Home</li>
+                                    <li className={`sm:text-17px md:text-17px ${activeLink('/') == "activeLink" ? styles.activeLink : ""} ${styles.underlineTransition}`}>Home</li>
                                 </Link>
                                 <Link href="/education">
-                                    <li className='sm:text-17px md:text-17px'>Education</li>
+                                    <li className={`sm:text-17px md:text-17px ${activeLink('/education') == "activeLink" ? styles.activeLink : ""}  ${styles.underlineTransition}`}>Education</li>
                                 </Link>
                                 <Link href="/experience">
-                                    <li className='sm:text-17px md:text-17px'>Experience</li>
+                                    <li className={`sm:text-17px md:text-17px ${activeLink('/experience') == "activeLink" ? styles.activeLink : ""} ${styles.underlineTransition}`}>Experience</li>
                                 </Link>
                                 <Link href="/projects">
-                                    <li className='sm:text-17px md:text-17px'>Projects</li>
+                                    <li className={`sm:text-17px md:text-17px ${activeLink('/projects') == "activeLink" ? styles.activeLink : ""} ${styles.underlineTransition}`}>Projects</li>
                                 </Link>
                                 <Link href="/contact">
-                                    <li className='sm:text-17px md:text-17px'>Contact Me</li>
+                                    <li className={`sm:text-17px md:text-17px ${activeLink('/contact') == "activeLink" ? styles.activeLink : ""} ${styles.underlineTransition}`}>Contact Me</li>
                                 </Link>
                             </ul>
                         </div>
                     )
                 }
 
-            </nav>
+            </nav >
 
         </>
     )
