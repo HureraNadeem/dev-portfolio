@@ -7,6 +7,9 @@ import ProjectCard from '@/components/project-card/project-card';
 import Footer from '@/components/footer/footer';
 import Head from 'next/head';
 import { Fade, Slide } from "react-awesome-reveal";
+import { GithubSVG } from '@/public/assets/svgs/socials-svg';
+import Link from 'next/link';
+
 
 
 
@@ -20,19 +23,19 @@ function Projects() {
             creationDate: "July 2022",
             stackSVGs: [
                 {
-                    name:'HTML',
+                    name: 'HTML',
                     component: <HtmlSVG />
                 },
                 {
-                    name:'CSS',
+                    name: 'CSS',
                     component: <CssSVG />
                 },
                 {
-                    name:'JavaScript',
+                    name: 'JavaScript',
                     component: <JavascriptSVG />
                 },
                 {
-                    name:'Typescript',
+                    name: 'Typescript',
                     component: <TypescriptSVG />
                 }
             ],
@@ -44,19 +47,19 @@ function Projects() {
             creationDate: "July 2022",
             stackSVGs: [
                 {
-                    name:'HTML',
+                    name: 'HTML',
                     component: <HtmlSVG />
                 },
                 {
-                    name:'CSS',
+                    name: 'CSS',
                     component: <CssSVG />
                 },
                 {
-                    name:'JavaScript',
+                    name: 'JavaScript',
                     component: <JavascriptSVG />
                 },
                 {
-                    name:'Typescript',
+                    name: 'Typescript',
                     component: <TypescriptSVG />
                 }
             ],
@@ -68,19 +71,19 @@ function Projects() {
             creationDate: "July 2022",
             stackSVGs: [
                 {
-                    name:'HTML',
+                    name: 'HTML',
                     component: <HtmlSVG />
                 },
                 {
-                    name:'CSS',
+                    name: 'CSS',
                     component: <CssSVG />
                 },
                 {
-                    name:'JavaScript',
+                    name: 'JavaScript',
                     component: <JavascriptSVG />
                 },
                 {
-                    name:'Typescript',
+                    name: 'Typescript',
                     component: <TypescriptSVG />
                 }
             ],
@@ -92,19 +95,19 @@ function Projects() {
             creationDate: "July 2022",
             stackSVGs: [
                 {
-                    name:'HTML',
+                    name: 'HTML',
                     component: <HtmlSVG />
                 },
                 {
-                    name:'CSS',
+                    name: 'CSS',
                     component: <CssSVG />
                 },
                 {
-                    name:'JavaScript',
+                    name: 'JavaScript',
                     component: <JavascriptSVG />
                 },
                 {
-                    name:'Typescript',
+                    name: 'Typescript',
                     component: <TypescriptSVG />
                 }
             ],
@@ -116,19 +119,19 @@ function Projects() {
             creationDate: "July 2022",
             stackSVGs: [
                 {
-                    name:'HTML',
+                    name: 'HTML',
                     component: <HtmlSVG />
                 },
                 {
-                    name:'CSS',
+                    name: 'CSS',
                     component: <CssSVG />
                 },
                 {
-                    name:'JavaScript',
+                    name: 'JavaScript',
                     component: <JavascriptSVG />
                 },
                 {
-                    name:'Typescript',
+                    name: 'Typescript',
                     component: <TypescriptSVG />
                 }
             ],
@@ -159,12 +162,23 @@ function Projects() {
             </Wrapper>
 
             <Wrapper>
-                
-                    <div className="project-container flex flex-row gap-[2vw] flex-wrap justify-center item-center sm:gap-10 md:gap-10 ">
-                        {
-                            projectData.map(e => <ProjectCard name={e.name} description={e.description} creationDate={e.creationDate} stackSVGs={e.stackSVGs} link={e.link}/>)
-                        }
+
+                <div className="project-container flex flex-row gap-[2vw] flex-wrap justify-center item-center sm:gap-10 md:gap-10 ">
+                    {
+                        projectData.map(e => <ProjectCard name={e.name} description={e.description} creationDate={e.creationDate} stackSVGs={e.stackSVGs} link={e.link} />)
+                    }
+                </div>
+            </Wrapper>
+            <Wrapper>
+
+                <div className={`flex flex-row justify-center items-center`}>
+                    <div className='bg-text-color text-main-bg-color font-GoogleSans-Regular font-medium leading-tight max-w-max px-6 py-3 mr-0 rounded-md text-center no-underline font-sans mt-5 text-lg cursor-pointer tracking-wide  hover:transform transition-transform duration-500 transform hover:scale-105'>
+                        <Link href={'https://www.github.com/hureranadeem'} download={"Hurera's Resume"} target='_blank' rel='noreferrer' className='font-GoogleSans-Regular flex flex-row gap-4 justify-center items-center'>
+                            <span className='sm:text-[13px] md:text-[15px]'> More Projects</span>
+                            <span className='sm:text-[13px] md:text-[15px]'><GithubSVG /></span>
+                        </Link>
                     </div>
+                </div>
             </Wrapper>
 
             <Footer />
