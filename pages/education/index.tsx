@@ -55,7 +55,6 @@ function Education() {
                 <meta name="description" content="This is the education page of hurera'a dev portfolio." />
             </Head>
 
-            <Navbar />
 
             <Wrapper>
                 <div className="py-7 sm:px-0 md:px-0 lg:px-0 sm:py-5 md:py-5 lg:py-5 flex flex-row sm:flex-col md:flex-col lg:flex-col justify-around items-start sm:items-center md:items-center lg:items-center bg-main-bg-color xl:gap-5 2xl:gap-5 2xl:justify-center 2xl:items-center">
@@ -124,7 +123,6 @@ function Education() {
                     }
                 </div>
             </Wrapper>
-            <Footer />
         </>
     )
 }

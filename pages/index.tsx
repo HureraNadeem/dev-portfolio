@@ -19,11 +19,8 @@ export default function Home() {
         <title>Hurera Nadeem</title>
         <meta name="description" content="This is the home page of hurera'a dev portfolio." />
       </Head>
-      <Navbar />
       <Greeting />
       <WhatIDo />
-      <Footer />
-
     </>
   )
 }

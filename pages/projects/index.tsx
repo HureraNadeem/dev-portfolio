@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from '@/components/navbar/navbar';
 import Wrapper from '@/components/wrapper/wrapper';
 import ProjectsPageSVG from '@/public/assets/svgs/projects-page-svg';
-import { HtmlSVG, CssSVG, JavascriptSVG, TypescriptSVG } from '@/public/assets/svgs/projects-tech-logos-svgs';
+import { HtmlSVG, CssSVG, JavascriptSVG, TypescriptSVG, ReactSVG, NodeSVG, ExpressJsSVG, MongoDBSVG, MongooseSVG, NextSVG, PostmanSVG, ReduxSVG, TailwindSVG, ReduxSagaSVG, MaterialUI,BootstrapSVG,CppSVG, JavaSVG, FireBaseSVG, XmlSVG} from '@/public/assets/svgs/projects-tech-logos-svgs';
 import ProjectCard from '@/components/project-card/project-card';
 import Footer from '@/components/footer/footer';
 import Head from 'next/head';
@@ -12,130 +12,178 @@ import Link from 'next/link';
 
 
 
-
-
-
 function Projects() {
     const projectData = [
         {
             name: "ezNMC",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur at veniam sapiente nesciunt eos eius, magni corporis voluptate repellendus accusantium recusandae, nihil unde iste amet esse hic, adipisci nulla officia!",
-            creationDate: "July 2022",
+            description: "Full-stack Web based solution for the NUST Medical Centre, providing convenient access to medical services for NUST students. It automates processes such as ambulance requests, doctor appointments, and pharmacy purchases, eliminating the need for manual intervention.",
+            creationDate: "January 2023",
             stackSVGs: [
                 {
-                    name: 'HTML',
-                    component: <HtmlSVG />
+                    name: 'React.js',
+                    component: <ReactSVG />
                 },
                 {
-                    name: 'CSS',
-                    component: <CssSVG />
+                    name: 'Redux',
+                    component: <ReduxSVG />
                 },
                 {
-                    name: 'JavaScript',
-                    component: <JavascriptSVG />
+                    name: 'Node.js',
+                    component: <NodeSVG />
                 },
                 {
-                    name: 'Typescript',
-                    component: <TypescriptSVG />
-                }
+                    name: 'MongoDB',
+                    component: <MongoDBSVG />
+                },
+                {
+                    name: 'Mongoose',
+                    component: <MongooseSVG />
+                },
             ],
             link: "https://www.github.com/hureranadeem/eznmc"
         },
         {
-            name: "ezNMC",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur at veniam sapiente nesciunt eos eius, magni corporis voluptate repellendus accusantium recusandae, nihil unde iste amet esse hic, adipisci nulla officia!",
-            creationDate: "July 2022",
+            name: "Dev-Portfolio",
+            description: "The Website you are scrolling through right now ;) Dev-Portfolio is open source customizable portfolio website for developers to showcase their technical skills and highlight their achievements. Fork it, update it, deploy it :)",
+            creationDate: "June 2023",
             stackSVGs: [
                 {
-                    name: 'HTML',
-                    component: <HtmlSVG />
+                    name: 'Next.js',
+                    component: <NextSVG />
                 },
                 {
-                    name: 'CSS',
-                    component: <CssSVG />
+                    name: 'React.js',
+                    component: <ReactSVG />
                 },
                 {
-                    name: 'JavaScript',
-                    component: <JavascriptSVG />
+                    name: 'Tailwind Css',
+                    component: <TailwindSVG />
                 },
                 {
-                    name: 'Typescript',
+                    name: 'TypeScript',
                     component: <TypescriptSVG />
-                }
+                },
             ],
-            link: "https://www.github.com/hureranadeem/eznmc"
+            link: "https://github.com/HureraNadeem/dev-portfolio"
         },
         {
-            name: "ezNMC",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur at veniam sapiente nesciunt eos eius, magni corporis voluptate repellendus accusantium recusandae, nihil unde iste amet esse hic, adipisci nulla officia!",
+            name: "Katra",
+            description: "Full-Stack Cross Platform application for Creative Chaos designed to seamlessly connect individuals in need of blood with generous donors. This innovative solution simplifies and enhances communication between both parties, ensuring a smooth and efficient process.",
             creationDate: "July 2022",
             stackSVGs: [
                 {
-                    name: 'HTML',
-                    component: <HtmlSVG />
+                    name: 'React',
+                    component: <ReactSVG />
                 },
                 {
-                    name: 'CSS',
-                    component: <CssSVG />
+                    name: 'Material-UI',
+                    component: <MaterialUI />
                 },
                 {
-                    name: 'JavaScript',
-                    component: <JavascriptSVG />
+                    name: 'Redux',
+                    component: <ReduxSVG />
                 },
                 {
-                    name: 'Typescript',
+                    name: 'Redux Sagas',
+                    component: <ReduxSagaSVG />
+                },
+                {
+                    name: 'TypeScript',
                     component: <TypescriptSVG />
-                }
+                },
+                
             ],
-            link: "https://www.github.com/hureranadeem/eznmc"
+            link: "https://creativechaos.co/"
         },
         {
-            name: "ezNMC",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur at veniam sapiente nesciunt eos eius, magni corporis voluptate repellendus accusantium recusandae, nihil unde iste amet esse hic, adipisci nulla officia!",
-            creationDate: "July 2022",
+            name: "BarCode Scanner",
+            description: "Platform for small scaled businesses and local shops to efficiently scan barcodes to retrieve product codes, and instantly access relevant product data from an extensive excel database.",
+            creationDate: "March 203",
             stackSVGs: [
                 {
-                    name: 'HTML',
-                    component: <HtmlSVG />
+                    name: 'Next.js',
+                    component: <NextSVG />
                 },
                 {
-                    name: 'CSS',
-                    component: <CssSVG />
+                    name: 'React.js',
+                    component: <ReactSVG />
                 },
                 {
-                    name: 'JavaScript',
-                    component: <JavascriptSVG />
+                    name: 'Node.js',
+                    component: <NodeSVG />
                 },
                 {
-                    name: 'Typescript',
+                    name: 'Tailwind Css',
+                    component: <TailwindSVG />
+                },
+                {
+                    name: 'TypeScript',
                     component: <TypescriptSVG />
-                }
+                },
             ],
-            link: "https://www.github.com/hureranadeem/eznmc"
+            link: "about:blank"
         },
         {
-            name: "ezNMC",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur at veniam sapiente nesciunt eos eius, magni corporis voluptate repellendus accusantium recusandae, nihil unde iste amet esse hic, adipisci nulla officia!",
-            creationDate: "July 2022",
+            name: "Text File compressor and decompressor",
+            description: "Text File compressor and decompressor using Huffman Coding (i.e Huffman encoding and Decoding) implementing several data structures and algorithms in c++.",
+            creationDate: "December 2021",
             stackSVGs: [
                 {
-                    name: 'HTML',
-                    component: <HtmlSVG />
+                    name: 'C++',
+                    component: <CppSVG />
                 },
-                {
-                    name: 'CSS',
-                    component: <CssSVG />
-                },
-                {
-                    name: 'JavaScript',
-                    component: <JavascriptSVG />
-                },
-                {
-                    name: 'Typescript',
-                    component: <TypescriptSVG />
-                }
+                
             ],
-            link: "https://www.github.com/hureranadeem/eznmc"
+            link: "https://github.com/HureraNadeem/Text-File-compressor"
+        },
+        // {
+        //     name: "Weather Finder",
+        //     description: "Web page to discover real-time weather updates and forecasts for any City with the Weather Finder website. Using Open-source weather API, it helps you stay informed and make informed decisions with ease.",
+        //     creationDate: "May 2021",
+        //     stackSVGs: [
+        //         {
+        //             name: 'React',
+        //             component: <ReactSVG />
+        //         },
+        //         {
+        //             name: 'Bootstrap',
+        //             component: <BootstrapSVG />
+        //         },
+        //         {
+        //             name: 'JavaScript',
+        //             component: <JavascriptSVG />
+        //         },
+        //         {
+        //             name: 'HTML',
+        //             component: <HtmlSVG />
+        //         },
+        //         {
+        //             name: 'CSS',
+        //             component: <CssSVG />
+        //         },
+               
+        //     ],
+        //     link: "https://github.com/HureraNadeem/Mart-By-Marsh"
+        // },
+        {
+            name: "Mart by MARSH",
+            description: "An android application for online grocery shopping ensures secure and efficient data management and intuitive interfaces. Used Firebase as database and for authentication.",
+            creationDate: "May 2021",
+            stackSVGs: [
+                {
+                    name: 'Java',
+                    component: <JavaSVG />
+                },
+                {
+                    name: 'Firebase',
+                    component: <FireBaseSVG />
+                },
+                {
+                    name: 'XML',
+                    component: <XmlSVG />
+                },
+            ],
+            link: "https://github.com/HureraNadeem/Mart-By-Marsh"
         },
     ]
     return (
@@ -144,7 +192,6 @@ function Projects() {
                 <title>Projects - Hurera</title>
                 <meta name="description" content="This is the projects page of hurera'a dev portfolio." />
             </Head>
-            <Navbar />
 
             <Wrapper>
                 <div className="py-7 sm:px-0 md:px-0 lg:px-0 sm:py-5 md:py-5 lg:py-5 flex flex-row sm:flex-col md:flex-col lg:flex-col justify-around items-start sm:items-center md:items-center lg:items-center bg-main-bg-color xl:gap-5 2xl:gap-5 2xl:justify-center 2xl:items-center">
@@ -181,7 +228,6 @@ function Projects() {
                 </div>
             </Wrapper>
 
-            <Footer />
         </>
 
     )
