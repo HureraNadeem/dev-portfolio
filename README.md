@@ -1,38 +1,45 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Hurera's dev portfolio 💯
 
-## Getting Started
+Hit the live example, [click here](hurera-dev.netlify.app) 🚀
 
-First, run the development server:
+This repository contains the source code and for my personal dev portfolio website. The website showcases my experience, education, and projects as a full stack developer.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **About Me**: Provides an overview of my background, skills, and expertise.
+- **Experience**: Highlights my professional experience, including previous work positions and projects.
+- **Education**: Displays my educational background, including degrees and certifications.
+- **Projects**: Showcases a selection of my notable projects, providing details about their features and technologies used.
+- **Contact**: Offers a convenient way for visitors to get in touch with me.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Technologies Used
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- Next.js
+- TypeScript
+- Tailwind CSS
+- React Reveal
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Illustrations
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Undraw
 
-## Learn More
+## Deployment
 
-To learn more about Next.js, take a look at the following resources:
+The website is deployed and accessible at [hurera-dev.netlify.app](hurera-dev.netlify.app)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Run the project locally
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+To run the project locally, follow these steps:
 
-## Deploy on Vercel
+1. Clone the repository: `git clone https://github.com/HureraNadeem/dev-portfolio`
+2. Install the required dependencies: `npm install`
+3. Start the development server: `npm run dev`
+4. Open your browser and visit `http://localhost:3000` to view the website.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Feel free to explore the source code and modify it to create your own portfolio website. If you have any questions or suggestions, feel free to reach out to me.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Special Shoutout:
+
+A special shoutout to [Ashutosh Hathidara](https://github.com/ashutosh1919) and [Muhammad Kumail](https://github.com/mkumail1) as most of the UI inspiration has been taken from their portfolio websites.
+
+
