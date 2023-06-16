@@ -37,7 +37,7 @@ export const WhatIDoCard: FC<Props> = ({ skillName, MainSVG, iconsArr, descripti
                                 iconsArr.map((element, index) => {
                                     return (
                                         <>
-                                            <span  id={`id-${index}`} key={index} className=''>
+                                            <span id={`id-${index}`} key={index} className=''>
                                                 {element.svg}
                                             </span>
                                             <ReactTooltip
@@ -57,8 +57,9 @@ export const WhatIDoCard: FC<Props> = ({ skillName, MainSVG, iconsArr, descripti
                                     return (
                                         <>
                                             <p key={index} className='tertiary-text my-3'>
-                                                📌 {element}
-                                                {/* ⚡ {element} */}
+                                                {/* 📍 {element} */}
+                                                {/* 📌 {element} */}
+                                                ⚡ {element}
                                             </p>
                                         </>
                                     );

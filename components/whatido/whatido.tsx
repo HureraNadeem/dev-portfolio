@@ -97,23 +97,24 @@ function WhatIDo() {
 
             ],
             descriptionArr: [
-                'Building responsive websites using React-Redux.js | HTML/CSS | Tailwind-CSS | Bootstrap | Material UI',
-                'Creating Single page rendering applications using Redux and HooksJs',
-                'Developing cross-platform mobile applications using React Native and Flutter',
-                'Creating optimized application backends in Node.js and Express.js',
-                'Experience in usage of Rest APIs in modern programming practices',
-                'Building secure authentication using JWT, Passport, Cognito, Auth0'
+                'Developing responsive single page web applications front end using React.js, Next.js, Redux.js, Redux Saga, TailwindCSS, Material-UI,  HTML/CSS and Bootstrap.',
+                'Creating secure and fast backends for application utilizing Node.js and Express.js',
+                'Interacting with the databases like MongoDB and PostgreSQL using ORMs like Mongoose and Prisma respectively.',
+                'Utilizing  GraphQL for efficient data querying and manipulation.',
+                'Utilizing TypeScript for its powerful features like static typing etc to develop both front-end and back-end applications with enhanced code quality, maintainability, and scalability.',
+                'Developing and consuming RESTful APIs, employing modern programming practices to ensure integration.',
+                'Implementing secure authentication using JWT and OAuth to enable robust and reliable user authentication and authorization.',
+                'Utilizing Docker, Jira and Figma for seamless collaboration within cross-functional teams.',
             ]
         },
     ]
 
-
     return (
         <>
             <Wrapper>
-                <h3 className='primary-heading text-center'>What I do?</h3>
-                <h4 className='secondary-text text-center'>I love to work contractually helping to growing my clients' business🤝</h4>
-                <h4 className='secondary-text text-center'>The tech stack i use is as follows:</h4>
+                <h3 className='primary-heading text-center'>{`{ What I do? }`}</h3>
+                <h4 className='secondary-text text-center'>I love to code for contract based projects and help companies expand their businesses.🤜🤛</h4>
+                <h4 className='secondary-text text-center'>My tech expertise are as follows:</h4>
                 {
                     Data.map((element, index) => {
                         return (

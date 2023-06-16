@@ -6,7 +6,8 @@
 :root {
   --text-color: '#313638';
   --main-bg-color: "#f5f5f5";
-  --secondary-bg-color: '#F2F2F2',
+  --secondary-bg-color: '#eef0eb',
+  /* --secondary-bg-color: '#F2F2F2', */
   --card-bg-color: '#fff'
 }
 

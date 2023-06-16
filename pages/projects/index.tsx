@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from '@/components/navbar/navbar';
 import Wrapper from '@/components/wrapper/wrapper';
 import ProjectsPageSVG from '@/public/assets/svgs/projects-page-svg';
-import { HtmlSVG, CssSVG, JavascriptSVG, TypescriptSVG, ReactSVG, NodeSVG, ExpressJsSVG, MongoDBSVG, MongooseSVG, NextSVG, PostmanSVG, ReduxSVG, TailwindSVG, ReduxSagaSVG, MaterialUI,BootstrapSVG,CppSVG, JavaSVG, FireBaseSVG, XmlSVG} from '@/public/assets/svgs/projects-tech-logos-svgs';
+import { HtmlSVG, CssSVG, JavascriptSVG, TypescriptSVG, ReactSVG, NodeSVG, ExpressJsSVG, MongoDBSVG, MongooseSVG, NextSVG, PostmanSVG, ReduxSVG, TailwindSVG, ReduxSagaSVG, MaterialUI, BootstrapSVG, CppSVG, JavaSVG, FireBaseSVG, XmlSVG } from '@/public/assets/svgs/projects-tech-logos-svgs';
 import ProjectCard from '@/components/project-card/project-card';
 import Footer from '@/components/footer/footer';
 import Head from 'next/head';
@@ -44,7 +44,7 @@ function Projects() {
         },
         {
             name: "Dev-Portfolio",
-            description: "The Website you are scrolling through right now ;) Dev-Portfolio is open source customizable portfolio website for developers to showcase their technical skills and highlight their achievements. Fork it, update it, deploy it :)",
+            description: "The Website you are scrolling through right now 😉 Dev-Portfolio is open source customizable portfolio website for developers to showcase their technical skills and highlight their achievements.",
             creationDate: "June 2023",
             stackSVGs: [
                 {
@@ -91,7 +91,7 @@ function Projects() {
                     name: 'TypeScript',
                     component: <TypescriptSVG />
                 },
-                
+
             ],
             link: "https://creativechaos.co/"
         },
@@ -132,7 +132,7 @@ function Projects() {
                     name: 'C++',
                     component: <CppSVG />
                 },
-                
+
             ],
             link: "https://github.com/HureraNadeem/Text-File-compressor"
         },
@@ -161,7 +161,7 @@ function Projects() {
         //             name: 'CSS',
         //             component: <CssSVG />
         //         },
-               
+
         //     ],
         //     link: "https://github.com/HureraNadeem/Mart-By-Marsh"
         // },
@@ -201,7 +201,7 @@ function Projects() {
                     <div className="sm:mb-2 md:mb-2 lg:mb-2 xl:w-50% 2xl:w-50% flex flex-col items-center justify-center pt-14 xl:pt-12 2xl:pt-0">
                         <Slide triggerOnce direction="right">
                             <h4 className='primary-heading justify-self-center text-center'>Projects</h4>
-                            <p className='tertiary-text justify-self-center text-center py-1'>Over the years I have used various tech architectures and tools comprising ReactJs, NextJs, Redux, Hooks, Nodejs, ExpressJs, MongoDB, HTML/CSS, C/C++, Python, Solidity, Android Apps in Java, Flutter, Firebase, and React Native. I have mixed the blends of different technologies into microservices to solve coupling problems of a particular framework. Having versatility has brought me to the forefront of the industry and I am currently working on projects that will be part of the next major breakthroughs in the industry.</p>
+                            <p className='tertiary-text justify-self-center text-center py-1'>With a deep understanding of React, Next.js, Redux, Node.js, Express, GraphQL and MongoDB, my expertise lies in developing robust and scalable web applications. By harnessing the power of these technologies, I create engaging user interfaces that deliver exceptional experiences, effectively manage complex application states to ensure seamless data flow, develop efficient server-side APIs and design efficient data models and ensure secure data storage. My proficiency in these technologies enables me to deliver high-quality applications that meet the demands of modern web development.</p>
                         </Slide>
 
                     </div>

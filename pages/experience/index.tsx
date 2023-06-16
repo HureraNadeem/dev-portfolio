@@ -17,18 +17,32 @@ function Experience() {
 
     const WorkData = [
         {
+            companyName: 'Devsinc',
+            jobRoleTile: 'DevOps Engineer Intern',
+            logo: "devsinc.jpeg",
+            tenure: 'June 2023 - present',
+            location: 'Islamabad, Pakistan',
+            jobDescription: [
+                "To be discussed yet ;)",
+            ],
+            link: 'https://www.linkedin.com/company/developers-inc/'
+        },
+        {
             companyName: 'Creative Choas',
             jobRoleTile: 'Software Engineer Intern',
             logo: "creative_chaos.jpg",
             tenure: 'June 2022 - August 2022',
             location: 'San Francisco, US / Karachi, Pakistan / Remote',
             jobDescription: [
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, deserunt!",
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, deserunt!",
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, deserunt!",
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, deserunt!",
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, deserunt!"
-            ]
+                "Took on the sole ownership of developing the front-end for the KATRA project under the mentorship of a solution architect and senior software engineers. This challenging endeavor allowed me to demonstrate my ability to independently tackle complex projects and deliver exceptional outcomes. Working closely with cross-functional team, successfully delivered impressive results.",
+                "Developed and maintained complex application logic with Redux Sagas, enabling efficient state management and asynchronous data flow.",
+                "Optimized performance by employing best architectural techniques and practices like code splitting and lazy loading to enhance the application's speed.",
+                "Worked closely with the back-end developers to integrate RESTful APIs and handled data fetching and manipulation using Redux Sagas, ensuring smooth data flow between the front-end and back-end systems.",
+                "Collaborated with designers and product managers to translate wireframes and mockups into interactive and functional components, ensuring a consistent and visually appealing design across multiple devices.",
+                "Collaborated closely with DevOps engineer to ensure seamless deployment and release processes.",
+            ],
+            link: 'https://www.linkedin.com/company/creative-chaos/'
+
         },
         {
             companyName: 'Kpibar',
@@ -37,12 +51,13 @@ function Experience() {
             tenure: 'February 2022 - March 2022',
             location: 'Madrid, Spain / Remote',
             jobDescription: [
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, deserunt!",
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, deserunt!",
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, deserunt!",
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, deserunt!",
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, deserunt!"
-            ]
+                "Contributed to the development of Kpibar by leveraging React, Ant Design, and React Context to create reusable and modular front-end components.",
+                "Collaborated with the team to implement UI enhancements and optimize user interactions, resulting in an improved user experience and increased usability.",
+                "Utilized React Context to manage global state and facilitate seamless data sharing between components, enhancing code maintainability and reducing redundancy.",
+                "Played a key role in refactoring and optimizing the existing codebase, resulting in improved performance, scalability, and code reusability."
+            ],
+            link: 'https://www.linkedin.com/company/kpibar/'
+
         },
         {
             companyName: 'CodeFier',
@@ -51,54 +66,145 @@ function Experience() {
             tenure: 'January 2022 - March 2022',
             location: 'Rawalpindi, Pakistan / Remote',
             jobDescription: [
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, deserunt!",
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, deserunt!",
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, deserunt!",
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, deserunt!",
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, deserunt!"
-            ]
+                "Developed the front-end of an in-house HR tool using Vanilla JavaScript, HTML, and CSS.",
+                "Created interactive and intuitive user interfaces to facilitate easy generation of reports and letters, simplifying the HR workflow.",
+                "Implemented responsive designs to ensure optimal user experience across various devices.",
+                "Collaborated with the HR team to understand their requirements and translate them into functional and visually appealing UI components."
+            ],
+            link: 'https://www.linkedin.com/company/codefier/'
         }
     ]
     const VolunteershipData = [
         {
-            companyName: 'HackClub',
-            jobRoleTile: 'Joint Secretary (Web and IT)',
-            logo: "creative_chaos.jpg",
-            tenure: 'June 2022 - August 2022',
-            location: 'San Francisco, US / Karachi, Pakistan / Remote',
+            companyName: 'Devsinc',
+            jobRoleTile: 'Campus Ambassador',
+            logo: "devsinc.jpeg",
+            tenure: 'March 2023 - present',
+            location: 'Islamabad, Pakistan / Remote',
             jobDescription: [
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, deserunt! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis reiciendis at accusamus eveniet enim consectetur totam, odit, minima minus quidem aliquid sunt. Tempore, iure earum minus sapiente, illo laborum alias dolor expedita molestias enim nesciunt magni. Ducimus dolores quis fugit dolor odit deleniti commodi, provident maxime corporis numquam in quia aliquid culpa vitae cum, voluptates quisquam eum vel aperiam quibusdam exercitationem impedit aspernatur ut nulla. Voluptatibus iusto iste architecto sapiente voluptates? Deleniti inventore velit at sit nesciunt, earum tempore placeat reprehenderit adipisci quasi praesentium suscipit impedit accusantium sequi beatae voluptas commodi vero. Maiores optio adipisci blanditiis necessitatibus placeat neque id?",
-            ]
+                "Actively contributing in Devsinc's mission to bridge the gap between industry and academia.",
+                "Responsible for organizing various Devsinc's events on campus.",
+                "Utilizing my strong social media skills, particularly on LinkedIn, responsible for promoting these events to maximize their reach and impact within the NUST community.",
+                "Working closely with the Devsinc team, ensuring seamless event planning and execution, creating engaging and valuable experiences for the participants.",
+                "By effectively marketing and showcasing Devsinc's initiatives and events, contributing to the company's brand awareness and visibility among students at NUST."
+            ],
+            link: 'https://www.linkedin.com/company/developers-inc/'
+        },
+        {
+            companyName: 'HackClub, NUST',
+            jobRoleTile: 'Joint Secretary (Web and IT)',
+            logo: "hack-club.jpeg",
+            tenure: 'August 2022 - present',
+            location: 'NUST, Islamabad',
+            jobDescription: [
+                "Leading the team in maintaining the club's website, ensuring its functionality and aesthetic appeal.",
+                "Helping team members and juniors in enhancing their technical skills as developers.",
+                "Actively mentoring team members, offering guidance and support in their web development journey."
+            ],
+            link: "https://www.linkedin.com/company/hackclub-nust/"
+        },
+        {
+            companyName: "Orientation of NUST 2022 (ON'22)",
+            jobRoleTile: 'Sponsorships Executive',
+            logo: "ON_22_NUST.jpg",
+            tenure: 'August 2022 - October 2022',
+            location: 'NUST, Islamabad',
+            jobDescription: [
+                "Orientation is the flagship event of NUST that witnesses a remarkable turnout of over 1800 students and 3000+ enthusiastic participants engaging in a wide array of captivating social events.",
+                "Engaged with numerous potential companies, showcasing the value and benefits of sponsoring the event.",
+                "Successfully closed deals with two companies, securing their support as sponsors for the Orientation event.",
+                "Played a pivotal role in securing financial contributions and resources, ensuring the successful execution of the event."
+            ],
+            link: "https://instagram.com/o_nust?igshid=MzRlODBiNWFlZA=="
+        },
+        {
+            companyName: 'Google Developers Student Club (GDSC), NUST',
+            jobRoleTile: 'Team Member (Web Development)',
+            logo: "GDSC_NUST.jpeg",
+            tenure: 'April 2022 - August 2022',
+            location: 'NUST, Islamabad',
+            jobDescription: [
+                "As a member of GDSC, actively participated in the club's management and operations.",
+                "Collaborated with fellow team members to efficiently manage and organize club activities, ensuring smooth coordination and effective execution of events and projects.",
+                "Continuously improved my skills as a developer through hands-on experience and exposure to various web development technologies and frameworks.",
+            ],
+            link: "https://www.linkedin.com/company/gdscnust/"
+        },
+        {
+            companyName: 'HackClub, NUST',
+            jobRoleTile: 'Co-Team Lead Social Media Marketing',
+            logo: "hack-club.jpeg",
+            tenure: 'November 2021 - August 2022',
+            location: 'NUST, Islamabad',
+            jobDescription: [
+                "Led social media marketing as the Team Lead for HackClub, covering major events and delivering timely updates on Instagram and Facebook",
+                "Enhanced the social media following and reach of HackClub's social media pages.",
+                "Coordinated with volunteers from HackClub and GDSC NUST during Devfest Islamabad 2021 and Codefest 2021, fostering collaboration and synergy.",
+                "Collaborated with 10Pearls Islamabad for Game Of Code, a speed coding competition."
+            ],
+            link: "https://www.linkedin.com/company/hackclub-nust/"
+
+        },
+        {
+            companyName: 'HackClub, NUST',
+            jobRoleTile: 'Team Member Web and IT',
+            logo: "hack-club.jpeg",
+            tenure: 'June 2021 - November 2021',
+            location: 'NUST, Islamabad',
+            jobDescription: [
+                "Contributed as a member of the Web and IT team, actively involved in the development of Hack Club, NUST's official website.",
+                "Utilizing React.js, React Bootstrap (Reactstrap), and Material UI, we crafted a modern and visually appealing website.",
+                "Additionally, collaborated closely with the team on various web and IT tasks, ensuring smooth coordination and efficient project execution."
+            ],
+            link: "https://www.linkedin.com/company/hackclub-nust/"
+
+        },
+        {
+            companyName: 'Project Insaniyat, NUST',
+            jobRoleTile: 'Fundraiser',
+            logo: "nust-logo.png",
+            tenure: 'April 2021 - May 2021',
+            location: 'NUST, Islamabad',
+            jobDescription: [
+                "Participated in Project Insaniyat, a fundraising initiative for social causes, during my second semester at NUST.",
+                "Led a team effort to collect donations and raise funds for noble causes.",
+                "Successfully raised approximately Rs. 127k in donations.",
+                "Donated the funds to the Sunbeams school system to support their campaign of establishing schools in rural areas of the country."
+            ],
+            link: "https://www.linkedin.com/school/nustofficial/"
         },
 
         {
-            companyName: 'Kpibar',
-            jobRoleTile: 'Frontend Engineer',
-            logo: "kpibar.jpeg",
-            tenure: 'February 2022 - March 2022',
-            location: 'Madrid, Spain / Remote',
+
+            companyName: 'NUST Media Club',
+            jobRoleTile: 'Team Lead (Web and IT)',
+            logo: "nust_media_club.jpeg",
+            tenure: 'September 2021 - December 2021',
+            location: 'NUST, Islamabad',
             jobDescription: [
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, deserunt!",
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, deserunt!",
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, deserunt!",
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, deserunt!",
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, deserunt!"
-            ]
+                "Led a team of 5 individuals as the Team Lead of Web and IT at the NUST Media Club.",
+                "Managed and maintained the club's WordPress website, ensuring its functionality and performance.",
+                "Collaborated closely with the Publications Team to update and publish engaging blog posts on the website.",
+                "Responsible to keep the website up-to-date with NUST Media Club blogs and relevant and informative content, enhancing the club's online presence."
+            ],
+            link: "https://instagram.com/nustmediaclub?igshid=MzRlODBiNWFlZA=="
+
         },
         {
-            companyName: 'CodeFier',
-            jobRoleTile: 'Junior Web Developer',
-            logo: "codefier.jpeg",
-            tenure: 'January 2022 - March 2022',
-            location: 'Rawalpindi, Pakistan / Remote',
+            companyName: 'IEEE-School of Electrical Engineering and Computer Science, NUST',
+            jobRoleTile: 'Team Member (Web and IT)',
+            logo: "IEEE-NUST.jpeg",
+            tenure: 'October 2021 - December 2021',
+            location: 'NUST, Islamabad',
             jobDescription: [
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, deserunt!",
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, deserunt!",
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, deserunt!",
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, deserunt!",
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, deserunt!"
-            ]
-        }
+                "Contributed as a valuable member of the Web and IT team at IEEE NUST.",
+                "Designed and developed professional email templates, ensuring consistent branding and effective communication with the audience.",
+                "Coordinated with teams, such as Marketing and Graphics, to align web and IT efforts and enhance overall project success.",
+                "Actively participated in community-building initiatives, organizing events and activities to foster engagement and collaboration within the IEEE NUST community."
+            ],
+            link: 'https://www.linkedin.com/company/nustieeeclub/'
+        },
+
     ]
 
     return (
@@ -117,7 +223,7 @@ function Experience() {
                         <Slide triggerOnce direction="right" >
                             <h4 className='primary-heading justify-self-center text-center'>Experience</h4>
                             <h5 className='primary-text justify-self-center text-center'>Work, Internship and Volunteership</h5>
-                            <p className='tertiary-text justify-self-center text-center py-1'>I am working as a Senior Software Engineer as a Full Stack Developer, Designer and a Software Architect. Its been 3 years of dedication that has made me capable of building solutions at scale. I am in Love with building research driven innovative solutions from scratch. Having the urge of giving back to people I teach students in my freetime, and raise funds for the deserving lads. From personally conducting hackathons to mentoring students as a Developer Advocate I have built empowering tech communities benefitting thousands of people across Pakistan</p>
+                            <p className='tertiary-text justify-self-center text-center py-1'>I'm a passionate software engineer who loves crafting creative solutions with code. My main area of expertise revolves around building scalable applications using the MERN stack. Additionally, I have a strong enthusiasm for fostering tech communities and actively engage in various tech events. Guiding and supporting aspiring developers as they begin their career paths brings me immense joy because we all know the struggle of finding the missing semicolon. 😉</p>
                         </Slide>
                     </div>
                 </div>
@@ -137,7 +243,7 @@ function Experience() {
                                     WorkData.map((element, index) => {
                                         return (
                                             <>
-                                                <ExperienceCard key={index} lastOne={(WorkData.length - index) == 1 ? true : false} companyName={element.companyName} jobRoleTile={element.jobRoleTile} logo={element.logo} tenure={element.tenure} location={element.location} jobDescription={element.jobDescription} />
+                                                <ExperienceCard key={index} lastOne={(WorkData.length - index) == 1 ? true : false} companyName={element.companyName} jobRoleTile={element.jobRoleTile} logo={element.logo} tenure={element.tenure} location={element.location} jobDescription={element.jobDescription} link={element.link} />
                                             </>
                                         );
                                     })
@@ -157,10 +263,10 @@ function Experience() {
                         showVolunteership && (
                             <div className="employement-container flex flex-col">
                                 {
-                                    WorkData.map((element, index) => {
+                                    VolunteershipData.map((element, index) => {
                                         return (
                                             <>
-                                                <ExperienceCard key={index} lastOne={(WorkData.length - index) == 1 ? true : false} companyName={element.companyName} jobRoleTile={element.jobRoleTile} logo={element.logo} tenure={element.tenure} location={element.location} jobDescription={element.jobDescription} />
+                                                <ExperienceCard key={index} lastOne={(VolunteershipData.length - index) == 1 ? true : false} companyName={element.companyName} jobRoleTile={element.jobRoleTile} logo={element.logo} tenure={element.tenure} location={element.location} jobDescription={element.jobDescription} link={element.link} />
                                             </>
                                         );
                                     })

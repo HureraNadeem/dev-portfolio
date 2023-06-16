@@ -16,7 +16,7 @@ export default function Greeting() {
 
                     <div className="animate-slide-in-from-left  info-div lg:w-50% xl:w-50% 2xl:w-50% 2xl:ml-6 sm:flex sm:flex-col sm:justify-center sm:items-center md:flex md:flex-col md:justify-center md:items-center">
                         <h1 className='primary-heading'>Wassup! this is Hurera</h1>
-                        <h3 className='primary-text'>A Full-stack developer (MERN) 💻 - DevOps and Cloud Enthusiast ☁️</h3>
+                        <h3 className='primary-text'>A Full-stack developer (MERN) 💻 - DevOps and Cloud Enthusiast ☁️ - Problem Solver 🤔</h3>
                         <div className="socials flex flex-row gap-1 mt-5 mb-4 sm:justify-center md:justify-center">
                             <Link href="https://github.com/HureraNadeem" passHref={true} target='_blank'>
                                 <SocialIconWrappper bgcolor={"black"}>

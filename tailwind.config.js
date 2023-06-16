@@ -11,7 +11,8 @@ module.exports = {
       colors: {
         'text-color': '#313638',
         'main-bg-color': "#f5f5f5",
-        'secondary-bg-color': '#dee2e6',
+        'secondary-bg-color': '#eef0eb',
+        // 'secondary-bg-color': '#dee2e6',
         'card-bg-color':'#fff'
       },
       fontFamily: {
