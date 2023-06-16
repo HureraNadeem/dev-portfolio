@@ -23,7 +23,7 @@ function Contact() {
                     <div className="sm:mb-2 md:mb-2 lg:mb-2 xl:w-50% 2xl:w-50% flex flex-col items-center justify-center pt-14 xl:pt-12 2xl:pt-0">
                         <Slide triggerOnce direction="right">
                             <h4 className='primary-heading justify-self-center text-center'>Contact Me</h4>
-                            <p className='tertiary-text justify-self-center text-center py-1'>I'm practically the social media version of Batman, always lurking in the shadows of every platform, ready to swoop in and save the day! So, whether you need some industry wizardry or a tech talk virtuoso, just reach out to me. And hey, if you're in the mood for some tech-savvy banter or seeking advice about MERN Stack, consider me your go-to guru. Let's connect and sprinkle some laughter into the world of tech!</p>
+                            <p className='tertiary-text justify-self-center text-center py-1'>I'm practically the social media version of Batman, always lurking in the shadows of every platform, ready to swoop in and save the day! So, whether you need some industry wizardry or a tech talk virtuoso, just reach out to me. Let's connect and sprinkle some laughter into the world of tech! 🤝</p>
                             <div className="socials flex flex-row gap-1 mt-5 mb-4 sm:justify-center md:justify-center">
                                 <Link href="https://github.com/HureraNadeem" passHref={true} target='_blank'>
                                     <SocialIconWrappper bgcolor={"black"}>
