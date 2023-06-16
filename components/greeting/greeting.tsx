@@ -3,7 +3,9 @@ import Link from 'next/link';
 import React from 'react';
 import Wrapper from '../wrapper/wrapper';
 import { GithubSVG, LinkedInSVG, InstagramSVG, TwitterSVG, FacebookSVG } from '@/public/assets/svgs/socials-svg';
-import ProfilePicture from "@/public/assets/images/cropped-profile-pic.jpg";
+import ProfilePicture from "@/public/assets/images/dp.png";
+// import ProfilePicture from "@/public/assets/images/dp_1.jpg";
+// import ProfilePicture from "@/public/assets/images/dp_2.png";
 import SocialIconWrappper from '@/components/social-media-icons-wrapper/social-media-icons-wrapper'
 
 

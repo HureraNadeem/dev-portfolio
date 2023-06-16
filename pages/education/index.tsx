@@ -86,7 +86,11 @@ function Education() {
 
                     </div>
                     <div className="degree-details-div border-solid border-2 border-dee2e6 rounded-lg shadow-lg">
-                        <div className='border bg-secondary-bg-color lg:p-20px xl:p-20px 2xl:p-20px sm:p-15px md:p-15px  flex flex-row justify-between sm:flex-col md:flex-col gap-2'>
+                        <div style={{
+                            background: 'rgba(255, 255, 255, 0.1)',
+                            boxShadow: 'inset 43.3667px -43.3667px 43.3667px rgba(173, 173, 173, 0.1), inset -43.3667px 43.3667px 43.3667px rgba(255, 255, 255, 0.1)',
+                            backdropFilter: 'blur(43.3667px)'
+                        }} className='border  lg:p-20px xl:p-20px 2xl:p-20px sm:p-15px md:p-15px  flex flex-row justify-between sm:flex-col md:flex-col gap-2'>
                             <div className='flex flex-col justify-between'>
                                 <h3 className='text-23px font-semibold mt-2 mb-4'>National University of Sciences and Technology, Islamabad</h3>
                                 <h6 className='text-18px font-semibold'>Bachelor's in Software Engineering</h6>

@@ -10,6 +10,8 @@ module.exports = {
     extend: {
       colors: {
         'text-color': '#313638',
+        // 'text-color': '#313638',
+        // 'main-bg-color': "#f2f2f2",
         'main-bg-color': "#f5f5f5",
         'secondary-bg-color': '#eef0eb',
         // 'secondary-bg-color': '#dee2e6',
