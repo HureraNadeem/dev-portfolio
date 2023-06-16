@@ -121,7 +121,7 @@ function Projects() {
                     component: <TypescriptSVG />
                 },
             ],
-            link: "about:blank"
+            link: "https://pforce.ony-x.co.uk/"
         },
         {
             name: "Text File compressor and decompressor",
