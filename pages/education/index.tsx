@@ -8,6 +8,7 @@ import CourseCard from '@/components/course-card/course-card'
 import Footer from '@/components/footer/footer'
 import Head from 'next/head';
 import { Flip, Slide } from "react-awesome-reveal";
+import Link from 'next/link'
 
 
 function Education() {
@@ -77,11 +78,13 @@ function Education() {
                 <div className='degree-card flex flex-row justify-between items-center sm:flex-col md:flex-col lg:flex-col sm:gap-7 md:gap-7 lg:gap-3 xl:gap-3 2xl:gap-3'>
                     <div style={{ borderRadius: '50%' }} className='sm:w-50vw md:w-35vw lg:w-30vw degree-logo-div border-solid border-2 border-dee2e6 rounded-50% p-10px shadow-lg'>
                         <Flip direction='vertical' triggerOnce>
-                            <Image style={{
-                                maxWidth: '100%',
-                                maxHeight: '100%',
-                                transform: "scale(80%, 80%)"
-                            }} src={NustLogo} alt='NUST logo' />
+                            <Link href={'https://www.linkedin.com/school/nustofficial/'} target='_blank' >
+                                <Image style={{
+                                    maxWidth: '100%',
+                                    maxHeight: '100%',
+                                    transform: "scale(80%, 80%)"
+                                }} src={NustLogo} alt='NUST logo' />
+                            </Link>
                         </Flip>
 
                     </div>

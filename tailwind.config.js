@@ -148,7 +148,8 @@ module.exports = {
     },
     screens: {
       // mobile:
-      'sm': { 'min': '200px', 'max': '480px' },
+      // 'sm': { 'min': '200px', 'max': '480px' },
+      'sm': { 'max': '480px' },
 
       // tablets
       'md': { 'min': '481px', 'max': '768px' },
