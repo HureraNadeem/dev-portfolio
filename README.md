@@ -1,6 +1,6 @@
 # Hurera's dev portfolio 💯
 
-Hit the live example, [click here](hurera-dev.netlify.app) 🚀
+Hit the live example, [click here](https://hurera-dev.netlify.app) 🚀
 
 This repository contains the source code and for my personal dev portfolio website. The website showcases my experience, education, and projects as a full stack developer.
 
@@ -25,7 +25,7 @@ This repository contains the source code and for my personal dev portfolio websi
 
 ## Deployment
 
-The website is deployed and accessible at [hurera-dev.netlify.app](hurera-dev.netlify.app)
+The website is deployed and accessible at [hurera-dev.netlify.app](https://hurera-dev.netlify.app)
 
 ## Run the project locally
 
