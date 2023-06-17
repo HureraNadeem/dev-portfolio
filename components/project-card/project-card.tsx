@@ -27,7 +27,7 @@ const ProjectCard: FC<Props> = ({ name, description, creationDate, stackSVGs, li
 
     return (
         <>
-            <div className="bg-card-bg-color rounded-lg shadow-lg project-card flex flex-col sm:w-[90%] md:w-[90%] lg:w-[48%] xl:w-[40%] 2xl:w-[30%] h-fit px-5 py-5 gap-2 sm:max-h-[500px] md:max-h-[500px] lg:max-h-[500px]  max-h-[500px] min-h-[230px] cursor-pointer overflow-hidden  motion-safe:from-right transition-transform duration-500 transform hover:scale-110" onClick={handleClick}>
+            <div className="bg-card-bg-color rounded-lg shadow-lg project-card flex flex-col sm:w-[90%] md:w-[90%] lg:w-[48%] xl:w-[40%] 2xl:w-[30%] h-fit px-5 py-5 gap-2 sm:max-h-[500px] md:max-h-[500px] lg:max-h-[500px]  max-h-[500px] min-h-[230px] cursor-pointer overflow-hidden  motion-safe:from-right transition-transform duration-500 transform hover:scale-105" onClick={handleClick}>
                 <Fade triggerOnce direction='up'>
                     <h2 className='font-medium text-left text-[22px] sm:text-center md:text-center'>{name}</h2>
                     <div className='max-h-[50%] text-left font-normal text-[17px] sm:text-center md:text-center whitespace-no-wrap overflow-hidden text-ellipsis'>{description}</div>

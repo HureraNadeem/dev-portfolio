@@ -41,7 +41,7 @@ const CourseCard: FC<Props> = ({ name, instructor, imgsrc, link }) => {
 
     return (
         <>
-            <div className="w-385px sm:h-fit md:h-fit h-350px overflow-hidden certificate-card bg-card-bg-color border-secondary-bg-color max-w-sm rounded-lg shadow-lg transition-transform duration-500 transform hover:scale-110 huihui">
+            <div className="w-385px sm:h-fit md:h-fit h-350px overflow-hidden certificate-card bg-card-bg-color border-secondary-bg-color max-w-sm rounded-lg shadow-lg transition-transform duration-500 transform hover:scale-105 huihui">
                 <Fade triggerOnce direction='up'  >
                     <div>  {/* <div onClick={handleClick}> */}
                         {/* custom animation class: animate-fade-in-bottom */}
