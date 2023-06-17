@@ -17,7 +17,7 @@ function FourOhFour() {
                 <meta name="description" content="This is the 404 page of hurera'a dev portfolio." />
             </Head>
             <Wrapper>
-                <div className='flex flex-col justify-start items-center h-[85vh] '>
+                <div className='flex flex-col justify-start items-center h-screen min-h-[533px]'>
 
                     <p className='text-center secondary-heading underline'>404</p>
                     <p className='text-center tertiary-text'>Page not found</p>

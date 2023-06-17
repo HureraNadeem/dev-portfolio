@@ -15,7 +15,7 @@ function Education() {
         {
             name: "Next.js & React - The Complete Guide (incl. Two Paths!)",
             instructor: "Maximilian Schwarzmüller",
-            imgsrc: "udemy_light_mode.png",
+            imgsrc: "udemy_dark.png",
             link: "http://coursera.org"
         },
         {
@@ -28,7 +28,7 @@ function Education() {
         {
             name: "Node.js, Express, MongoDB & More: The Complete Bootcamp",
             instructor: "Jonas Schmedtmann",
-            imgsrc: "udemy_light_mode.png",
+            imgsrc: "udemy_dark.png",
             link: "http://coursera.org"
 
         },
@@ -36,7 +36,7 @@ function Education() {
         {
             name: "Understanding TypeScript",
             instructor: "Maximilian Schwarzmüller",
-            imgsrc: "udemy_light_mode.png",
+            imgsrc: "udemy_dark.png",
             link: "http://coursera.org"
 
         },
