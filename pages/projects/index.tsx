@@ -98,7 +98,7 @@ function Projects() {
         {
             name: "BarCode Scanner",
             description: "Platform for small scaled businesses and local shops to efficiently scan barcodes to retrieve product codes, and instantly access relevant product data from an extensive excel database.",
-            creationDate: "March 203",
+            creationDate: "March 2023",
             stackSVGs: [
                 {
                     name: 'Next.js',
