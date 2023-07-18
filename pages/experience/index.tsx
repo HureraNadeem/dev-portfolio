@@ -23,7 +23,7 @@ function Experience() {
             tenure: 'June 2023 - present',
             location: 'Islamabad, Pakistan',
             jobDescription: [
-                "To be discussed yet ;)",
+                'Learning and implementing the techniques and tools to streamline processes, automate deployments, and ensure seamless collaboration for efficient and scalable software delivery.'
             ],
             link: 'https://www.linkedin.com/company/developers-inc/'
         },
