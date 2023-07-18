@@ -94,7 +94,7 @@ function Experience() {
             companyName: 'HackClub, NUST',
             jobRoleTile: 'Joint Secretary (Web and IT)',
             logo: "hack-club.jpeg",
-            tenure: 'August 2022 - present',
+            tenure: 'August 2022 - July 2023',
             location: 'NUST, Islamabad',
             jobDescription: [
                 "Leading the team in maintaining the club's website, ensuring its functionality and aesthetic appeal.",
