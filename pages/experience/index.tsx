@@ -20,10 +20,17 @@ function Experience() {
             companyName: 'Devsinc',
             jobRoleTile: 'DevOps Engineer Intern',
             logo: "devsinc.jpeg",
-            tenure: 'June 2023 - present',
+            tenure: 'July 2023 - September 2023',
             location: 'Islamabad, Pakistan',
-            jobDescription: [
-                'Learning and implementing the techniques and tools to streamline processes, automate deployments, and ensure seamless collaboration for efficient and scalable software delivery.'
+            jobDescription : [
+                "Achieved distinction by being selected as one of the few candidates out of a massive applicant pool of 25,000",
+                "Completed a rigorous training program that delved into the latest DevOps tools and practices.",
+                "Achieved mastery in foundational technologies such as Linux and Git, while also excelling in critical DevOps tools like Docker and Kubernetes (K8s).",
+                "Gained mastery in writing CI/CD pipelines using GitHub Actions, and Jenkins.",
+                "Gained proficiency in Infrastructure as Code (IAC) with Terraform and demonstrated expertise in harnessing various AWS services like EC2 and S3, adhering to CI/CD best practices.",
+                "Took sole ownership of two projects, one based on Node.js and the other on Ruby on Rails (ROR), overseeing the entire CI/CD lifecycle.",
+                "Utilized a wide array of learned tools to containerize and deploy both applications within the AWS ecosystem, leveraging EC2 services to ensure scalability and reliability.",
+                "Implemented Nginx as a reverse proxy to optimize application performance and efficiently manage incoming traffic."
             ],
             link: 'https://www.linkedin.com/company/developers-inc/'
         },
