@@ -14,6 +14,12 @@ import Link from 'next/link'
 function Education() {
     const coursesData = [
         {
+            name: "Complete Vue3 Developer Bootcamp (Pinia, Vitest)",
+            instructor: "Andrei Neagoie",
+            imgsrc: "udemy_dark.png",
+            link: "http://coursera.org"
+        },
+        {
             name: "Next.js & React - The Complete Guide (incl. Two Paths!)",
             instructor: "Maximilian Schwarzmüller",
             imgsrc: "udemy_dark.png",
@@ -43,7 +49,7 @@ function Education() {
         },
         {
             name: "Front-End Web Development with React",
-            instructor: "The Hong Kong University of Science and Technology",
+            instructor: "The Hong Kong University",
             imgsrc: "coursera.png",
             link: "http://coursera.org"
 
@@ -99,7 +105,8 @@ function Education() {
                                 <h6 className='text-18px font-semibold'>Bachelor's in Software Engineering</h6>
                             </div>
                             <div>
-                                <p className='text-16px font-normal my-4'>Oct 2020 - Jun 2024 (expected)</p>
+                                <p className='text-16px font-normal my-4'>Oct 2020 - May 2024</p>
+                                <p className='text-16px font-normal my-4'>Islamabad, Pakistan</p>
                             </div>
                         </div>
                         <div className='bg-card-bg-color  lg:p-20px xl:p-20px 2xl:p-20px sm:p-15px md:p-15px pr-20px'>

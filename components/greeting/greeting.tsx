@@ -18,7 +18,7 @@ export default function Greeting() {
 
                     <div className="animate-slide-in-from-left  info-div lg:w-50% xl:w-50% 2xl:w-50% 2xl:ml-6 sm:flex sm:flex-col sm:justify-center sm:items-center md:flex md:flex-col md:justify-center md:items-center">
                         <h1 className='primary-heading'>Wassup! this is Hurera</h1>
-                        <h3 className='primary-text'>A Full-stack developer (MERN) 💻 - DevOps and Cloud Enthusiast ☁️ - Problem Solver 🤔</h3>
+                        <h3 className='primary-text'>A Full-stack developer (MERN/MEVN) 💻 - DevOps and Cloud Enthusiast ☁️ - Problem Solver 🤔</h3>
                         <div className="socials flex flex-row gap-1 mt-5 mb-4 sm:justify-center md:justify-center">
                             <Link href="https://github.com/HureraNadeem" passHref={true} target='_blank'>
                                 <SocialIconWrappper bgcolor={"black"}>
@@ -35,11 +35,11 @@ export default function Greeting() {
                                     <InstagramSVG />
                                 </SocialIconWrappper>
                             </Link>
-                            <Link href="https://twitter.com/iamhurera" passHref={true} target='_blank'>
+                            {/* <Link href="https://twitter.com/iamhurera" passHref={true} target='_blank'>
                                 <SocialIconWrappper bgcolor={"rgb(29, 161, 242)"}>
                                     <TwitterSVG />
                                 </SocialIconWrappper>
-                            </Link>
+                            </Link> */}
                             <Link href="https://www.facebook.com/iamhurera" passHref={true} target='_blank'>
                                 <SocialIconWrappper bgcolor={"rgb(24, 119, 242)"}>
                                     <FacebookSVG />
@@ -47,7 +47,7 @@ export default function Greeting() {
                             </Link>
                         </div>
                         <div className={`resume-div bg-text-color text-main-bg-color font-GoogleSans-Regular font-medium leading-tight max-w-max px-6 py-3 mr-0 rounded-md text-center no-underline font-sans block mt-5 text-lg cursor-pointer tracking-wide`}>
-                            <Link href={'https://drive.google.com/file/d/1qF8nZbI4c0_g5vlbkxMJZxOQmoXwuw6W/view?usp=sharing'} download={"Hurera's Resume"} target='_blank' rel='noreferrer' className='font-GoogleSans-Regular'>
+                            <Link href={'https://drive.google.com/file/d/17tbs8vZmaKnIF-XMAsKz1nDmQNr9kXMY/view?usp=sharing'} download={"Hurera's Resume"} target='_blank' rel='noreferrer' className='font-GoogleSans-Regular'>
                                 Resume 📄
                             </Link>
                         </div>

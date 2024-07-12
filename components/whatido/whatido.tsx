@@ -1,7 +1,7 @@
 import React from 'react'
 import Wrapper from '../wrapper/wrapper';
 import { WhatIDoCard } from '../whatido-card/whatido-card';
-import { ReactSVG, MongoDBSVG, JavascriptSVG, TypescriptSVG, HtmlSVG, CssSVG, NodeSVG, TailwindSVG, BootstrapSVG, JwtSVG, NextSVG, ReduxSVG, ReduxSagaSVG, ExpressJsSVG, MongooseSVG, JiraSVG, GitSVG, PostmanSVG, FigmaSVG, MaterialUI } from '@/public/assets/svgs/tech-skills-svgs'
+import { ReactSVG, VueSVG, PiniaSVG, MySqlSVG, CiCdSVG, DockerSVG, SequelizeSVG, MongoDBSVG, JavascriptSVG, TypescriptSVG, HtmlSVG, CssSVG, NodeSVG, TailwindSVG, BootstrapSVG, JwtSVG, NextSVG, ReduxSVG, ReduxSagaSVG, ExpressJsSVG, MongooseSVG, JiraSVG, GitSVG, PostmanSVG, FigmaSVG, MaterialUI, JestSVG } from '@/public/assets/svgs/tech-skills-svgs'
 import { FullStackDevSVG, FullStackDevSVGAlt } from '@/public/assets/svgs/tech-stack-svgs'
 
 
@@ -21,12 +21,20 @@ function WhatIDo() {
                     svg: <NextSVG />
                 },
                 {
+                    name: "Vue3.js",
+                    svg: <VueSVG />
+                },
+                {
                     name: "Redux",
                     svg: <ReduxSVG />
                 },
+                // {
+                //     name: "Redux Saga",
+                //     svg: <ReduxSagaSVG />
+                // },
                 {
-                    name: "Redux Saga",
-                    svg: <ReduxSagaSVG />
+                    name: "Pinia",
+                    svg: <PiniaSVG />
                 },
                 {
                     name: "JavaScript",
@@ -60,7 +68,6 @@ function WhatIDo() {
                     name: "Node.js",
                     svg: <NodeSVG />
                 },
-
                 {
                     name: "Express.js",
                     svg: <ExpressJsSVG />
@@ -73,7 +80,26 @@ function WhatIDo() {
                     name: "Mongoose",
                     svg: <MongooseSVG />
                 },
-
+                {
+                    name: "MySQL",
+                    svg: <MySqlSVG />
+                },
+                {
+                    name: "Sequelize",
+                    svg: <SequelizeSVG />
+                },
+                {
+                    name: "Jest",
+                    svg: <JestSVG />
+                },
+                {
+                    name: "Docker",
+                    svg: <DockerSVG />
+                },
+                {
+                    name: "CI/CD pipelines with Github Actions and Gitlab CI/CD",
+                    svg: <CiCdSVG />
+                },
                 {
                     name: "JWT",
                     svg: <JwtSVG />
@@ -97,14 +123,16 @@ function WhatIDo() {
 
             ],
             descriptionArr: [
-                'Developing responsive single page web applications front end using React.js, Next.js, Redux.js, Redux Saga, TailwindCSS, Material-UI,  HTML/CSS and Bootstrap.',
+                'Developing responsive single page web applications front end using React.js, Next.js, Vue3.js, Redux.js, Pinia, TailwindCSS, Material-UI,  HTML/CSS and Bootstrap.',
                 'Creating secure and fast backends for application utilizing Node.js and Express.js',
-                'Interacting with the databases like MongoDB and PostgreSQL using ORMs like Mongoose and Prisma respectively.',
-                'Utilizing  GraphQL for efficient data querying and manipulation.',
+                'Interacting with the databases like MongoDB, MySQL, PostgreSQL using ODMs/ORMs like Mongoose, Sequelize and Prisma respectively.',
+                // 'Utilizing  GraphQL for efficient data querying and manipulation.',
                 'Utilizing TypeScript for its powerful features like static typing etc to develop both front-end and back-end applications with enhanced code quality, maintainability, and scalability.',
                 'Developing and consuming RESTful APIs, employing modern programming practices to ensure integration.',
-                'Implementing secure authentication using JWT and OAuth to enable robust and reliable user authentication and authorization.',
-                'Utilizing Docker, Jira and Figma for seamless collaboration within cross-functional teams.',
+                // 'Implementing secure authentication using JWT and OAuth to enable robust and reliable user authentication and authorization.',
+                'Writing and executing unit and e2e tests using Jest to ensure code reliability and performance, fostering a robust codebase.',
+                'Implementing CI/CD pipelines using GitHub Actions and GitLab CI/CD to automate testing, building, and deployment processes, ensuring code quality and accelerating release cycles.',
+                'Utilizing Docker, Jira and Figma for seamless collaboration within cross-functional teams.'
             ]
         },
     ]

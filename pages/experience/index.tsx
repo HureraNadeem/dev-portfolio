@@ -22,7 +22,7 @@ function Experience() {
             logo: "devsinc.jpeg",
             tenure: 'July 2023 - September 2023',
             location: 'Islamabad, Pakistan',
-            jobDescription : [
+            jobDescription: [
                 "Achieved distinction by being selected as one of the few candidates out of a massive applicant pool of 25,000",
                 "Completed a rigorous training program that delved into the latest DevOps tools and practices.",
                 "Achieved mastery in foundational technologies such as Linux and Git, while also excelling in critical DevOps tools like Docker and Kubernetes (K8s).",
@@ -86,7 +86,7 @@ function Experience() {
             companyName: 'Devsinc',
             jobRoleTile: 'Campus Ambassador',
             logo: "devsinc.jpeg",
-            tenure: 'March 2023 - present',
+            tenure: 'March 2023 - May 2024',
             location: 'Islamabad, Pakistan / Remote',
             jobDescription: [
                 "Actively contributing in Devsinc's mission to bridge the gap between industry and academia.",

@@ -40,11 +40,11 @@ function Contact() {
                                         <InstagramSVG />
                                     </SocialIconWrappper>
                                 </Link>
-                                <Link href="https://twitter.com/iamhurera" passHref={true} target='_blank'>
+                                {/* <Link href="https://twitter.com/iamhurera" passHref={true} target='_blank'>
                                     <SocialIconWrappper bgcolor={"rgb(29, 161, 242)"}>
                                         <TwitterSVG />
                                     </SocialIconWrappper>
-                                </Link>
+                                </Link> */}
                                 <Link href="https://www.facebook.com/iamhurera" passHref={true} target='_blank'>
                                     <SocialIconWrappper bgcolor={"rgb(24, 119, 242)"}>
                                         <FacebookSVG />
