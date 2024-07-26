@@ -17,6 +17,22 @@ function Experience() {
 
     const WorkData = [
         {
+            companyName: "Cowlar Design Studio",
+            jobRoleTitle: "Full Stack Software Engineer",
+            logo: "cowlar_design_studio.jpeg",
+            tenure: "February 2024 - Present",
+            location: "Islamabad, Pakistan",
+            jobDescription: [
+                "Collaborating with the ML team on an AI-driven retail product, incorporating continuous user feedback to enhance functionality and satisfaction.",
+                "Developing modular and reusable frontend components with Vue.js, React.js, and TypeScript to drive UI efficiency and ensure robust product performance.",
+                "Implementing RESTful APIs with Node.js and Express.js, using Sequelize for MySQL and Mongoose for MongoDB to ensure efficient database interactions.",
+                "Working on a high-impact AI annotation platform for large-scale image datasets, increasing throughput by 60% and accelerating model development cycles.",
+                "Writing complex database queries for dashboard statistics, boosting data retrieval speed by 40% and enhancing real-time analytics.",
+                "Optimizing existing APIs and database queries, cutting execution time by 75% and improving system throughput by 55%, resulting in faster application responsiveness."
+            ],
+            link: "https://www.linkedin.com/company/cowlar-design/"
+        }, 
+        {
             companyName: 'Devsinc',
             jobRoleTitle: 'DevOps Engineer Intern',
             logo: "devsinc.jpeg",
