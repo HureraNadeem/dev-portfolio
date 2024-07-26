@@ -18,7 +18,7 @@ function Experience() {
     const WorkData = [
         {
             companyName: 'Devsinc',
-            jobRoleTile: 'DevOps Engineer Intern',
+            jobRoleTitle: 'DevOps Engineer Intern',
             logo: "devsinc.jpeg",
             tenure: 'July 2023 - September 2023',
             location: 'Islamabad, Pakistan',
@@ -36,7 +36,7 @@ function Experience() {
         },
         {
             companyName: 'Creative Choas',
-            jobRoleTile: 'Software Engineer Intern',
+            jobRoleTitle: 'Software Engineer Intern',
             logo: "creative_chaos.jpg",
             tenure: 'June 2022 - August 2022',
             location: 'San Francisco, US / Karachi, Pakistan / Remote',
@@ -53,7 +53,7 @@ function Experience() {
         },
         {
             companyName: 'Kpibar',
-            jobRoleTile: 'Frontend Engineer',
+            jobRoleTitle: 'Frontend Engineer',
             logo: "kpibar.jpeg",
             tenure: 'February 2022 - March 2022',
             location: 'Madrid, Spain / Remote',
@@ -68,7 +68,7 @@ function Experience() {
         },
         {
             companyName: 'CodeFier',
-            jobRoleTile: 'Junior Web Developer',
+            jobRoleTitle: 'Junior Web Developer',
             logo: "codefier.jpeg",
             tenure: 'January 2022 - March 2022',
             location: 'Rawalpindi, Pakistan / Remote',
@@ -84,7 +84,7 @@ function Experience() {
     const VolunteershipData = [
         {
             companyName: 'Devsinc',
-            jobRoleTile: 'Campus Ambassador',
+            jobRoleTitle: 'Campus Ambassador',
             logo: "devsinc.jpeg",
             tenure: 'March 2023 - May 2024',
             location: 'Islamabad, Pakistan / Remote',
@@ -99,7 +99,7 @@ function Experience() {
         },
         {
             companyName: 'HackClub, NUST',
-            jobRoleTile: 'Joint Secretary (Web and IT)',
+            jobRoleTitle: 'Joint Secretary (Web and IT)',
             logo: "hack-club.jpeg",
             tenure: 'August 2022 - July 2023',
             location: 'NUST, Islamabad',
@@ -112,7 +112,7 @@ function Experience() {
         },
         {
             companyName: "Orientation of NUST 2022 (ON'22)",
-            jobRoleTile: 'Sponsorships Executive',
+            jobRoleTitle: 'Sponsorships Executive',
             logo: "ON_22_NUST.jpg",
             tenure: 'August 2022 - October 2022',
             location: 'NUST, Islamabad',
@@ -126,7 +126,7 @@ function Experience() {
         },
         {
             companyName: 'Google Developers Student Club (GDSC), NUST',
-            jobRoleTile: 'Team Member (Web Development)',
+            jobRoleTitle: 'Team Member (Web Development)',
             logo: "GDSC_NUST.jpeg",
             tenure: 'April 2022 - August 2022',
             location: 'NUST, Islamabad',
@@ -139,7 +139,7 @@ function Experience() {
         },
         {
             companyName: 'HackClub, NUST',
-            jobRoleTile: 'Co-Team Lead Social Media Marketing',
+            jobRoleTitle: 'Co-Team Lead Social Media Marketing',
             logo: "hack-club.jpeg",
             tenure: 'November 2021 - August 2022',
             location: 'NUST, Islamabad',
@@ -154,7 +154,7 @@ function Experience() {
         },
         {
             companyName: 'HackClub, NUST',
-            jobRoleTile: 'Team Member Web and IT',
+            jobRoleTitle: 'Team Member Web and IT',
             logo: "hack-club.jpeg",
             tenure: 'June 2021 - November 2021',
             location: 'NUST, Islamabad',
@@ -168,7 +168,7 @@ function Experience() {
         },
         {
             companyName: 'Project Insaniyat, NUST',
-            jobRoleTile: 'Fundraiser',
+            jobRoleTitle: 'Fundraiser',
             logo: "nust-logo.png",
             tenure: 'April 2021 - May 2021',
             location: 'NUST, Islamabad',
@@ -184,7 +184,7 @@ function Experience() {
         {
 
             companyName: 'NUST Media Club',
-            jobRoleTile: 'Team Lead (Web and IT)',
+            jobRoleTitle: 'Team Lead (Web and IT)',
             logo: "nust_media_club.jpeg",
             tenure: 'September 2021 - December 2021',
             location: 'NUST, Islamabad',
@@ -199,7 +199,7 @@ function Experience() {
         },
         {
             companyName: 'IEEE-School of Electrical Engineering and Computer Science, NUST',
-            jobRoleTile: 'Team Member (Web and IT)',
+            jobRoleTitle: 'Team Member (Web and IT)',
             logo: "IEEE-NUST.jpeg",
             tenure: 'October 2021 - December 2021',
             location: 'NUST, Islamabad',
@@ -250,7 +250,7 @@ function Experience() {
                                     WorkData.map((element, index) => {
                                         return (
                                             <>
-                                                <ExperienceCard key={index} lastOne={(WorkData.length - index) == 1 ? true : false} companyName={element.companyName} jobRoleTile={element.jobRoleTile} logo={element.logo} tenure={element.tenure} location={element.location} jobDescription={element.jobDescription} link={element.link} />
+                                                <ExperienceCard key={index} lastOne={(WorkData.length - index) == 1 ? true : false} companyName={element.companyName} jobRoleTitle={element.jobRoleTitle} logo={element.logo} tenure={element.tenure} location={element.location} jobDescription={element.jobDescription} link={element.link} />
                                             </>
                                         );
                                     })
@@ -273,7 +273,7 @@ function Experience() {
                                     VolunteershipData.map((element, index) => {
                                         return (
                                             <>
-                                                <ExperienceCard key={index} lastOne={(VolunteershipData.length - index) == 1 ? true : false} companyName={element.companyName} jobRoleTile={element.jobRoleTile} logo={element.logo} tenure={element.tenure} location={element.location} jobDescription={element.jobDescription} link={element.link} />
+                                                <ExperienceCard key={index} lastOne={(VolunteershipData.length - index) == 1 ? true : false} companyName={element.companyName} jobRoleTitle={element.jobRoleTitle} logo={element.logo} tenure={element.tenure} location={element.location} jobDescription={element.jobDescription} link={element.link} />
                                             </>
                                         );
                                     })

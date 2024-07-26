@@ -8,7 +8,7 @@ interface Props {
     key: Number;
     lastOne: Boolean;
     companyName: String;
-    jobRoleTile: String;
+    jobRoleTitle: String;
     logo: String;
     tenure: String;
     location: String;
@@ -16,7 +16,7 @@ interface Props {
     link: String;
 }
 
-const ExperienceCard: FC<Props> = ({ lastOne, companyName, jobRoleTile, logo, tenure, location, jobDescription, link }) => {
+const ExperienceCard: FC<Props> = ({ lastOne, companyName, jobRoleTitle, logo, tenure, location, jobDescription, link }) => {
 
     return (
         <>
@@ -33,7 +33,7 @@ const ExperienceCard: FC<Props> = ({ lastOne, companyName, jobRoleTile, logo, te
                     <div className="employement-details w-94%">
                         <div className="first-part flex flex-row justify-between items-start  sm:flex-col sm:justify-center sm:items-center md:flex-col md:justify-center md:items-center sm:gap-[7px] md:gap-[7px] pb-[8px]">
                             <div className='flex flex-col justify-center items-start sm:justify-center sm:items-center md:justify-center md:items-center'>
-                                <h2 className='font-medium text-20px sm:text-center md:text-center'>{jobRoleTile}</h2>
+                                <h2 className='font-medium text-20px sm:text-center md:text-center'>{jobRoleTitle}</h2>
                                 <h1 className='font-normal text-15px sm:text-center md:text-center'>{companyName}</h1>
                             </div>
                             <div className='flex flex-col justify-center items-end sm:justify-center sm:items-center md:justify-center md:items-center'>
