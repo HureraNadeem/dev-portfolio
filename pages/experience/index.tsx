@@ -17,10 +17,23 @@ function Experience() {
 
     const WorkData = [
         {
+            companyName: "RipeSeed.io",
+            jobRoleTitle: "Associate Software Engineer",
+            logo: "ripeseed_logo.jpeg",
+            tenure: "August 2024 - Present",
+            location: "Lahore, Pakistan",
+            jobDescription: [
+                "Developing high-performance, scalable web applications using React.js, Next.js, Node.js, and NestJS, with TypeScript to ensure type-safe and maintainable code.",
+                "Implementing secure, cloud-native solutions on AWS, optimizing infrastructure for scalability, cost-efficiency, and high availability.",
+                "Building RESTful APIs and microservices, ensuring seamless integration and superior performance across distributed systems."
+            ],
+            link: "https://pk.linkedin.com/company/ripeseed"
+        },
+        {
             companyName: "Cowlar Design Studio",
             jobRoleTitle: "Full Stack Software Engineer",
             logo: "cowlar_design_studio.jpeg",
-            tenure: "February 2024 - Present",
+            tenure: "February 2024 - August, 2024",
             location: "Islamabad, Pakistan",
             jobDescription: [
                 "Collaborating with the ML team on an AI-driven retail product, incorporating continuous user feedback to enhance functionality and satisfaction.",
@@ -31,7 +44,7 @@ function Experience() {
                 "Optimizing existing APIs and database queries, cutting execution time by 75% and improving system throughput by 55%, resulting in faster application responsiveness."
             ],
             link: "https://www.linkedin.com/company/cowlar-design/"
-        }, 
+        },
         {
             companyName: 'Devsinc',
             jobRoleTitle: 'DevOps Engineer Intern',
