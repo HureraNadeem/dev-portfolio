@@ -105,7 +105,7 @@ function Education() {
                                 <h6 className='text-18px font-semibold'>Bachelor's in Software Engineering</h6>
                             </div>
                             <div>
-                                <p className='text-16px font-normal my-4'>Oct 2020 - May 2024</p>
+                                {/* <p className='text-16px font-normal my-4'>Oct 2020 - May 2024</p> */}
                                 <p className='text-16px font-normal my-4'>Islamabad, Pakistan</p>
                             </div>
                         </div>
