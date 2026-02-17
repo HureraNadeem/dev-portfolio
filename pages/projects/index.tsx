@@ -1,47 +1,47 @@
-import React from 'react';
-import Navbar from '@/components/navbar/navbar';
 import Wrapper from '@/components/wrapper/wrapper';
 import ProjectsPageSVG from '@/public/assets/svgs/projects-page-svg';
 import {
-  HtmlSVG,
-  CssSVG,
-  JavascriptSVG,
-  TypescriptSVG,
-  ReactSVG,
-  NodeSVG,
-  ExpressJsSVG,
-  MongoDBSVG,
-  MongooseSVG,
-  NextSVG,
-  PostmanSVG,
-  ReduxSVG,
-  TailwindSVG,
-  ReduxSagaSVG,
-  MaterialUI,
-  BootstrapSVG,
-  CppSVG,
-  JavaSVG,
-  FireBaseSVG,
-  XmlSVG,
-  ShadCNSVG,
-  AzureSVG,
-  PostgreSQLSVG,
-  DockerSVG,
   AWSSVG,
-  ReactNativeSVG,
+  AzureSVG,
+  DockerSVG,
+  ExpressJsSVG,
+  FireBaseSVG,
   GCPSVG,
+  MaterialUI,
+  MongoDBSVG,
+  NextSVG,
+  NodeSVG,
+  PostgreSQLSVG,
+  ReactNativeSVG,
+  ReactSVG,
+  ReduxSagaSVG,
+  ReduxSVG,
+  ShadCNSVG,
+  TailwindSVG,
+  TypescriptSVG,
   VueJSSVG,
 } from '@/public/assets/svgs/projects-tech-logos-svgs';
 
 import ProjectCard from '@/components/project-card/project-card';
-import Footer from '@/components/footer/footer';
-import Head from 'next/head';
-import { Fade, Slide } from 'react-awesome-reveal';
 import { GithubSVG } from '@/public/assets/svgs/socials-svg';
+import Head from 'next/head';
 import Link from 'next/link';
+import { Slide } from 'react-awesome-reveal';
 
 function Projects() {
   const projectData = [
+    {
+      name: 'Pockla AI',
+      description:
+        'Powered by AI, every customer of yours gets their own personlized landing page. Connect your CRM and give every contact their own personalized landing page automatically.',
+      creationDate: '2026',
+      stackSVGs: [
+        { name: 'Next.js', component: <NextSVG /> },
+        { name: 'ShadCN', component: <ShadCNSVG /> },
+        { name: 'Tailwind CSS', component: <TailwindSVG /> },
+      ],
+      link: 'https://www.pockla.io/',
+    },
     {
       name: 'Brilio.ai',
       description:
@@ -141,7 +141,7 @@ function Projects() {
       ],
       link: 'https://www.thisisprgrss.com/',
     },
-        {
+    {
       name: 'Thanos',
       description:
         'Thanos AI is the epitome of our digitization tools-a comprehensive end-to-end solution for machine learning projects. It encompasses everything from data gathering and annotation to AI-assisted model deployment.',
