@@ -18,7 +18,7 @@ function Experience() {
     const WorkData = [
         {
             companyName: "RipeSeed.io",
-            jobRoleTitle: "Associate Software Engineer",
+            jobRoleTitle: "Software Engineer",
             logo: "ripeseed_logo.jpeg",
             tenure: "August 2024 - Present",
             location: "Lahore, Pakistan",
@@ -28,6 +28,22 @@ function Experience() {
                 "Building RESTful APIs and microservices, ensuring seamless integration and superior performance across distributed systems."
             ],
             link: "https://pk.linkedin.com/company/ripeseed"
+        },
+        {
+            companyName: "Brilio",
+            jobRoleTitle: "Founding Product Engineer",
+            logo: "brilio_logo.jpeg",
+            tenure: "Jan 2025 - Oct 2025",
+            location: "Abu Dhabi, United Arab Emirates · Remote",
+            jobDescription: [
+                "Led a team of 4 Frontend Engineers, set technical direction and standards.",
+                "Delivered 4 GenAI products including Brilio, end-to-end within a 9-month timeline.",
+                "Owned the product lifecycle - from concept validation to launch.",
+                "Revamped Brilio’s frontend, transforming it into a UX-first product experience.",
+                "Scaled Brilio for the European market by implementing support for 6 languages.",
+                "Led the launch of Brilio’s embeddable AI chatbot via script and WordPress/Shopify plugins, enabling instant integration across customers' apps."
+            ],
+            link: "https://www.linkedin.com/company/brilio"
         },
         {
             companyName: "Cowlar Design Studio",
@@ -62,6 +78,17 @@ function Experience() {
                 "Implemented Nginx as a reverse proxy to optimize application performance and efficiently manage incoming traffic."
             ],
             link: 'https://www.linkedin.com/company/developers-inc/'
+        },
+        {
+                companyName: "RunTheSims (Contract)",
+                jobRoleTitle: "Frontend Engineer",
+                logo: "runthesims.jpg",
+                tenure: "May 2022 - August 2022",
+                location: "San Francisco Bay Area, US (Remote)",
+                jobDescription: [
+                    "Contractually outsourced to RunTheSims. Contributed to the development of a simulation tool and dashboard using ReactJS, React Context, and Material-UI, focusing on creating reusable components and enhancing the overall user experience."
+                ],
+                link: "#"
         },
         {
             companyName: 'Creative Choas',
