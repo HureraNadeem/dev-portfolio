@@ -46,7 +46,7 @@ function Projects() {
       name: 'Brilio.ai',
       description:
         'AI SaaS for businesses and individuals to create custom AI agents, train LLMs with their business logic, and integrate data from documents, web links, databases, and QA chats.',
-      creationDate: '2024',
+      creationDate: '2025',
       stackSVGs: [
         {
           name: 'Next.js',
@@ -79,7 +79,7 @@ function Projects() {
       name: 'Brava CrewConnect',
       description:
         'Workforce management platform for roofing contractors that automates crew training certification, job assignments, and compliance tracking across subcontractors. Features real-time integrations with Monday.com, FlexiQuiz, CompanyCam, and multi-channel notifications (email/SMS).',
-      creationDate: '2024',
+      creationDate: '2025-2026',
       stackSVGs: [
         {
           name: 'Next.js',
@@ -116,7 +116,7 @@ function Projects() {
       name: 'PRGRSS.ai',
       description:
         'Cross-platform Web and Mobile platform for AI assisted mentorship of Black and Brown community in the UK, featuring AI powered mentors/mentees matching, real-time video communication, progress tracking, and in-app chat feature to provide end-to-end mentorship.',
-      creationDate: '2024',
+      creationDate: '2024-2025',
       stackSVGs: [
         {
           name: 'React Native',
@@ -141,40 +141,26 @@ function Projects() {
       ],
       link: 'https://www.thisisprgrss.com/',
     },
-    // {
-    //   name: 'ezNMC',
-    //   description:
-    //     'Full-stack Web based solution for the NUST Medical Centre, providing convenient access to medical services for NUST students. It automates processes such as ambulance requests, doctor appointments, and pharmacy purchases, eliminating the need for manual intervention.',
-    //   creationDate: 'January 2023',
-    //   stackSVGs: [
-    //     {
-    //       name: 'React.js',
-    //       component: <ReactSVG />,
-    //     },
-    //     {
-    //       name: 'Redux',
-    //       component: <ReduxSVG />,
-    //     },
-    //     {
-    //       name: 'Node.js',
-    //       component: <NodeSVG />,
-    //     },
-    //     {
-    //       name: 'MongoDB',
-    //       component: <MongoDBSVG />,
-    //     },
-    //     {
-    //       name: 'Mongoose',
-    //       component: <MongooseSVG />,
-    //     },
-    //   ],
-    //   link: 'https://www.github.com/hureranadeem/eznmc',
-    // },
+        {
+      name: 'Thanos',
+      description:
+        'Thanos AI is the epitome of our digitization tools-a comprehensive end-to-end solution for machine learning projects. It encompasses everything from data gathering and annotation to AI-assisted model deployment.',
+      creationDate: '2024',
+      stackSVGs: [
+        { name: 'Node.js', component: <NodeSVG /> },
+        { name: 'Express', component: <ExpressJsSVG /> },
+        { name: 'MongoDB', component: <MongoDBSVG /> },
+        { name: 'Vue.js', component: <VueJSSVG /> },
+        { name: 'Tailwind CSS', component: <TailwindSVG /> },
+        { name: 'PostgreSQL', component: <PostgreSQLSVG /> },
+      ],
+      link: 'https://cowlardesignstudio.com/solutions/technology/thanos',
+    },
     {
       name: 'Dev-Portfolio',
       description:
         'The Website you are scrolling through right now 😉 Dev-Portfolio is open source customizable portfolio website for developers to showcase their technical skills and highlight their achievements.',
-      creationDate: 'June 2023',
+      creationDate: '2023',
       stackSVGs: [
         {
           name: 'Next.js',
@@ -199,7 +185,7 @@ function Projects() {
       name: 'Katra',
       description:
         'Full-Stack Cross Platform application for Creative Chaos designed to seamlessly connect individuals in need of blood with generous donors. This innovative solution simplifies and enhances communication between both parties, ensuring a smooth and efficient process.',
-      creationDate: 'July 2022',
+      creationDate: '2022',
       stackSVGs: [
         {
           name: 'React',
@@ -223,84 +209,6 @@ function Projects() {
         },
       ],
       link: 'https://creativechaos.co/',
-    },
-    // {
-    //   name: 'BarCode Scanner',
-    //   description:
-    //     'Platform for small scaled businesses and local shops to efficiently scan barcodes to retrieve product codes, and instantly access relevant product data from an extensive excel database.',
-    //   creationDate: 'March 2023',
-    //   stackSVGs: [
-    //     {
-    //       name: 'Next.js',
-    //       component: <NextSVG />,
-    //     },
-    //     {
-    //       name: 'React.js',
-    //       component: <ReactSVG />,
-    //     },
-    //     {
-    //       name: 'Node.js',
-    //       component: <NodeSVG />,
-    //     },
-    //     {
-    //       name: 'Tailwind Css',
-    //       component: <TailwindSVG />,
-    //     },
-    //     {
-    //       name: 'TypeScript',
-    //       component: <TypescriptSVG />,
-    //     },
-    //   ],
-    //   link: 'https://pforce.ony-x.co.uk/',
-    // },
-    // {
-    //   name: 'Text File compressor and decompressor',
-    //   description:
-    //     'Text File compressor and decompressor using Huffman Coding (i.e Huffman encoding and Decoding) implementing several data structures and algorithms in c++.',
-    //   creationDate: 'December 2021',
-    //   stackSVGs: [
-    //     {
-    //       name: 'C++',
-    //       component: <CppSVG />,
-    //     },
-    //   ],
-    //   link: 'https://github.com/HureraNadeem/Text-File-compressor',
-    // },
-    // {
-    //   name: 'Mart by MARSH',
-    //   description:
-    //     'An android application for online grocery shopping ensures secure and efficient data management and intuitive interfaces. Used Firebase as database and for authentication.',
-    //   creationDate: 'May 2021',
-    //   stackSVGs: [
-    //     {
-    //       name: 'Java',
-    //       component: <JavaSVG />,
-    //     },
-    //     {
-    //       name: 'Firebase',
-    //       component: <FireBaseSVG />,
-    //     },
-    //     {
-    //       name: 'XML',
-    //       component: <XmlSVG />,
-    //     },
-    //   ],
-    //   link: 'https://github.com/HureraNadeem/Mart-By-Marsh',
-    // },
-    {
-      name: 'Thanos',
-      description:
-        'Thanos AI is the epitome of our digitization tools-a comprehensive end-to-end solution for machine learning projects. It encompasses everything from data gathering and annotation to AI-assisted model deployment.',
-      creationDate: '2025',
-      stackSVGs: [
-        { name: 'Node.js', component: <NodeSVG /> },
-        { name: 'Express', component: <ExpressJsSVG /> },
-        { name: 'MongoDB', component: <MongoDBSVG /> },
-        { name: 'Vue.js', component: <VueJSSVG /> },
-        { name: 'Tailwind CSS', component: <TailwindSVG /> },
-        { name: 'PostgreSQL', component: <PostgreSQLSVG /> },
-      ],
-      link: 'https://cowlardesignstudio.com/solutions/technology/thanos',
     },
   ];
   return (
