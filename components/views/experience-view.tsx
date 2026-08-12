@@ -14,6 +14,24 @@ function ExperienceView() {
 
   const WorkData = [
     {
+      companyName: 'Pockla',
+      jobRoleTitle: 'Senior Software Engineer',
+      logo: 'pockla_logo.png',
+      tenure: 'November 2025 - Present',
+      location: 'London, United Kingdom · Remote',
+      jobDescription: [
+        'Pockla is a London-based AdTech startup, founded in 2022 by Hugo Bibby and Rupert Boddington, building agent-first infrastructure for self-adapting websites — instead of one static landing page for everyone, AI agents generate a page tailored to every individual prospect, without rebuilding the site.',
+        'The platform runs the full lead generation loop for UK insurance, finance, claims and legal businesses: driving traffic through paid ads, AI outbound calling and cold email, landing each prospect on a page generated just for them, then qualifying and nurturing them with AI SMS and voice agents. Trusted by brands including Lottie, Kene, Omnos and NWEH.',
+        'Backed by ~£2M in funding, including a £1.6M seed round led by Venrex, with participation from Upside Ventures (the Sidemen’s VC arm), Love Ventures, Shuttle and SyndicateRoom.',
+        'Engineering the core CLI platform in Node.js, an MCP server exposing 30+ tools that drives 20 autonomous Claude Code skills through a workflow state machine to generate, QA, test and deploy Astro landing pages end-to-end.',
+        'Architecting the serverless backend on AWS with a Fastify API on Lambda, DynamoDB, S3 and CloudFront provisioned through CDK, plus an ECS Fargate edge layer running Caddy with on-demand TLS for multi-tenant custom domain routing.',
+        'Diagnosed and eliminated a production-blocking out-of-memory failure in bulk page builds by tracing it to a fixed WASM compiler memory ceiling and migrating to Astro’s native Rust compiler, unlocking 2,000+ page builds in ~40 seconds and retiring the batching workaround entirely.',
+        'Redesigned the deploy pipeline to mirror the full build output to S3 with checksum-based diffing, so only changed files upload while every page, asset and SEO artifact is served same-origin.',
+        'Implementing multi-tenant workspaces with JWT access and refresh authentication and role-based access control, alongside a lead ingestion and buyer-forwarding pipeline with per-submission delivery tracking.',
+      ],
+      link: 'https://www.linkedin.com/company/pockla/',
+    },
+    {
       companyName: 'RipeSeed.io',
       jobRoleTitle: 'Software Engineer',
       logo: 'ripeseed_logo.jpeg',
