@@ -23,6 +23,8 @@ export const WhatIDoCard: FC<Props> = ({
   iconsArr,
   descriptionArr,
 }) => {
+  const tooltipId = `whatido-tooltip-${skillName.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`
+
   return (
     <div className="WhatIDoCard py-7 sm:px-0 md:px-0 lg:px-0 sm:py-5 md:py-5 lg:py-5 flex flex-row sm:flex-col md:flex-col lg:flex-col justify-around items-center bg-main-bg-color xl:gap-5 2xl:gap-5">
       <Slide
@@ -38,12 +40,17 @@ export const WhatIDoCard: FC<Props> = ({
           <h4 className="secondary-heading justify-self-center text-center py-3">{skillName}</h4>
           <div className="stack-logos flex flex-row items-center justify-center gap-4 flex-wrap justify-self-center text-center py-1">
             {iconsArr.map((element, index) => (
-              <React.Fragment key={index}>
-                <span id={`skill-icon-${index}`}>{element.svg}</span>
-                <ReactTooltip anchorSelect={`#skill-icon-${index}`} place="top" content={element.name} />
-              </React.Fragment>
+              <span
+                key={index}
+                className="flex items-center justify-center"
+                data-tooltip-id={tooltipId}
+                data-tooltip-content={element.name}
+              >
+                {element.svg}
+              </span>
             ))}
           </div>
+          <ReactTooltip id={tooltipId} place="top" />
           <div className="stack-description my-4">
             {descriptionArr.map((element, index) => (
               <p key={index} className="tertiary-text my-3">
