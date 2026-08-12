@@ -154,6 +154,87 @@ h1, h2, h3, h4, h5, h6, p {
   animation: fade-in 1s ease-in-out forwards;
 }
 
+/* ---------------------------------------------------------------------------
+   "What I do" cards
+   Breakpoints mirror tailwind.config.js, which uses max-width ranges:
+   sm <= 480px, md 481-768px, lg 769-1024px.
+   --------------------------------------------------------------------------- */
+
+/* The svg fills this wrapper, so capping the wrapper caps the artwork. Without
+   it the illustration spans the full column and dominates small viewports. */
+.whatido-illustration {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.whatido-illustration > svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Laptops and below stack the card vertically, so the artwork competes with the
+   content for vertical space. Cap it progressively. */
+@media (max-width: 1024px) {
+  .whatido-illustration {
+    max-width: 360px;
+  }
+}
+
+@media (max-width: 768px) {
+  .whatido-illustration {
+    max-width: 275px;
+  }
+}
+
+@media (max-width: 480px) {
+  .whatido-illustration {
+    max-width: 200px;
+  }
+}
+
+/* Tech icons: lift on hover to signal the tooltip, and scale down on smaller
+   screens so a 16-icon grid stays a tidy few rows instead of a wall. */
+.whatido-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.whatido-icon:hover {
+  transform: translateY(-3px) scale(1.08);
+}
+
+.whatido-icon > svg {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .whatido-icon > svg {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .whatido-icon > svg {
+    width: 34px;
+    height: 34px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .whatido-icon {
+    transition: none;
+  }
+
+  .whatido-icon:hover {
+    transform: none;
+  }
+}
+
 
 
 

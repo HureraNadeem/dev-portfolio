@@ -32,17 +32,17 @@ export const WhatIDoCard: FC<Props> = ({
         direction="left"
         className="svg-div w-100% xl:w-50% 2xl:w-50% 2xl:ml-6 sm:flex sm:flex-col sm:justify-center sm:items-center md:flex md:flex-col md:justify-center md:items-center lg:flex lg:flex-col lg:justify-center lg:items-center self-start mt-4"
       >
-        {MainSVG}
+        <div className="whatido-illustration">{MainSVG}</div>
       </Slide>
 
       <div className="sm:mb-2 md:mb-2 lg:mb-2 xl:w-50% 2xl:w-50% flex flex-col items-center justify-center">
         <Slide triggerOnce direction="right">
           <h4 className="secondary-heading justify-self-center text-center py-3">{skillName}</h4>
-          <div className="stack-logos flex flex-row items-center justify-center gap-4 flex-wrap justify-self-center text-center py-1">
+          <div className="stack-logos flex flex-row items-center justify-center gap-4 sm:gap-3 md:gap-3 flex-wrap justify-self-center text-center py-1">
             {iconsArr.map((element, index) => (
               <span
                 key={index}
-                className="flex items-center justify-center"
+                className="whatido-icon"
                 data-tooltip-id={tooltipId}
                 data-tooltip-content={element.name}
               >
