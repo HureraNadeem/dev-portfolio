@@ -8,7 +8,7 @@ import {
     TailwindSVG, MaterialUI, BootstrapSVG, HtmlSVG, CssSVG, FigmaSVG, AstroSVG,
     NodeSVG, ExpressJsSVG, NestJsSVG, FastifySVG, PostgreSQLSVG, PrismaSVG, MongoDBSVG,
     MongooseSVG, MySqlSVG, SequelizeSVG, RedisSVG, JwtSVG, PostmanSVG,
-    AwsSVG, AzureSVG, GcpSVG, DockerSVG, KubernetesSVG, TerraformSVG, GithubActionsSVG,
+    AwsSVG, AzureSVG, GcpSVG, DockerSVG, GithubActionsSVG,
     CiCdSVG, NginxSVG, GitSVG, JestSVG, PlaywrightSVG, JiraSVG,
     ClaudeSVG, OpenAiSVG, McpSVG,
 } from '@/public/assets/svgs/tech-skills-svgs'
@@ -41,11 +41,11 @@ function WhatIDo() {
                 { name: "Figma", svg: <FigmaSVG /> },
             ],
             descriptionArr: [
-                'Building responsive single-page and server-rendered applications with React.js, Next.js, Vue 3 and Astro — from marketing sites through to dense, data-heavy dashboards.',
-                'Managing complex client state with Redux, Redux Saga, Pinia and React Context, reaching for the lightest tool that fits the problem instead of a global store by default.',
-                'Styling with Tailwind CSS, ShadCN, Material-UI and Bootstrap, translating Figma designs into pixel-accurate, reusable component libraries.',
-                'Leading frontend teams and setting technical direction — component conventions, coding standards and review culture.',
-                'Shipping for international audiences with multi-language (i18n) support, and embedding products into customers’ sites via drop-in scripts and WordPress/Shopify plugins.',
+                'Developing responsive single-page and server-rendered web applications using React.js, Next.js, Vue 3 and Astro.',
+                'Managing application state with Redux, Redux Saga, Pinia and React Context.',
+                'Building reusable, modular component libraries with Tailwind CSS, ShadCN, Material-UI and Bootstrap, working from Figma designs.',
+                'Writing type-safe frontends in TypeScript, with an eye on accessibility, responsiveness and performance across devices.',
+                'Working with internationalisation (i18n), embeddable widgets and third-party frontend integrations.',
             ]
         },
         {
@@ -68,11 +68,11 @@ function WhatIDo() {
                 { name: "Postman", svg: <PostmanSVG /> },
             ],
             descriptionArr: [
-                'Designing and building RESTful APIs, services and microservices with Node.js, Express.js, NestJS and Fastify — typed end-to-end with TypeScript so contracts hold across the wire.',
-                'Modelling and querying both relational and document databases — PostgreSQL, MySQL, MongoDB and DynamoDB — through Prisma, Sequelize and Mongoose.',
-                'Implementing authentication and authorization properly: JWT access and refresh flows, OTP verification, and database-driven role-based access control enforced at the API boundary, not just in the UI.',
-                'Running data-model migrations on live systems — moving read paths onto the new structure while keeping legacy writes intact so a rollback is always available.',
-                'Integrating third-party APIs and webhooks, and building multi-channel notification pipelines over email and SMS.',
+                'Designing and building RESTful APIs, services and microservices with Node.js, Express.js, NestJS and Fastify, written in TypeScript.',
+                'Working with both relational and document databases — PostgreSQL, MySQL, MongoDB and DynamoDB — through ORMs and ODMs like Prisma, Sequelize and Mongoose.',
+                'Implementing authentication and authorization using JWT, OAuth, OTP verification and role-based access control.',
+                'Using Redis for caching and session management, and designing schemas and migrations for evolving data models.',
+                'Integrating third-party APIs and webhooks, and building notification pipelines over email and SMS.',
             ]
         },
         {
@@ -83,8 +83,6 @@ function WhatIDo() {
                 { name: "Azure", svg: <AzureSVG /> },
                 { name: "Google Cloud Platform", svg: <GcpSVG /> },
                 { name: "Docker", svg: <DockerSVG /> },
-                { name: "Kubernetes", svg: <KubernetesSVG /> },
-                { name: "Terraform", svg: <TerraformSVG /> },
                 { name: "GitHub Actions", svg: <GithubActionsSVG /> },
                 { name: "CI/CD pipelines with GitHub Actions, GitLab CI/CD and Jenkins", svg: <CiCdSVG /> },
                 { name: "Nginx", svg: <NginxSVG /> },
@@ -94,11 +92,11 @@ function WhatIDo() {
                 { name: "Jira", svg: <JiraSVG /> },
             ],
             descriptionArr: [
-                'Architecting serverless and containerised infrastructure on AWS — Lambda, DynamoDB, S3, CloudFront and ECS Fargate — provisioned entirely as code with the AWS CDK.',
-                'Containerising applications with Docker and Kubernetes, provisioning with Terraform, and fronting services with Nginx and Caddy reverse proxies, including on-demand TLS for multi-tenant custom domains.',
-                'Automating testing, builds and deployments through CI/CD pipelines on GitHub Actions, GitLab CI/CD and Jenkins, keeping release cycles short and repeatable.',
-                'Writing unit and end-to-end tests with Jest and Playwright, and chasing production issues down to root cause — from N+1 queries to a compiler’s memory ceiling.',
-                'Working across GCP, Azure and Firebase alongside AWS, choosing the platform that fits the product rather than bending the product to the platform.',
+                'Building and deploying on AWS — Lambda, DynamoDB, S3, CloudFront, ECS Fargate and EC2 — with infrastructure defined as code using the AWS CDK.',
+                'Containerising applications with Docker, and configuring Nginx and Caddy as reverse proxies.',
+                'Automating testing, builds and deployments through CI/CD pipelines on GitHub Actions, GitLab CI/CD and Jenkins.',
+                'Writing unit and end-to-end tests with Jest and Playwright to keep codebases reliable as they grow.',
+                'Working across GCP, Azure and Firebase alongside AWS, and collaborating through Git and Jira.',
             ]
         },
         {
@@ -113,11 +111,11 @@ function WhatIDo() {
                 { name: "Astro", svg: <AstroSVG /> },
             ],
             descriptionArr: [
-                'Building agent-first products — CLI platforms and MCP servers that expose tooling to coding agents and drive autonomous skills through a workflow state machine with explicit gates.',
-                'Shipping GenAI products end-to-end: retrieval over documents, websites and databases, with confidence thresholds so an agent hands over to a human instead of guessing.',
-                'Integrating LLMs across providers — Claude, GPT and DeepSeek — and building the guardrails, evaluation and human-review layers that make their output safe to ship.',
-                'Generating and deploying content at scale, taking AI-authored pages through build, static export and CDN delivery without a human touching a deploy.',
-                'Treating agents as a real deployment target: version-controlled prompts and skills, deterministic state machines and reversible steps, so autonomous runs stay reproducible and debuggable.',
+                'Building AI-powered products and agentic workflows with LLMs from Anthropic (Claude), OpenAI and others.',
+                'Working with the Model Context Protocol (MCP) to expose tools and data to coding agents and AI clients.',
+                'Integrating retrieval over documents, websites and databases, with human review and guardrails around model output.',
+                'Automating content and page generation pipelines, from model output through build and deployment.',
+                'Writing agent tooling, skills and prompts in Node.js and TypeScript, kept version-controlled and reproducible.',
             ]
         },
     ]
