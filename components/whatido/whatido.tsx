@@ -9,7 +9,7 @@ import {
     NodeSVG, ExpressJsSVG, NestJsSVG, FastifySVG, PostgreSQLSVG, PrismaSVG, MongoDBSVG,
     MongooseSVG, MySqlSVG, SequelizeSVG, RedisSVG, JwtSVG, PostmanSVG,
     AwsSVG, AzureSVG, GcpSVG, DockerSVG, GithubActionsSVG,
-    CiCdSVG, NginxSVG, GitSVG, JestSVG, PlaywrightSVG, JiraSVG,
+    NginxSVG, GitSVG, JestSVG, PlaywrightSVG, JiraSVG,
     ClaudeSVG, OpenAiSVG, McpSVG,
 } from '@/public/assets/svgs/tech-skills-svgs'
 import { ShadCNSVG } from '@/public/assets/svgs/projects-tech-logos-svgs'
@@ -56,7 +56,6 @@ function WhatIDo() {
                 { name: "Express.js", svg: <ExpressJsSVG /> },
                 { name: "NestJS", svg: <NestJsSVG /> },
                 { name: "Fastify", svg: <FastifySVG /> },
-                { name: "TypeScript", svg: <TypescriptSVG /> },
                 { name: "PostgreSQL", svg: <PostgreSQLSVG /> },
                 { name: "Prisma", svg: <PrismaSVG /> },
                 { name: "MongoDB", svg: <MongoDBSVG /> },
@@ -68,7 +67,7 @@ function WhatIDo() {
                 { name: "Postman", svg: <PostmanSVG /> },
             ],
             descriptionArr: [
-                'Designing and building RESTful APIs, services and microservices with Node.js, Express.js, NestJS and Fastify, written in TypeScript.',
+                'Designing and building RESTful APIs, services and microservices with Node.js, Express.js, NestJS and Fastify.',
                 'Working with both relational and document databases — PostgreSQL, MySQL, MongoDB and DynamoDB — through ORMs and ODMs like Prisma, Sequelize and Mongoose.',
                 'Implementing authentication and authorization using JWT, OAuth, OTP verification and role-based access control.',
                 'Using Redis for caching and session management, and designing schemas and migrations for evolving data models.',
@@ -84,7 +83,6 @@ function WhatIDo() {
                 { name: "Google Cloud Platform", svg: <GcpSVG /> },
                 { name: "Docker", svg: <DockerSVG /> },
                 { name: "GitHub Actions", svg: <GithubActionsSVG /> },
-                { name: "CI/CD pipelines with GitHub Actions, GitLab CI/CD and Jenkins", svg: <CiCdSVG /> },
                 { name: "Nginx", svg: <NginxSVG /> },
                 { name: "Git", svg: <GitSVG /> },
                 { name: "Jest", svg: <JestSVG /> },
@@ -106,16 +104,13 @@ function WhatIDo() {
                 { name: "Claude", svg: <ClaudeSVG /> },
                 { name: "OpenAI", svg: <OpenAiSVG /> },
                 { name: "Model Context Protocol (MCP)", svg: <McpSVG /> },
-                { name: "Node.js", svg: <NodeSVG /> },
-                { name: "TypeScript", svg: <TypescriptSVG /> },
-                { name: "Astro", svg: <AstroSVG /> },
             ],
             descriptionArr: [
                 'Building AI-powered products and agentic workflows with LLMs from Anthropic (Claude), OpenAI and others.',
                 'Working with the Model Context Protocol (MCP) to expose tools and data to coding agents and AI clients.',
                 'Integrating retrieval over documents, websites and databases, with human review and guardrails around model output.',
                 'Automating content and page generation pipelines, from model output through build and deployment.',
-                'Writing agent tooling, skills and prompts in Node.js and TypeScript, kept version-controlled and reproducible.',
+                'Writing agent tooling, skills and prompts that stay version-controlled and reproducible.',
             ]
         },
     ]
