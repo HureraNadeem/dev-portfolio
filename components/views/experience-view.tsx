@@ -20,7 +20,7 @@ function ExperienceView() {
       tenure: 'November 2025 - Present',
       location: 'London, United Kingdom · Remote',
       jobDescription: [
-        'Pockla is a London-based AdTech startup, founded in 2022 by Hugo Bibby and Rupert Boddington, building agent-first infrastructure for self-adapting websites — instead of one static landing page for everyone, AI agents generate a page tailored to every individual prospect, without rebuilding the site.',
+        'Pockla is a London-based AdTech startup, building agent-first infrastructure for self-adapting websites — instead of one static landing page for everyone, AI agents generate a page tailored to every individual prospect, without rebuilding the site.',
         'The platform runs the full lead generation loop for UK insurance, finance, claims and legal businesses: driving traffic through paid ads, AI outbound calling and cold email, landing each prospect on a page generated just for them, then qualifying and nurturing them with AI SMS and voice agents. Trusted by brands including Lottie, Kene, Omnos and NWEH.',
         'Backed by ~£2M in funding, including a £1.6M seed round led by Venrex, with participation from Upside Ventures (the Sidemen’s VC arm), Love Ventures, Shuttle and SyndicateRoom.',
         'Engineering the core CLI platform in Node.js, an MCP server exposing 30+ tools that drives 20 autonomous Claude Code skills through a workflow state machine to generate, QA, test and deploy Astro landing pages end-to-end.',
