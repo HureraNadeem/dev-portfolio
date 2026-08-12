@@ -1,3 +1,5 @@
+'use client';
+
 import React, { FC, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { Fade } from 'react-awesome-reveal';
@@ -28,13 +30,14 @@ const CourseCard: FC<Props> = ({ name, instructor, imgsrc, link }) => {
             });
         });
 
-        if (elementRef.current) {
-            observer.observe(elementRef.current);
+        const element = elementRef.current;
+        if (element) {
+            observer.observe(element);
         }
 
         return () => {
-            if (elementRef.current) {
-                observer.unobserve(elementRef.current);
+            if (element) {
+                observer.unobserve(element);
             }
         };
     }, []);
@@ -45,7 +48,7 @@ const CourseCard: FC<Props> = ({ name, instructor, imgsrc, link }) => {
                 <Fade triggerOnce direction='up'  >
                     <div> {/* <div onClick={handleClick}> */}
                         {/* custom animation class: animate-fade-in-bottom */}
-                        <Image className="hover:brightness-75 transition-all duration-300 w-385px h-215px object-cover rounded-t-lg" src={require(`../../public/assets/images/${imgsrc}`)} alt='platfrom_img' />
+                        <Image className="hover:brightness-75 transition-all duration-300 w-385px h-215px object-cover rounded-t-lg" src={`/assets/images/${imgsrc}`} width={385} height={215} alt={`${name} course platform`} />
                         <div className="p-5 border-t border-t-secondary-bg-color ">
                             <h5 className="select-none font-GoogleSans-Regular font-medium my-2 tracking-tight text-center text-20px">{name}</h5>
                             <p className=" select-none font-GoogleSans-Regular italic mb-3 text-center font-18px"> - {instructor}</p>

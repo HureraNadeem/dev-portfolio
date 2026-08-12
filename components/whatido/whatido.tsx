@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import Wrapper from '../wrapper/wrapper';
 import { WhatIDoCard } from '../whatido-card/whatido-card';

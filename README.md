@@ -14,10 +14,22 @@ This repository contains the source code and for my personal dev portfolio websi
 
 ## Technologies Used
 
-- Next.js
+- Next.js 16 (App Router)
+- React 19
 - TypeScript
 - Tailwind CSS
-- React Reveal
+- React Awesome Reveal
+
+## Architecture
+
+- **Static Site Generation (SSG)** — the site is fully pre-rendered to static
+  HTML at build time via `output: 'export'`, so it can be served from any static
+  host (Netlify, Vercel, GitHub Pages, S3, …) with no server runtime.
+- **App Router** — routes live under `app/`, each page is a server component
+  that exposes SEO metadata through the Next.js **Metadata API**.
+- **SEO built in** — per-page `<title>`/description, canonical URLs, Open Graph
+  and Twitter cards, JSON-LD `Person` structured data, and generated
+  `robots.txt` (`app/robots.ts`) and `sitemap.xml` (`app/sitemap.ts`).
 
 ## Illustrations
 
@@ -27,6 +39,9 @@ This repository contains the source code and for my personal dev portfolio websi
 
 The website is deployed and accessible at [hurera-dev.netlify.app](https://hurera-dev.netlify.app)
 
+The production URL used for canonical tags, Open Graph and the sitemap can be
+overridden at build time with the `NEXT_PUBLIC_SITE_URL` environment variable.
+
 ## Run the project locally
 
 To run the project locally, follow these steps:
@@ -35,6 +50,9 @@ To run the project locally, follow these steps:
 2. Install the required dependencies: `npm install`
 3. Start the development server: `npm run dev`
 4. Open your browser and visit `http://localhost:3000` to view the website.
+
+To generate the static production build, run `npm run build` — the exported
+site is written to the `out/` directory.
 
 Feel free to explore the source code and modify it to create your own portfolio website. If you have any questions or suggestions, feel free to reach out to me.
 

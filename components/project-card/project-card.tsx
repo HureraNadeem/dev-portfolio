@@ -1,10 +1,11 @@
+'use client';
+
 import React, { FC } from 'react';
 import { Fade } from 'react-awesome-reveal';
-import { v4 as uuidv4 } from 'uuid';
 
 interface StackSVG {
   name: string;
-  component: JSX.Element;
+  component: React.JSX.Element;
 }
 interface Props {
   name: String;
@@ -67,10 +68,9 @@ const ProjectCard: FC<Props> = ({
               <h6 className='font-light text-[17px] text-left sm:text-left md:text-left'>{`Created in ${creationDate}`}</h6>
               <div className='stack-logos-div flex flex-row flex-wrap justify-center gap-2'>
                 {stackSVGs?.map((svgObj, index) => {
-                  const key_ = uuidv4();
                   return (
                     <span
-                      key={key_}
+                      key={svgObj.name}
                       className='relative'
                       onMouseEnter={() => setTooltipIndex(index)}
                       onMouseLeave={() => setTooltipIndex(null)}>

@@ -42,7 +42,7 @@ a {
   font-style: normal;
   font-weight: normal;
   src: local("GoogleSans-Regular"),
-    url("../public/assets/fonts/GoogleSans-Regular.ttf") format("ttf");
+    url("../public/assets/fonts/GoogleSans-Regular.ttf") format("truetype");
 }
 
 .font-AgustinaRegular {

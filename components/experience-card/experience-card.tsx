@@ -1,4 +1,6 @@
-import React, { FC, useEffect, useRef } from 'react';
+'use client';
+
+import React, { FC } from 'react';
 import Image from 'next/image';
 import { Fade } from 'react-awesome-reveal';
 import Link from 'next/link';
@@ -27,7 +29,7 @@ const ExperienceCard: FC<Props> = ({ lastOne, companyName, jobRoleTitle, logo, t
                     </div> */}
                     <Link href={`${link}`} target='_blank'>
                         <div className="company-logo pb-3 sm:self-center md:self-center">
-                            <Image className='w-70px h-70px' src={require(`../../public/assets/images/${logo}`)} alt='company_logo' />
+                            <Image className='w-70px h-70px' src={`/assets/images/${logo}`} width={70} height={70} alt={`${companyName} logo`} />
                         </div>
                     </Link>
                     <div className="employement-details w-94%">
@@ -43,7 +45,7 @@ const ExperienceCard: FC<Props> = ({ lastOne, companyName, jobRoleTitle, logo, t
                         </div>
                         <div className="second-part ">
                             {
-                                jobDescription.map((element) => (<p className='text-14px leading-[1.25rem] font-light'><span className='mr-[10px]'>&ndash;</span>{element}</p>
+                                jobDescription.map((element, index) => (<p key={index} className='text-14px leading-[1.25rem] font-light'><span className='mr-[10px]'>&ndash;</span>{element}</p>
                                 ))
                             }
                         </div>
