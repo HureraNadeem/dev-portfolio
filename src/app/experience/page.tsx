@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
+import JsonLd from '@/components/json-ld';
 import ExperienceView from '@/features/experience/experience-view';
+import { pageJsonLd } from '@/lib/structured-data';
 
 const description =
   'Hurera Nadeem’s professional experience across full-stack engineering, ' +
@@ -17,5 +19,10 @@ export const metadata: Metadata = {
 };
 
 export default function ExperiencePage() {
-  return <ExperienceView />;
+  return (
+    <>
+      <JsonLd data={pageJsonLd({ path: '/experience', name: 'Experience', description })} />
+      <ExperienceView />
+    </>
+  );
 }

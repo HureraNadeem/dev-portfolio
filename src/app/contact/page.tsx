@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
+import JsonLd from '@/components/json-ld';
 import ContactView from '@/features/contact/contact-view';
+import { pageJsonLd } from '@/lib/structured-data';
 
 const description =
   'Get in touch with Hurera Nadeem — connect on GitHub, LinkedIn, Instagram ' +
@@ -17,5 +19,10 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
-  return <ContactView />;
+  return (
+    <>
+      <JsonLd data={pageJsonLd({ path: '/contact', name: 'Contact', description })} />
+      <ContactView />
+    </>
+  );
 }

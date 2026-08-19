@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
+import JsonLd from '@/components/json-ld';
 import ProjectsView from '@/features/projects/projects-view';
+import { pageJsonLd } from '@/lib/structured-data';
 
 const description =
   'A selection of Hurera Nadeem’s projects — AI SaaS platforms, workforce ' +
@@ -17,5 +19,10 @@ export const metadata: Metadata = {
 };
 
 export default function ProjectsPage() {
-  return <ProjectsView />;
+  return (
+    <>
+      <JsonLd data={pageJsonLd({ path: '/projects', name: 'Projects', description })} />
+      <ProjectsView />
+    </>
+  );
 }

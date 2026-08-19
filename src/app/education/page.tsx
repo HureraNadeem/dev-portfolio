@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
+import JsonLd from '@/components/json-ld';
 import EducationView from '@/features/education/education-view';
+import { pageJsonLd } from '@/lib/structured-data';
 
 const description =
   'Hurera Nadeem’s education: a Bachelor’s in Software Engineering from ' +
@@ -17,5 +19,10 @@ export const metadata: Metadata = {
 };
 
 export default function EducationPage() {
-  return <EducationView />;
+  return (
+    <>
+      <JsonLd data={pageJsonLd({ path: '/education', name: 'Education', description })} />
+      <EducationView />
+    </>
+  );
 }

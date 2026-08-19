@@ -333,23 +333,26 @@ function ExperienceView() {
               )}
             </p>
           </div>
-          {showWork && (
-            <div className="employement-container flex flex-col">
-              {WorkData.map((element, index) => (
-                <ExperienceCard
-                  key={index}
-                  lastOne={WorkData.length - index === 1}
-                  companyName={element.companyName}
-                  jobRoleTitle={element.jobRoleTitle}
-                  logo={element.logo}
-                  tenure={element.tenure}
-                  location={element.location}
-                  jobDescription={element.jobDescription}
-                  link={element.link}
-                />
-              ))}
-            </div>
-          )}
+          <div
+            className="employement-container flex flex-col overflow-hidden transition-[max-height] duration-700 ease-in-out"
+            style={{ maxHeight: showWork ? '20000px' : '0' }}
+            aria-hidden={!showWork}
+            inert={!showWork}
+          >
+            {WorkData.map((element, index) => (
+              <ExperienceCard
+                key={index}
+                lastOne={WorkData.length - index === 1}
+                companyName={element.companyName}
+                jobRoleTitle={element.jobRoleTitle}
+                logo={element.logo}
+                tenure={element.tenure}
+                location={element.location}
+                jobDescription={element.jobDescription}
+                link={element.link}
+              />
+            ))}
+          </div>
         </div>
 
         <div>
@@ -366,23 +369,26 @@ function ExperienceView() {
               )}
             </p>
           </div>
-          {showVolunteership && (
-            <div className="employement-container flex flex-col">
-              {VolunteershipData.map((element, index) => (
-                <ExperienceCard
-                  key={index}
-                  lastOne={VolunteershipData.length - index === 1}
-                  companyName={element.companyName}
-                  jobRoleTitle={element.jobRoleTitle}
-                  logo={element.logo}
-                  tenure={element.tenure}
-                  location={element.location}
-                  jobDescription={element.jobDescription}
-                  link={element.link}
-                />
-              ))}
-            </div>
-          )}
+          <div
+            className="employement-container flex flex-col overflow-hidden transition-[max-height] duration-700 ease-in-out"
+            style={{ maxHeight: showVolunteership ? '20000px' : '0' }}
+            aria-hidden={!showVolunteership}
+            inert={!showVolunteership}
+          >
+            {VolunteershipData.map((element, index) => (
+              <ExperienceCard
+                key={index}
+                lastOne={VolunteershipData.length - index === 1}
+                companyName={element.companyName}
+                jobRoleTitle={element.jobRoleTitle}
+                logo={element.logo}
+                tenure={element.tenure}
+                location={element.location}
+                jobDescription={element.jobDescription}
+                link={element.link}
+              />
+            ))}
+          </div>
         </div>
       </Wrapper>
     </>
