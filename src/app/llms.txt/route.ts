@@ -1,6 +1,7 @@
 import {
   ALMA_MATER,
   CONTACT_EMAIL,
+  RESUME_URL,
   ROUTES,
   SITE_DESCRIPTION,
   SITE_NAME,
@@ -50,6 +51,7 @@ ${SOCIAL_LINKS.map((url) => `- ${url}`).join('\n')}
 ## Contact
 
 - Email: ${CONTACT_EMAIL}
+- Resume/CV: ${RESUME_URL}
 
 ## Notes
 

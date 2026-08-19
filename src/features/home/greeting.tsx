@@ -4,6 +4,7 @@ import Wrapper from '@/components/layout/wrapper';
 import { GithubSVG, LinkedInSVG, InstagramSVG, FacebookSVG } from '@/components/icons/social-icons';
 import ProfilePicture from '@public/assets/images/dp.png';
 import SocialIconBadge from '@/components/ui/social-icon-badge';
+import { RESUME_URL } from '@/config/site';
 
 export default function Greeting() {
   return (
@@ -47,10 +48,7 @@ export default function Greeting() {
               className={`resume-div font-GoogleSans-Regular mr-0 mt-5 block max-w-max cursor-pointer rounded-md bg-text-color px-6 py-3 text-center font-sans text-lg font-medium leading-tight tracking-wide text-main-bg-color no-underline`}
             >
               <Link
-                href={
-                  'https://drive.google.com/file/d/17tbs8vZmaKnIF-XMAsKz1nDmQNr9kXMY/view?usp=sharing'
-                }
-                download={"Hurera's Resume"}
+                href={RESUME_URL}
                 target="_blank"
                 rel="noreferrer"
                 className="font-GoogleSans-Regular"

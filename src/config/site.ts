@@ -31,6 +31,10 @@ export const SOCIAL_LINKS = [
 
 export const CONTACT_EMAIL = 'muhammadhureran8@gmail.com';
 
+/** Publicly shared CV. Kept here so the button and llms.txt cannot disagree. */
+export const RESUME_URL =
+  'https://drive.google.com/file/d/1gRGEmR_rYKr_leux1vztJTQ_X0Ceq5bN/view?usp=sharing';
+
 export const ALMA_MATER = {
   name: 'National University of Sciences and Technology (NUST)',
   url: 'https://nust.edu.pk/',
