@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function NotFound() {
   return (
     <Wrapper>
-      <div className="flex flex-col justify-start items-center h-screen min-h-[533px]">
+      <div className="flex flex-col justify-start items-center min-h-[533px]">
         <p className="text-center secondary-heading underline">404</p>
         <p className="text-center tertiary-text">Page not found</p>
 

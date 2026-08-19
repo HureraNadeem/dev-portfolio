@@ -86,10 +86,18 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body>
+      {/*
+        Sticky-footer shell. The page background only ever came from the
+        navbar, each Wrapper and the footer, so a short page (e.g. /experience
+        with both accordions collapsed) left the footer floating mid-screen
+        above bare white. Make the body a full-height flex column that paints
+        the background itself, and let <main> absorb whatever space the content
+        does not use.
+      */}
+      <body className="min-h-screen flex flex-col bg-main-bg-color">
         <FontAwesomeConfig />
         <Navbar />
-        {children}
+        <main className="grow">{children}</main>
         <Footer />
         <ScrollToTopButton />
       </body>
