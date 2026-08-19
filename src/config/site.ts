@@ -4,7 +4,7 @@
  * `NEXT_PUBLIC_SITE_URL` (e.g. in the hosting provider's env settings).
  */
 export const SITE_URL = (
-  process.env.NEXT_PUBLIC_SITE_URL ?? 'https://hurera-dev.netlify.app'
+  process.env.NEXT_PUBLIC_SITE_URL ?? 'https://hurera.dev'
 ).replace(/\/$/, '');
 
 export const SITE_NAME = 'Hurera Nadeem';

@@ -1,6 +1,6 @@
 # Hurera's dev portfolio 💯
 
-Hit the live example, [click here](https://hurera-dev.netlify.app) 🚀
+Hit the live example, [click here](https://hurera.dev) 🚀
 
 This repository contains the source code and for my personal dev portfolio website. The website showcases my experience, education, and projects as a full stack developer.
 
@@ -121,7 +121,7 @@ git config blame.ignoreRevsFile .git-blame-ignore-revs
 
 ## Deployment
 
-The website is deployed and accessible at [hurera-dev.netlify.app](https://hurera-dev.netlify.app)
+The website is deployed and accessible at [hurera.dev](https://hurera.dev)
 
 The production URL used for canonical tags, Open Graph and the sitemap can be
 overridden at build time with the `NEXT_PUBLIC_SITE_URL` environment variable —
