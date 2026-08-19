@@ -19,6 +19,7 @@ This repository contains the source code and for my personal dev portfolio websi
 - TypeScript
 - Tailwind CSS
 - React Awesome Reveal
+- ESLint + Prettier
 
 ## Project structure
 
@@ -46,10 +47,14 @@ src/
     experience/             experience-view (+ experience-card)
     projects/               projects-view (+ project-card)
     contact/                contact-view
+    not-found/              not-found-view (the 404)
   config/site.ts            Single source of truth for site metadata + routes
   lib/                      Framework/third-party setup (Font Awesome)
   styles/globals.css        Global stylesheet & @font-face declarations
 ```
+
+Root config: `next.config.ts`, `tsconfig.json`, `tailwind.config.js`,
+`postcss.config.js`, `eslint.config.mjs`, `.prettierrc.json`, `.env.example`.
 
 Conventions:
 
@@ -64,6 +69,39 @@ Conventions:
 - **`src/config/site.ts` is the single source of truth** for the site URL,
   metadata and navigation; the navbar, sitemap, robots and JSON-LD all read
   from it, so adding a route means editing one array.
+
+## Code quality
+
+| Command                | What it does                                      |
+| ---------------------- | ------------------------------------------------- |
+| `npm run check`        | Everything below, in order — use this before a PR |
+| `npm run typecheck`    | `tsc --noEmit`                                    |
+| `npm run lint`         | ESLint                                            |
+| `npm run lint:fix`     | ESLint with autofix                               |
+| `npm run format`       | Prettier, writes in place                         |
+| `npm run format:check` | Prettier, fails instead of writing                |
+
+**ESLint** composes `eslint-config-next` with `typescript-eslint`'s recommended
+rules, then `eslint-config-prettier` last so the linter never argues with the
+formatter about the same line. Beyond the defaults it enforces `prefer-const`,
+`no-var`, `eqeqeq`, and `no-unused-vars` (prefix a name with `_` to keep it
+deliberately). `no-console` is on because this is a static export with no server
+to log to — a stray `console.log` ships straight to a visitor's devtools —
+though `console.warn` and `console.error` stay allowed.
+
+**Prettier** is configured in `.prettierrc.json`: semicolons, single quotes,
+2-space indent, 100 column width. `prettier-plugin-tailwindcss` sorts class
+strings into Tailwind's canonical order, which is safe because the cascade is
+decided by the order utilities appear in the generated stylesheet, not by their
+order in the `class` attribute.
+
+**`git blame`** — the repo was reformatted in one sweep, so
+`.git-blame-ignore-revs` lists that commit. GitHub honours the file on its own;
+locally it is one command per clone:
+
+```bash
+git config blame.ignoreRevsFile .git-blame-ignore-revs
+```
 
 ## Architecture
 
@@ -100,6 +138,8 @@ To run the project locally, follow these steps:
 
 To generate the static production build, run `npm run build` — the exported
 site is written to the `out/` directory.
+
+Before opening a pull request, run `npm run check` (typecheck, lint, format).
 
 Feel free to explore the source code and modify it to create your own portfolio website. If you have any questions or suggestions, feel free to reach out to me.
 
