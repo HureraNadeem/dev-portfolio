@@ -1,0 +1,11 @@
+# Revisions listed here are skipped by `git blame`, so a line's blame points at
+# whoever last changed its meaning rather than at a bulk reformat.
+#
+# Enable locally (one time, per clone):
+#     git config blame.ignoreRevsFile .git-blame-ignore-revs
+#
+# GitHub picks this file up automatically. Only add commits that change
+# formatting and nothing else.
+
+# style: apply Prettier across the codebase
+0391d3fac8cb9e26144e3e584eb444521575d995
