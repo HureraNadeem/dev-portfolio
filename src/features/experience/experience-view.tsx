@@ -301,10 +301,10 @@ function ExperienceView() {
           </Slide>
           <div className="flex flex-col items-center justify-center pt-14 sm:mb-2 md:mb-2 lg:mb-2 xl:w-50% xl:pt-12 2xl:w-50% 2xl:pt-0">
             <Slide triggerOnce direction="right">
-              <h4 className="primary-heading justify-self-center text-center">Experience</h4>
-              <h5 className="primary-text justify-self-center text-center">
+              <h1 className="primary-heading justify-self-center text-center">Experience</h1>
+              <p className="primary-text justify-self-center text-center">
                 Work, Internship and Volunteership
-              </h5>
+              </p>
               <p className="tertiary-text justify-self-center py-1 text-center">
                 I&apos;m a passionate software engineer who loves crafting creative solutions with
                 code. My main area of expertise revolves around building scalable applications using
@@ -324,7 +324,7 @@ function ExperienceView() {
             onClick={() => setShowWork((prev) => !prev)}
             className="employement-type-heading flex h-50px cursor-pointer flex-row items-center justify-between border border-secondary-bg-color bg-white px-20px py-10px font-medium"
           >
-            <h6>Work</h6>
+            <h2>Work</h2>
             <p>
               {showWork ? (
                 <FontAwesomeIcon className="text-text-color" icon={faMinus} />
@@ -360,7 +360,7 @@ function ExperienceView() {
             onClick={() => setShowVolunteership((prev) => !prev)}
             className="employement-type-heading flex h-50px cursor-pointer flex-row items-center justify-between border border-secondary-bg-color bg-white px-20px py-10px font-medium"
           >
-            <h6>Volunteerships</h6>
+            <h2>Volunteerships</h2>
             <p>
               {showVolunteership ? (
                 <FontAwesomeIcon className="text-text-color" icon={faMinus} />

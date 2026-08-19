@@ -50,12 +50,10 @@ const ExperienceCard: FC<Props> = ({
           <div className="employement-details w-94%">
             <div className="first-part flex flex-row items-start justify-between pb-[8px] sm:flex-col sm:items-center sm:justify-center sm:gap-[7px] md:flex-col md:items-center md:justify-center md:gap-[7px]">
               <div className="flex flex-col items-start justify-center sm:items-center sm:justify-center md:items-center md:justify-center">
-                <h2 className="text-20px font-medium sm:text-center md:text-center">
+                <h3 className="text-20px font-medium sm:text-center md:text-center">
                   {jobRoleTitle}
-                </h2>
-                <h1 className="text-15px font-normal sm:text-center md:text-center">
-                  {companyName}
-                </h1>
+                </h3>
+                <p className="text-15px font-normal sm:text-center md:text-center">{companyName}</p>
               </div>
               <div className="flex flex-col items-end justify-center sm:items-center sm:justify-center md:items-center md:justify-center">
                 <p className="text-right text-15px font-light sm:text-center md:text-center">

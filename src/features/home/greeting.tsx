@@ -12,10 +12,10 @@ export default function Greeting() {
         <div className="header flex flex-row items-center justify-around bg-main-bg-color sm:flex-col-reverse md:flex-col-reverse">
           <div className="animate-slide-in-from-left info-div sm:flex sm:flex-col sm:items-center sm:justify-center md:flex md:flex-col md:items-center md:justify-center lg:w-50% xl:w-50% 2xl:ml-6 2xl:w-50%">
             <h1 className="primary-heading">Wassup! this is Hurera</h1>
-            <h3 className="primary-text">
+            <p className="primary-text">
               A Full-stack developer (MERN/MEVN) 💻 - DevOps and Cloud Enthusiast ☁️ - Problem
               Solver 🤔
-            </h3>
+            </p>
             <div className="socials mb-4 mt-5 flex flex-row gap-1 sm:justify-center md:justify-center">
               <Link href="https://github.com/HureraNadeem" passHref={true} target="_blank">
                 <SocialIconBadge bgcolor={'black'}>

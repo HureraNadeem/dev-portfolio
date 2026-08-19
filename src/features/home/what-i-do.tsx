@@ -155,11 +155,11 @@ function WhatIDo() {
   return (
     <>
       <Wrapper>
-        <h3 className="primary-heading text-center">{`{ What I do? }`}</h3>
-        <h4 className="secondary-text text-center">
+        <h2 className="primary-heading text-center">{`{ What I do? }`}</h2>
+        <p className="secondary-text text-center">
           I love to code for contract based projects and help companies expand their businesses.🤜🤛
-        </h4>
-        <h4 className="secondary-text text-center">My tech expertise are as follows:</h4>
+        </p>
+        <p className="secondary-text text-center">My tech expertise are as follows:</p>
         {Data.map((element, index) => {
           return (
             <WhatIDoCard

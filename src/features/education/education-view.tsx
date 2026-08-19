@@ -60,10 +60,10 @@ function EducationView() {
           </Slide>
           <div className="flex flex-col items-center justify-center pt-14 sm:mb-2 md:mb-2 lg:mb-2 xl:w-50% xl:pt-12 2xl:w-50% 2xl:pt-0">
             <Slide triggerOnce direction="right">
-              <h4 className="primary-heading justify-self-center text-center">{`Education`}</h4>
-              <h5 className="primary-text justify-self-center text-center">
+              <h1 className="primary-heading justify-self-center text-center">{`Education`}</h1>
+              <p className="primary-text justify-self-center text-center">
                 My Qualifications and Certifications
-              </h5>
+              </p>
               <p className="tertiary-text justify-self-center py-1 text-center">
                 Here&apos;s what you need to know about my academic background 🙃
               </p>
@@ -73,10 +73,10 @@ function EducationView() {
       </Wrapper>
 
       <Wrapper>
-        <h4
+        <h2
           style={{ marginBottom: '50px' }}
           className="primary-heading justify-self-center text-center"
-        >{`{ Degree Received }`}</h4>
+        >{`{ Degree Received }`}</h2>
         <div className="degree-card flex flex-row items-center justify-between sm:flex-col sm:gap-7 md:flex-col md:gap-7 lg:flex-col lg:gap-3 xl:gap-3 2xl:gap-3">
           <div
             style={{ borderRadius: '50%' }}
@@ -110,50 +110,50 @@ function EducationView() {
                 <h3 className="mb-4 mt-2 text-23px font-semibold">
                   National University of Sciences and Technology, Islamabad
                 </h3>
-                <h6 className="text-18px font-semibold">Bachelor&apos;s in Software Engineering</h6>
+                <h4 className="text-18px font-semibold">Bachelor&apos;s in Software Engineering</h4>
               </div>
               <div>
                 <p className="my-4 text-16px font-normal">Islamabad, Pakistan</p>
               </div>
             </div>
             <div className="bg-card-bg-color pr-20px sm:p-15px md:p-15px lg:p-20px xl:p-20px 2xl:p-20px">
-              <h2 className="my-3 text-[17px]">
+              <p className="my-3 text-[17px]">
                 ⚡ Gained extensive knowledge and insights through rigorous Computer Science courses
                 covering areas such as Data Structures, Algorithms, Database Management Systems,
                 Operating Systems, Machine Learning.
-              </h2>
-              <h2 className="my-3 text-[17px]">
+              </p>
+              <p className="my-3 text-[17px]">
                 ⚡ Got the inside scoop on the entire software development cycle and the
                 industry&apos;s processes by some specialized software engineering courses like
                 Software Requirements Engineering, Software Design &amp; Architecture, and Software
                 Construction etc.
-              </h2>
-              <h2 className="my-3 text-[17px]">
+              </p>
+              <p className="my-3 text-[17px]">
                 ⚡ In addition to my academic pursuits, I have pursued courses in MERN Stack
                 Development and explored the www world :)
-              </h2>
-              <h2 className="my-3 text-[17px]">
+              </p>
+              <p className="my-3 text-[17px]">
                 ⚡ The supportive environment at NUST have played a crucial role in my personal
                 development, fostering diversity and building confidence. Additionally, the emphasis
                 on community bonding techniques has greatly contributed to my growth.
-              </h2>
-              <h2 className="my-3 text-[17px]">
+              </p>
+              <p className="my-3 text-[17px]">
                 ⚡ One of my most fulfilling extracurricular activities has been leading and
                 managing tech communities including HackClub NUST, Google Developers Student Club
                 (GDSC) NUST, IEEE-NUST, NUST Media Club, and Orientation of NUST. These experiences
                 have been incredibly fulfilling, allowing me to connect with like-minded individuals
                 and contribute to the vibrant tech and non-tech ecosystem at NUST.
-              </h2>
+              </p>
             </div>
           </div>
         </div>
       </Wrapper>
 
       <Wrapper>
-        <h4
+        <h2
           style={{ marginBottom: '50px' }}
           className="primary-heading justify-self-center text-center"
-        >{`{ Online Courses }`}</h4>
+        >{`{ Online Courses }`}</h2>
         <div className="certificates-container flex flex-row flex-wrap items-center justify-center gap-10">
           {coursesData.map((element, index) => (
             <CourseCard

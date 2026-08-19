@@ -32,7 +32,7 @@ export const WhatIDoCard: FC<Props> = ({ skillName, MainSVG, iconsArr, descripti
 
       <div className="flex flex-col items-center justify-center sm:mb-2 md:mb-2 lg:mb-2 xl:w-50% 2xl:w-50%">
         <Slide triggerOnce direction="right">
-          <h4 className="secondary-heading justify-self-center py-3 text-center">{skillName}</h4>
+          <h3 className="secondary-heading justify-self-center py-3 text-center">{skillName}</h3>
           <div className="stack-logos flex flex-row flex-wrap items-center justify-center gap-4 justify-self-center py-1 text-center sm:gap-3 md:gap-3">
             {iconsArr.map((element, index) => (
               <span

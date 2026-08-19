@@ -50,9 +50,9 @@ const CourseCard: FC<Props> = ({ name, instructor, imgsrc }) => {
             alt={`${name} course platform`}
           />
           <div className="border-t border-t-secondary-bg-color p-5">
-            <h5 className="font-GoogleSans-Regular my-2 select-none text-center text-20px font-medium tracking-tight">
+            <h3 className="font-GoogleSans-Regular my-2 select-none text-center text-20px font-medium tracking-tight">
               {name}
-            </h5>
+            </h3>
             <p className="font-GoogleSans-Regular font-18px mb-3 select-none text-center italic">
               {' '}
               - {instructor}

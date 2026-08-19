@@ -6,6 +6,7 @@ import Link from 'next/link';
 import SocialIconBadge from '@/components/ui/social-icon-badge';
 import { GithubSVG, LinkedInSVG, FacebookSVG, InstagramSVG } from '@/components/icons/social-icons';
 import { Slide } from 'react-awesome-reveal';
+import { CONTACT_EMAIL, SITE_ROLE } from '@/config/site';
 
 function ContactView() {
   return (
@@ -20,7 +21,7 @@ function ContactView() {
         </Slide>
         <div className="flex flex-col items-center justify-center pt-14 sm:mb-2 md:mb-2 lg:mb-2 xl:w-50% xl:pt-12 2xl:w-50% 2xl:pt-0">
           <Slide triggerOnce direction="right">
-            <h4 className="primary-heading justify-self-center text-center">Contact Me</h4>
+            <h1 className="primary-heading justify-self-center text-center">Contact Me</h1>
             <p className="tertiary-text justify-self-center py-1 text-center">
               I&apos;m practically the social media version of Batman, always lurking in the shadows
               of every platform, ready to swoop in and save the day! So, whether you need some
@@ -49,8 +50,49 @@ function ContactView() {
                 </SocialIconBadge>
               </Link>
             </div>
+            <dl className="tertiary-text mt-2 grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 text-left">
+              <dt className="font-medium">Email</dt>
+              <dd>
+                <Link href={`mailto:${CONTACT_EMAIL}`} className="underline underline-offset-4">
+                  {CONTACT_EMAIL}
+                </Link>
+              </dd>
+              <dt className="font-medium">Based in</dt>
+              <dd>Islamabad, Pakistan — working with teams across time zones</dd>
+              <dt className="font-medium">Role</dt>
+              <dd>{SITE_ROLE}</dd>
+              <dt className="font-medium">Open to</dt>
+              <dd>Full-time roles, contract work and freelance projects</dd>
+            </dl>
+
+            <h2 className="secondary-text mt-8 text-center">What to reach out about</h2>
+            <ul className="tertiary-text mt-2 text-left">
+              <li className="my-2">
+                ⚡ Building web applications end to end — React, Next.js, Vue, Node.js, NestJS and
+                Express, backed by PostgreSQL, MongoDB or Redis.
+              </li>
+              <li className="my-2">
+                ⚡ Taking an existing product further: new features, performance work, or untangling
+                a codebase that has grown faster than its structure.
+              </li>
+              <li className="my-2">
+                ⚡ Deployment and infrastructure — AWS, Docker, CI/CD pipelines and getting a
+                release process that people trust.
+              </li>
+              <li className="my-2">
+                ⚡ AI-assisted product work, from LLM integrations to internal tooling.
+              </li>
+              <li className="my-2">
+                ⚡ Speaking at or helping run a tech community event — I have organised plenty.
+              </li>
+            </ul>
+
+            <p className="tertiary-text mt-6 text-center">
+              Email is the surest way to reach me; I usually reply within a couple of days.
+            </p>
+
             <div className="resume-div font-GoogleSans-Regular mr-0 mt-5 block max-w-max cursor-pointer rounded-md bg-text-color px-6 py-3 text-center font-sans text-lg font-medium leading-tight tracking-wide text-main-bg-color no-underline">
-              <Link href="mailto:muhammadhureran8@gmail.com" className="font-GoogleSans-Regular">
+              <Link href={`mailto:${CONTACT_EMAIL}`} className="font-GoogleSans-Regular">
                 Reach me via email 📧
               </Link>
             </div>

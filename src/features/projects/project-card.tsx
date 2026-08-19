@@ -52,15 +52,15 @@ const ProjectCard: FC<Props> = ({ name, description, creationDate, stackSVGs, li
         <Fade triggerOnce direction="up">
           <div className="flex h-full flex-col justify-between">
             <div>
-              <h2 className="text-left text-[22px] font-medium sm:text-center md:text-center">
+              <h3 className="text-left text-[22px] font-medium sm:text-center md:text-center">
                 {name}
-              </h2>
+              </h3>
               <div className="overflow-hidden text-ellipsis text-left text-[17px] font-normal sm:text-center md:text-center">
                 {description}
               </div>
             </div>
             <div className="flex flex-row items-center justify-between sm:flex-col sm:gap-2 md:flex-col md:gap-2">
-              <h6 className="text-left text-[17px] font-light sm:text-left md:text-left">{`Created in ${creationDate}`}</h6>
+              <p className="text-left text-[17px] font-light sm:text-left md:text-left">{`Created in ${creationDate}`}</p>
               <div className="stack-logos-div flex flex-row flex-wrap justify-center gap-2">
                 {stackSVGs?.map((svgObj, index) => {
                   return (

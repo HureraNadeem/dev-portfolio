@@ -144,7 +144,7 @@ function ProjectsView() {
           </Slide>
           <div className="flex flex-col items-center justify-center pt-14 sm:mb-2 md:mb-2 lg:mb-2 xl:w-50% xl:pt-12 2xl:w-50% 2xl:pt-0">
             <Slide triggerOnce direction="right">
-              <h4 className="primary-heading justify-self-center text-center">Projects</h4>
+              <h1 className="primary-heading justify-self-center text-center">Projects</h1>
               <p className="tertiary-text justify-self-center py-1 text-center">
                 With a deep understanding of React, Next.js, Redux, Node.js, Express, GraphQL and
                 MongoDB, my expertise lies in developing robust and scalable web applications. By
@@ -161,6 +161,10 @@ function ProjectsView() {
       </Wrapper>
 
       <Wrapper>
+        <h2
+          style={{ marginBottom: '50px' }}
+          className="primary-heading justify-self-center text-center"
+        >{`{ Selected Work }`}</h2>
         <div className="project-container item-center flex flex-row flex-wrap justify-center gap-[2vw] sm:gap-10 md:gap-10">
           {projectData.map((e) => (
             <ProjectCard
