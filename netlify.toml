@@ -1,0 +1,11 @@
+# Netlify configuration for the static (SSG) export.
+# `next build` with `output: 'export'` (see next.config.ts) pre-renders the
+# whole site into `out/`, which Netlify serves as static files.
+[build]
+  command = "npm run build"
+  publish = "out"
+
+[build.environment]
+  # Next.js 16 requires Node >= 20.9; pin a modern LTS so Netlify doesn't fall
+  # back to an older default that fails the build.
+  NODE_VERSION = "22"
