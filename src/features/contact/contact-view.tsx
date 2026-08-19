@@ -8,6 +8,30 @@ import { GithubSVG, LinkedInSVG, FacebookSVG, InstagramSVG } from '@/components/
 import { Slide } from 'react-awesome-reveal';
 import { CONTACT_EMAIL, SITE_ROLE } from '@/config/site';
 
+type ContactFact = { term: string; value: React.ReactNode };
+
+const CONTACT_FACTS: ContactFact[] = [
+  {
+    term: 'Email',
+    value: (
+      <Link href={`mailto:${CONTACT_EMAIL}`} className="underline underline-offset-4">
+        {CONTACT_EMAIL}
+      </Link>
+    ),
+  },
+  { term: 'Based in', value: 'Islamabad, Pakistan — working with teams across time zones' },
+  { term: 'Role', value: SITE_ROLE },
+  { term: 'Open to', value: 'Full-time roles, contract work and freelance projects' },
+];
+
+const REACH_OUT_ABOUT = [
+  'Building web applications end to end — React, Next.js, Vue, Node.js, NestJS and Express, backed by PostgreSQL, MongoDB or Redis.',
+  'Taking an existing product further: new features, performance work, or untangling a codebase that has grown faster than its structure.',
+  'Deployment and infrastructure — AWS, Docker, CI/CD pipelines and getting a release process that people trust.',
+  'AI-assisted product work, from LLM integrations to internal tooling.',
+  'Speaking at or helping run a tech community event — I have organised plenty.',
+];
+
 function ContactView() {
   return (
     <Wrapper>
@@ -19,7 +43,10 @@ function ContactView() {
         >
           <ContactPageSVG />
         </Slide>
-        <div className="flex flex-col items-center justify-center pt-14 sm:mb-2 md:mb-2 lg:mb-2 xl:w-50% xl:pt-12 2xl:w-50% 2xl:pt-0">
+        {/* Needs a definite width: this column is a flex item with items-center, so
+            without it the column shrink-to-fits around its widest child and the
+            max-w-md list below ends up setting the page width instead of obeying it. */}
+        <div className="flex w-100% flex-col items-center justify-center pt-14 sm:mb-2 md:mb-2 lg:mb-2 xl:w-50% xl:pt-12 2xl:w-50% 2xl:pt-0">
           <Slide triggerOnce direction="right">
             <h1 className="primary-heading justify-self-center text-center">Contact Me</h1>
             <p className="tertiary-text justify-self-center py-1 text-center">
@@ -50,45 +77,33 @@ function ContactView() {
                 </SocialIconBadge>
               </Link>
             </div>
-            <dl className="tertiary-text mt-2 grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 text-left">
-              <dt className="font-medium">Email</dt>
-              <dd>
-                <Link href={`mailto:${CONTACT_EMAIL}`} className="underline underline-offset-4">
-                  {CONTACT_EMAIL}
-                </Link>
-              </dd>
-              <dt className="font-medium">Based in</dt>
-              <dd>Islamabad, Pakistan — working with teams across time zones</dd>
-              <dt className="font-medium">Role</dt>
-              <dd>{SITE_ROLE}</dd>
-              <dt className="font-medium">Open to</dt>
-              <dd>Full-time roles, contract work and freelance projects</dd>
+            <dl className="mx-auto mt-6 w-full max-w-md divide-y divide-secondary-bg-color rounded-lg border border-secondary-bg-color bg-card-bg-color">
+              {CONTACT_FACTS.map(({ term, value }) => (
+                <div
+                  key={term}
+                  className="flex flex-row items-baseline gap-4 px-5 py-3 sm:flex-col sm:items-start sm:gap-1"
+                >
+                  <dt className="tertiary-text w-[88px] shrink-0 font-medium opacity-60">{term}</dt>
+                  <dd className="tertiary-text">{value}</dd>
+                </div>
+              ))}
             </dl>
 
-            <h2 className="secondary-text mt-8 text-center">What to reach out about</h2>
-            <ul className="tertiary-text mt-2 text-left">
-              <li className="my-2">
-                ⚡ Building web applications end to end — React, Next.js, Vue, Node.js, NestJS and
-                Express, backed by PostgreSQL, MongoDB or Redis.
-              </li>
-              <li className="my-2">
-                ⚡ Taking an existing product further: new features, performance work, or untangling
-                a codebase that has grown faster than its structure.
-              </li>
-              <li className="my-2">
-                ⚡ Deployment and infrastructure — AWS, Docker, CI/CD pipelines and getting a
-                release process that people trust.
-              </li>
-              <li className="my-2">
-                ⚡ AI-assisted product work, from LLM integrations to internal tooling.
-              </li>
-              <li className="my-2">
-                ⚡ Speaking at or helping run a tech community event — I have organised plenty.
-              </li>
+            <h2 className="secondary-text mt-10 text-center">What to reach out about</h2>
+            <ul className="mx-auto mt-3 flex w-full max-w-md flex-col gap-3">
+              {REACH_OUT_ABOUT.map((topic) => (
+                <li key={topic} className="tertiary-text flex flex-row gap-3 text-left">
+                  {/* Decorative: a bullet, not a word to be read out before every item. */}
+                  <span aria-hidden="true" className="shrink-0 leading-relaxed">
+                    ⚡
+                  </span>
+                  <span>{topic}</span>
+                </li>
+              ))}
             </ul>
 
             <p className="tertiary-text mt-6 text-center">
-              Email is the surest way to reach me; I usually reply within a couple of days.
+              Email is the surest way to reach me; I usually reply within a couple of hours.
             </p>
 
             <div className="resume-div font-GoogleSans-Regular mr-0 mt-5 block max-w-max cursor-pointer rounded-md bg-text-color px-6 py-3 text-center font-sans text-lg font-medium leading-tight tracking-wide text-main-bg-color no-underline">
