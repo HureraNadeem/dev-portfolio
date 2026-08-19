@@ -5,24 +5,24 @@
  */
 export const SITE_URL = (
   process.env.NEXT_PUBLIC_SITE_URL ?? 'https://hurera-dev.netlify.app'
-).replace(/\/$/, '')
+).replace(/\/$/, '');
 
-export const SITE_NAME = 'Hurera Nadeem'
+export const SITE_NAME = 'Hurera Nadeem';
 
-export const SITE_TITLE = 'Hurera Nadeem — Full-Stack Developer'
+export const SITE_TITLE = 'Hurera Nadeem — Full-Stack Developer';
 
 export const SITE_DESCRIPTION =
   'Portfolio of Hurera Nadeem, a full-stack software engineer specialising in ' +
   'React, Next.js, Node.js and cloud-native applications. Explore my experience, ' +
-  'education and projects.'
+  'education and projects.';
 
 /** Default social-share image (relative to `SITE_URL`). */
-export const OG_IMAGE = '/assets/images/dp.png'
+export const OG_IMAGE = '/assets/images/dp.png';
 
 export type NavRoute = {
-  href: string
-  label: string
-}
+  href: string;
+  label: string;
+};
 
 /** Single source of truth for navigation and the sitemap. */
 export const ROUTES: NavRoute[] = [
@@ -31,4 +31,4 @@ export const ROUTES: NavRoute[] = [
   { href: '/experience', label: 'Experience' },
   { href: '/projects', label: 'Projects' },
   { href: '/contact', label: 'Contact Me' },
-]
+];

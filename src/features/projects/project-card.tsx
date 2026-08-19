@@ -8,19 +8,13 @@ interface StackSVG {
   component: React.JSX.Element;
 }
 interface Props {
-  name: String;
-  description: String;
-  creationDate: String;
+  name: string;
+  description: string;
+  creationDate: string;
   stackSVGs: StackSVG[];
-  link: String;
+  link: string;
 }
-const ProjectCard: FC<Props> = ({
-  name,
-  description,
-  creationDate,
-  stackSVGs,
-  link,
-}) => {
+const ProjectCard: FC<Props> = ({ name, description, creationDate, stackSVGs, link }) => {
   const [tooltipIndex, setTooltipIndex] = React.useState<number | null>(null);
 
   const handleClick = () => {
@@ -52,37 +46,40 @@ const ProjectCard: FC<Props> = ({
         }
       `}</style>
       <div
-        className='bg-card-bg-color rounded-lg shadow-lg project-card flex flex-col sm:w-[90%] md:w-[90%] lg:w-[48%] xl:w-[40%] 2xl:w-[30%] h-[350px] min-h-[350px] max-h-[350px] px-5 py-5 gap-2 cursor-pointer overflow-hidden motion-safe:from-right transition-transform duration-500 transform hover:scale-105'
-        onClick={handleClick}>
-        <Fade triggerOnce direction='up'>
-          <div className='flex flex-col h-full justify-between'>
+        className="project-card motion-safe:from-right flex h-[350px] max-h-[350px] min-h-[350px] transform cursor-pointer flex-col gap-2 overflow-hidden rounded-lg bg-card-bg-color px-5 py-5 shadow-lg transition-transform duration-500 hover:scale-105 sm:w-[90%] md:w-[90%] lg:w-[48%] xl:w-[40%] 2xl:w-[30%]"
+        onClick={handleClick}
+      >
+        <Fade triggerOnce direction="up">
+          <div className="flex h-full flex-col justify-between">
             <div>
-              <h2 className='font-medium text-left text-[22px] sm:text-center md:text-center'>
+              <h2 className="text-left text-[22px] font-medium sm:text-center md:text-center">
                 {name}
               </h2>
-              <div className='text-left font-normal text-[17px] sm:text-center md:text-center overflow-hidden text-ellipsis'>
+              <div className="overflow-hidden text-ellipsis text-left text-[17px] font-normal sm:text-center md:text-center">
                 {description}
               </div>
             </div>
-            <div className='flex flex-row justify-between items-center sm:flex-col md:flex-col sm:gap-2 md:gap-2'>
-              <h6 className='font-light text-[17px] text-left sm:text-left md:text-left'>{`Created in ${creationDate}`}</h6>
-              <div className='stack-logos-div flex flex-row flex-wrap justify-center gap-2'>
+            <div className="flex flex-row items-center justify-between sm:flex-col sm:gap-2 md:flex-col md:gap-2">
+              <h6 className="text-left text-[17px] font-light sm:text-left md:text-left">{`Created in ${creationDate}`}</h6>
+              <div className="stack-logos-div flex flex-row flex-wrap justify-center gap-2">
                 {stackSVGs?.map((svgObj, index) => {
                   return (
                     <span
                       key={svgObj.name}
-                      className='relative'
+                      className="relative"
                       onMouseEnter={() => setTooltipIndex(index)}
-                      onMouseLeave={() => setTooltipIndex(null)}>
+                      onMouseLeave={() => setTooltipIndex(null)}
+                    >
                       {svgObj.component}
                       {tooltipIndex === index && (
                         <span
-                          className='custom-tooltip show'
+                          className="custom-tooltip show"
                           style={{
                             top: '-35px',
                             left: '50%',
                             transform: 'translateX(-50%)',
-                          }}>
+                          }}
+                        >
                           {svgObj.name}
                         </span>
                       )}

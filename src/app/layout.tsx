@@ -1,18 +1,12 @@
-import type { Metadata, Viewport } from 'next'
-import '@/styles/globals.css'
-import '@fortawesome/fontawesome-svg-core/styles.css'
+import type { Metadata, Viewport } from 'next';
+import '@/styles/globals.css';
+import '@fortawesome/fontawesome-svg-core/styles.css';
 
-import Navbar from '@/components/layout/navbar'
-import Footer from '@/components/layout/footer'
-import ScrollToTopButton from '@/components/layout/scroll-to-top-button'
-import FontAwesomeConfig from '@/lib/fontawesome'
-import {
-  OG_IMAGE,
-  SITE_DESCRIPTION,
-  SITE_NAME,
-  SITE_TITLE,
-  SITE_URL,
-} from '@/config/site'
+import Navbar from '@/components/layout/navbar';
+import Footer from '@/components/layout/footer';
+import ScrollToTopButton from '@/components/layout/scroll-to-top-button';
+import FontAwesomeConfig from '@/lib/fontawesome';
+import { OG_IMAGE, SITE_DESCRIPTION, SITE_NAME, SITE_TITLE, SITE_URL } from '@/config/site';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -73,17 +67,15 @@ export const metadata: Metadata = {
   icons: {
     icon: '/favicon.ico',
   },
-}
+};
 
 export const viewport: Viewport = {
   themeColor: '#f5f5f5',
   width: 'device-width',
   initialScale: 1,
-}
+};
 
-export default function RootLayout({
-  children,
-}: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
       {/*
@@ -94,7 +86,7 @@ export default function RootLayout({
         the background itself, and let <main> absorb whatever space the content
         does not use.
       */}
-      <body className="min-h-screen flex flex-col bg-main-bg-color">
+      <body className="flex min-h-screen flex-col bg-main-bg-color">
         <FontAwesomeConfig />
         <Navbar />
         <main className="grow">{children}</main>
@@ -102,5 +94,5 @@ export default function RootLayout({
         <ScrollToTopButton />
       </body>
     </html>
-  )
+  );
 }

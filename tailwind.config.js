@@ -1,20 +1,20 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
+  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     extend: {
       colors: {
         'text-color': '#313638',
         // 'text-color': '#313638',
         // 'main-bg-color': "#f2f2f2",
-        'main-bg-color': "#f5f5f5",
+        'main-bg-color': '#f5f5f5',
         'secondary-bg-color': '#eef0eb',
         // 'secondary-bg-color': '#dee2e6',
-        'card-bg-color':'#fff'
+        'card-bg-color': '#fff',
       },
       fontFamily: {
         'main-font': ['GoogleSans-Regular', 'sans-serif'],
-        'code-font': ['Agustina Regular', 'sans-serif']
+        'code-font': ['Agustina Regular', 'sans-serif'],
       },
       margin: {
         '1px': '1px',
@@ -37,7 +37,7 @@ module.exports = {
         '18px': '18px',
         '19px': '19px',
         '20px': '20px',
-        '50px': '50px'
+        '50px': '50px',
       },
       padding: {
         '1px': '1px',
@@ -60,7 +60,7 @@ module.exports = {
         '18px': '18px',
         '19px': '19px',
         '20px': '20px',
-        '55px': '55px'
+        '55px': '55px',
       },
       fontSize: {
         '6px': '6px',
@@ -89,11 +89,11 @@ module.exports = {
         '29px': '29px',
         '30px': '30px',
         '35px': '35px',
-        '40px':'40px',
-        '45px':'45px',
-        '50px':'50px',
-        '55px':'55px',
-        '60px':'60px'
+        '40px': '40px',
+        '45px': '45px',
+        '50px': '50px',
+        '55px': '55px',
+        '60px': '60px',
       },
       width: {
         '27rem': '27rem',
@@ -110,55 +110,52 @@ module.exports = {
         '37vw': '37vw',
         '50vw': '50vw',
         '74%': '74%',
-        '65%':'65%',
-        '55%':'55%',
-        '20%':'20%',
-        '80%':'80%',
-        '100%':'100%',
-        '660px':'660px',
-        '200px':'200px',
-        '385px':'385px',
-        '70px':'70px',
-        '6%':'6%',
-        '94%':'94%'
-
+        '65%': '65%',
+        '55%': '55%',
+        '20%': '20%',
+        '80%': '80%',
+        '100%': '100%',
+        '660px': '660px',
+        '200px': '200px',
+        '385px': '385px',
+        '70px': '70px',
+        '6%': '6%',
+        '94%': '94%',
       },
       height: {
         '27rem': '27rem',
         '432px': '432px',
         '80vw': '80vw',
         '65vw': '65vw',
-        '100%':'100%',
-        '20%':'20%',
-        '350px':'350px',
-        '215px':'215px',
-        '50px':'50px',
-        '70px':'70px'
-
+        '100%': '100%',
+        '20%': '20%',
+        '350px': '350px',
+        '215px': '215px',
+        '50px': '50px',
+        '70px': '70px',
       },
       boxShadow: {
-        'degreediv': '5px 5px 5px #d9dbdf',
+        degreediv: '5px 5px 5px #d9dbdf',
       },
-      textColor: ['hover']
+      textColor: ['hover'],
     },
     screens: {
       // mobile:
       // 'sm': { 'min': '200px', 'max': '480px' },
-      'sm': { 'max': '480px' },
+      sm: { max: '480px' },
 
       // tablets
-      'md': { 'min': '481px', 'max': '768px' },
+      md: { min: '481px', max: '768px' },
 
       // Laptops
-      'lg': { 'min': '769px', 'max': '1024px' },
+      lg: { min: '769px', max: '1024px' },
 
       // Big Screeened Laptops
-      'xl': {'min': '1025px', 'max': '1200px'},
+      xl: { min: '1025px', max: '1200px' },
 
       // Extra large screens
-      '2xl': {'min': '1201px'}
+      '2xl': { min: '1201px' },
     },
-
   },
   plugins: [],
-}
+};

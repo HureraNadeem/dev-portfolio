@@ -1,16 +1,16 @@
-'use client'
+'use client';
 
-import Wrapper from '@/components/layout/wrapper'
-import ExperiencePageSVG from '@/components/icons/experience-illustration'
-import { useState } from 'react'
-import ExperienceCard from './experience-card'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons'
-import { Slide } from 'react-awesome-reveal'
+import Wrapper from '@/components/layout/wrapper';
+import ExperiencePageSVG from '@/components/icons/experience-illustration';
+import { useState } from 'react';
+import ExperienceCard from './experience-card';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { Slide } from 'react-awesome-reveal';
 
 function ExperienceView() {
-  const [showWork, setShowWork] = useState<boolean>(false)
-  const [showVolunteership, setShowVolunteership] = useState<boolean>(false)
+  const [showWork, setShowWork] = useState<boolean>(false);
+  const [showVolunteership, setShowVolunteership] = useState<boolean>(false);
 
   const WorkData = [
     {
@@ -160,7 +160,7 @@ function ExperienceView() {
       ],
       link: 'https://www.linkedin.com/company/codefier/',
     },
-  ]
+  ];
   const VolunteershipData = [
     {
       companyName: 'Devsinc',
@@ -286,20 +286,33 @@ function ExperienceView() {
       ],
       link: 'https://www.linkedin.com/company/nustieeeclub/',
     },
-  ]
+  ];
 
   return (
     <>
       <Wrapper>
-        <div className="py-7 sm:px-0 md:px-0 lg:px-0 sm:py-5 md:py-5 lg:py-5 flex flex-row sm:flex-col md:flex-col lg:flex-col justify-around items-start sm:items-center md:items-center lg:items-center bg-main-bg-color xl:gap-5 2xl:gap-5 2xl:justify-center 2xl:items-center">
-          <Slide triggerOnce direction="left" className="svg-div w-100% xl:w-50% 2xl:w-50% 2xl:ml-6 sm:flex sm:flex-col sm:justify-center sm:items-center md:flex md:flex-col md:justify-center md:items-center lg:flex lg:flex-col lg:justify-center lg:items-center self-start mt-4">
+        <div className="flex flex-row items-start justify-around bg-main-bg-color py-7 sm:flex-col sm:items-center sm:px-0 sm:py-5 md:flex-col md:items-center md:px-0 md:py-5 lg:flex-col lg:items-center lg:px-0 lg:py-5 xl:gap-5 2xl:items-center 2xl:justify-center 2xl:gap-5">
+          <Slide
+            triggerOnce
+            direction="left"
+            className="svg-div mt-4 w-100% self-start sm:flex sm:flex-col sm:items-center sm:justify-center md:flex md:flex-col md:items-center md:justify-center lg:flex lg:flex-col lg:items-center lg:justify-center xl:w-50% 2xl:ml-6 2xl:w-50%"
+          >
             <ExperiencePageSVG />
           </Slide>
-          <div className="sm:mb-2 md:mb-2 lg:mb-2 xl:w-50% 2xl:w-50% flex flex-col items-center justify-center pt-14 xl:pt-12 2xl:pt-0">
+          <div className="flex flex-col items-center justify-center pt-14 sm:mb-2 md:mb-2 lg:mb-2 xl:w-50% xl:pt-12 2xl:w-50% 2xl:pt-0">
             <Slide triggerOnce direction="right">
               <h4 className="primary-heading justify-self-center text-center">Experience</h4>
-              <h5 className="primary-text justify-self-center text-center">Work, Internship and Volunteership</h5>
-              <p className="tertiary-text justify-self-center text-center py-1">I&apos;m a passionate software engineer who loves crafting creative solutions with code. My main area of expertise revolves around building scalable applications using the MERN stack. Additionally, I have a strong enthusiasm for fostering tech communities and actively engage in various tech events. Guiding and supporting aspiring developers as they begin their career paths brings me immense joy because we all know the struggle of finding the missing semicolon. 😉</p>
+              <h5 className="primary-text justify-self-center text-center">
+                Work, Internship and Volunteership
+              </h5>
+              <p className="tertiary-text justify-self-center py-1 text-center">
+                I&apos;m a passionate software engineer who loves crafting creative solutions with
+                code. My main area of expertise revolves around building scalable applications using
+                the MERN stack. Additionally, I have a strong enthusiasm for fostering tech
+                communities and actively engage in various tech events. Guiding and supporting
+                aspiring developers as they begin their career paths brings me immense joy because
+                we all know the struggle of finding the missing semicolon. 😉
+              </p>
             </Slide>
           </div>
         </div>
@@ -307,9 +320,18 @@ function ExperienceView() {
 
       <Wrapper>
         <div>
-          <div onClick={() => setShowWork((prev) => !prev)} className="employement-type-heading flex flex-row justify-between items-center border border-secondary-bg-color bg-white h-50px px-20px py-10px font-medium cursor-pointer">
+          <div
+            onClick={() => setShowWork((prev) => !prev)}
+            className="employement-type-heading flex h-50px cursor-pointer flex-row items-center justify-between border border-secondary-bg-color bg-white px-20px py-10px font-medium"
+          >
             <h6>Work</h6>
-            <p>{showWork ? <FontAwesomeIcon className="text-text-color" icon={faMinus} /> : <FontAwesomeIcon className="text-text-color" icon={faPlus} />}</p>
+            <p>
+              {showWork ? (
+                <FontAwesomeIcon className="text-text-color" icon={faMinus} />
+              ) : (
+                <FontAwesomeIcon className="text-text-color" icon={faPlus} />
+              )}
+            </p>
           </div>
           {showWork && (
             <div className="employement-container flex flex-col">
@@ -331,9 +353,18 @@ function ExperienceView() {
         </div>
 
         <div>
-          <div onClick={() => setShowVolunteership((prev) => !prev)} className="employement-type-heading flex flex-row justify-between items-center border border-secondary-bg-color bg-white h-50px px-20px py-10px font-medium cursor-pointer">
+          <div
+            onClick={() => setShowVolunteership((prev) => !prev)}
+            className="employement-type-heading flex h-50px cursor-pointer flex-row items-center justify-between border border-secondary-bg-color bg-white px-20px py-10px font-medium"
+          >
             <h6>Volunteerships</h6>
-            <p>{showVolunteership ? <FontAwesomeIcon className="text-text-color" icon={faMinus} /> : <FontAwesomeIcon className="text-text-color" icon={faPlus} />}</p>
+            <p>
+              {showVolunteership ? (
+                <FontAwesomeIcon className="text-text-color" icon={faMinus} />
+              ) : (
+                <FontAwesomeIcon className="text-text-color" icon={faPlus} />
+              )}
+            </p>
           </div>
           {showVolunteership && (
             <div className="employement-container flex flex-col">
@@ -355,7 +386,7 @@ function ExperienceView() {
         </div>
       </Wrapper>
     </>
-  )
+  );
 }
 
-export default ExperienceView
+export default ExperienceView;

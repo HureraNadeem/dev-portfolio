@@ -1,7 +1,7 @@
-'use client'
+'use client';
 
-import Wrapper from '@/components/layout/wrapper'
-import ProjectsPageSVG from '@/components/icons/projects-illustration'
+import Wrapper from '@/components/layout/wrapper';
+import ProjectsPageSVG from '@/components/icons/projects-illustration';
 import {
   AWSSVG,
   AzureSVG,
@@ -22,12 +22,12 @@ import {
   TailwindSVG,
   TypescriptSVG,
   VueJSSVG,
-} from '@/components/icons/tech-logos'
+} from '@/components/icons/tech-logos';
 
-import ProjectCard from './project-card'
-import { GithubSVG } from '@/components/icons/social-icons'
-import Link from 'next/link'
-import { Slide } from 'react-awesome-reveal'
+import ProjectCard from './project-card';
+import { GithubSVG } from '@/components/icons/social-icons';
+import Link from 'next/link';
+import { Slide } from 'react-awesome-reveal';
 
 function ProjectsView() {
   const projectData = [
@@ -130,32 +130,30 @@ function ProjectsView() {
       ],
       link: 'https://creativechaos.co/',
     },
-  ]
+  ];
   return (
     <>
       <Wrapper>
-        <div className="py-7 sm:px-0 md:px-0 lg:px-0 sm:py-5 md:py-5 lg:py-5 flex flex-row sm:flex-col md:flex-col lg:flex-col justify-around items-start sm:items-center md:items-center lg:items-center bg-main-bg-color xl:gap-5 2xl:gap-5 2xl:justify-center 2xl:items-center">
+        <div className="flex flex-row items-start justify-around bg-main-bg-color py-7 sm:flex-col sm:items-center sm:px-0 sm:py-5 md:flex-col md:items-center md:px-0 md:py-5 lg:flex-col lg:items-center lg:px-0 lg:py-5 xl:gap-5 2xl:items-center 2xl:justify-center 2xl:gap-5">
           <Slide
             triggerOnce
             direction="left"
-            className="svg-div w-100% xl:w-50% 2xl:w-50% 2xl:ml-6 sm:flex sm:flex-col sm:justify-center sm:items-center md:flex md:flex-col md:justify-center md:items-center lg:flex lg:flex-col lg:justify-center lg:items-center self-start mt-4"
+            className="svg-div mt-4 w-100% self-start sm:flex sm:flex-col sm:items-center sm:justify-center md:flex md:flex-col md:items-center md:justify-center lg:flex lg:flex-col lg:items-center lg:justify-center xl:w-50% 2xl:ml-6 2xl:w-50%"
           >
             <ProjectsPageSVG />
           </Slide>
-          <div className="sm:mb-2 md:mb-2 lg:mb-2 xl:w-50% 2xl:w-50% flex flex-col items-center justify-center pt-14 xl:pt-12 2xl:pt-0">
+          <div className="flex flex-col items-center justify-center pt-14 sm:mb-2 md:mb-2 lg:mb-2 xl:w-50% xl:pt-12 2xl:w-50% 2xl:pt-0">
             <Slide triggerOnce direction="right">
               <h4 className="primary-heading justify-self-center text-center">Projects</h4>
-              <p className="tertiary-text justify-self-center text-center py-1">
-                With a deep understanding of React, Next.js, Redux, Node.js,
-                Express, GraphQL and MongoDB, my expertise lies in developing
-                robust and scalable web applications. By harnessing the power of
-                these technologies, I create engaging user interfaces that
-                deliver exceptional experiences, effectively manage complex
-                application states to ensure seamless data flow, develop
-                efficient server-side APIs and design efficient data models and
-                ensure secure data storage. My proficiency in these technologies
-                enables me to deliver high-quality applications that meet the
-                demands of modern web development. 🫡
+              <p className="tertiary-text justify-self-center py-1 text-center">
+                With a deep understanding of React, Next.js, Redux, Node.js, Express, GraphQL and
+                MongoDB, my expertise lies in developing robust and scalable web applications. By
+                harnessing the power of these technologies, I create engaging user interfaces that
+                deliver exceptional experiences, effectively manage complex application states to
+                ensure seamless data flow, develop efficient server-side APIs and design efficient
+                data models and ensure secure data storage. My proficiency in these technologies
+                enables me to deliver high-quality applications that meet the demands of modern web
+                development. 🫡
               </p>
             </Slide>
           </div>
@@ -163,7 +161,7 @@ function ProjectsView() {
       </Wrapper>
 
       <Wrapper>
-        <div className="project-container flex flex-row gap-[2vw] flex-wrap justify-center item-center sm:gap-10 md:gap-10 ">
+        <div className="project-container item-center flex flex-row flex-wrap justify-center gap-[2vw] sm:gap-10 md:gap-10">
           {projectData.map((e) => (
             <ProjectCard
               key={e.name}
@@ -177,13 +175,13 @@ function ProjectsView() {
         </div>
       </Wrapper>
       <Wrapper>
-        <div className="flex flex-row justify-center items-center">
-          <div className="bg-text-color text-main-bg-color font-GoogleSans-Regular font-medium leading-tight max-w-max px-6 py-3 mr-0 rounded-md text-center no-underline font-sans mt-5 text-lg cursor-pointer tracking-wide  hover:transform transition-transform duration-500 transform hover:scale-105">
+        <div className="flex flex-row items-center justify-center">
+          <div className="font-GoogleSans-Regular mr-0 mt-5 max-w-max transform cursor-pointer rounded-md bg-text-color px-6 py-3 text-center font-sans text-lg font-medium leading-tight tracking-wide text-main-bg-color no-underline transition-transform duration-500 hover:scale-105 hover:transform">
             <Link
               href={'https://www.github.com/hureranadeem'}
               target="_blank"
               rel="noreferrer"
-              className="font-GoogleSans-Regular flex flex-row gap-4 justify-center items-center"
+              className="font-GoogleSans-Regular flex flex-row items-center justify-center gap-4"
             >
               <span className="sm:text-[13px] md:text-[15px]"> More Projects</span>
               <span className="sm:text-[13px] md:text-[15px]">
@@ -194,7 +192,7 @@ function ProjectsView() {
         </div>
       </Wrapper>
     </>
-  )
+  );
 }
 
-export default ProjectsView
+export default ProjectsView;

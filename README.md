@@ -106,5 +106,3 @@ Feel free to explore the source code and modify it to create your own portfolio 
 ## Special Shoutout:
 
 A special shoutout to [Ashutosh Hathidara](https://github.com/ashutosh1919) and [Muhammad Kumail](https://github.com/mkumail1) as most of the UI inspiration has been taken from their portfolio websites.
-
-

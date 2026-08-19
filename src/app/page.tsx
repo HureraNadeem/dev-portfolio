@@ -1,12 +1,12 @@
-import type { Metadata } from 'next'
-import Greeting from '@/features/home/greeting'
-import WhatIDo from '@/features/home/what-i-do'
-import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from '@/config/site'
+import type { Metadata } from 'next';
+import Greeting from '@/features/home/greeting';
+import WhatIDo from '@/features/home/what-i-do';
+import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from '@/config/site';
 
 export const metadata: Metadata = {
   description: SITE_DESCRIPTION,
   alternates: { canonical: '/' },
-}
+};
 
 const personJsonLd = {
   '@context': 'https://schema.org',
@@ -22,16 +22,8 @@ const personJsonLd = {
     'https://www.instagram.com/iamhurera/',
     'https://www.facebook.com/iamhurera',
   ],
-  knowsAbout: [
-    'React',
-    'Next.js',
-    'Node.js',
-    'TypeScript',
-    'MongoDB',
-    'DevOps',
-    'Cloud Computing',
-  ],
-}
+  knowsAbout: ['React', 'Next.js', 'Node.js', 'TypeScript', 'MongoDB', 'DevOps', 'Cloud Computing'],
+};
 
 export default function Home() {
   return (
@@ -44,5 +36,5 @@ export default function Home() {
       <Greeting />
       <WhatIDo />
     </>
-  )
+  );
 }

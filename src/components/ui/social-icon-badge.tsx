@@ -1,36 +1,38 @@
-import React, {FC, ReactNode} from "react";
+import React, { FC, ReactNode } from 'react';
 
 interface SocialIconBadgeProps {
-    children: ReactNode
-    bgcolor: String
+  children: ReactNode;
+  bgcolor: string;
 }
 
 const SocialIconBadge: FC<SocialIconBadgeProps> = ({ children, bgcolor }: SocialIconBadgeProps) => {
-    return (
-        <>
-            <span style={{
-                borderRadius: '2.6rem',
-                cursor: 'pointer',
-                fontSize: '1.3rem',
-                lineHeight: '2.9rem',
-                position: 'relative',
-                textAlign: 'center',
-                WebkitUserSelect: 'none',
-                MozUserSelect: 'none',
-                msUserSelect: 'none',
-                userSelect: 'none',
-                width: '42px',
-                height: '42px',
-                margin: '0 5px 10px',
-                backgroundColor: `${bgcolor}`,
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center'
-            }}>
-                {children}
-            </span>
-        </>
-    );
-}
+  return (
+    <>
+      <span
+        style={{
+          borderRadius: '2.6rem',
+          cursor: 'pointer',
+          fontSize: '1.3rem',
+          lineHeight: '2.9rem',
+          position: 'relative',
+          textAlign: 'center',
+          WebkitUserSelect: 'none',
+          MozUserSelect: 'none',
+          msUserSelect: 'none',
+          userSelect: 'none',
+          width: '42px',
+          height: '42px',
+          margin: '0 5px 10px',
+          backgroundColor: `${bgcolor}`,
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        {children}
+      </span>
+    </>
+  );
+};
 
 export default SocialIconBadge;

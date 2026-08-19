@@ -1,18 +1,15 @@
-import React, { FC, ReactNode } from 'react'
+import React, { FC, ReactNode } from 'react';
 
 interface Props {
-    children?: ReactNode
+  children?: ReactNode;
 }
 
 const Wrapper: FC<Props> = ({ children }) => {
-    return (
-        <div className='wrapper sm:px-7 md:px-9 lg:px-14 xl:px-16 2xl:px-24  py-8 sm:pt-4 md:pt-4 bg-main-bg-color'>
-            {children}
-        </div>
-    )
-}
+  return (
+    <div className="wrapper bg-main-bg-color py-8 sm:px-7 sm:pt-4 md:px-9 md:pt-4 lg:px-14 xl:px-16 2xl:px-24">
+      {children}
+    </div>
+  );
+};
 
-export default Wrapper
-
-
-
+export default Wrapper;

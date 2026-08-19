@@ -1,9 +1,9 @@
-import type { Metadata } from 'next'
-import ExperienceView from '@/features/experience/experience-view'
+import type { Metadata } from 'next';
+import ExperienceView from '@/features/experience/experience-view';
 
 const description =
   'Hurera Nadeem’s professional experience across full-stack engineering, ' +
-  'product engineering and DevOps roles, plus community volunteering.'
+  'product engineering and DevOps roles, plus community volunteering.';
 
 export const metadata: Metadata = {
   title: 'Experience',
@@ -14,8 +14,8 @@ export const metadata: Metadata = {
     description,
     url: '/experience',
   },
-}
+};
 
 export default function ExperiencePage() {
-  return <ExperienceView />
+  return <ExperienceView />;
 }

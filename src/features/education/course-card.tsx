@@ -5,59 +5,63 @@ import Image from 'next/image';
 import { Fade } from 'react-awesome-reveal';
 
 interface Props {
-    key: number,
-    name: String,
-    instructor: String,
-    imgsrc: String,
-    link: String;
+  key: number;
+  name: string;
+  instructor: string;
+  imgsrc: string;
+  link: string;
 }
 
-const CourseCard: FC<Props> = ({ name, instructor, imgsrc, link }) => {
-    const elementRef = useRef(null);
+const CourseCard: FC<Props> = ({ name, instructor, imgsrc }) => {
+  const elementRef = useRef(null);
 
-    // const handleClick = () => {
-    //     window.open(`${link}`, '_blank');
-    // }
-
-    useEffect(() => {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-fade-in-bottom');
-                } else {
-                    entry.target.classList.remove('animate-fade-in-bottom');
-                }
-            });
-        });
-
-        const element = elementRef.current;
-        if (element) {
-            observer.observe(element);
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fade-in-bottom');
+        } else {
+          entry.target.classList.remove('animate-fade-in-bottom');
         }
+      });
+    });
 
-        return () => {
-            if (element) {
-                observer.unobserve(element);
-            }
-        };
-    }, []);
+    const element = elementRef.current;
+    if (element) {
+      observer.observe(element);
+    }
 
-    return (
-        <>
-            <div className="w-385px sm:h-fit md:h-fit h-350px overflow-hidden certificate-card bg-card-bg-color border-secondary-bg-color rounded-lg shadow-lg transition-transform duration-500 transform hover:scale-105 huihui">
-                <Fade triggerOnce direction='up'  >
-                    <div> {/* <div onClick={handleClick}> */}
-                        {/* custom animation class: animate-fade-in-bottom */}
-                        <Image className="hover:brightness-75 transition-all duration-300 w-385px h-215px object-cover rounded-t-lg" src={`/assets/images/${imgsrc}`} width={385} height={215} alt={`${name} course platform`} />
-                        <div className="p-5 border-t border-t-secondary-bg-color ">
-                            <h5 className="select-none font-GoogleSans-Regular font-medium my-2 tracking-tight text-center text-20px">{name}</h5>
-                            <p className=" select-none font-GoogleSans-Regular italic mb-3 text-center font-18px"> - {instructor}</p>
-                        </div>
-                    </div>
-                </Fade >
-            </div>
-        </>
-    )
-}
+    return () => {
+      if (element) {
+        observer.unobserve(element);
+      }
+    };
+  }, []);
 
-export default CourseCard
+  return (
+    <div className="certificate-card h-350px w-385px transform overflow-hidden rounded-lg border-secondary-bg-color bg-card-bg-color shadow-lg transition-transform duration-500 hover:scale-105 sm:h-fit md:h-fit">
+      <Fade triggerOnce direction="up">
+        <div>
+          <Image
+            className="h-215px w-385px rounded-t-lg object-cover transition-all duration-300 hover:brightness-75"
+            src={`/assets/images/${imgsrc}`}
+            width={385}
+            height={215}
+            alt={`${name} course platform`}
+          />
+          <div className="border-t border-t-secondary-bg-color p-5">
+            <h5 className="font-GoogleSans-Regular my-2 select-none text-center text-20px font-medium tracking-tight">
+              {name}
+            </h5>
+            <p className="font-GoogleSans-Regular font-18px mb-3 select-none text-center italic">
+              {' '}
+              - {instructor}
+            </p>
+          </div>
+        </div>
+      </Fade>
+    </div>
+  );
+};
+
+export default CourseCard;
