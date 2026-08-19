@@ -30,7 +30,7 @@ export const WhatIDoCard: FC<Props> = ({
       <Slide
         triggerOnce
         direction="left"
-        className="svg-div w-100% xl:w-50% 2xl:w-50% 2xl:ml-6 sm:flex sm:flex-col sm:justify-center sm:items-center md:flex md:flex-col md:justify-center md:items-center lg:flex lg:flex-col lg:justify-center lg:items-center self-start mt-4"
+        className="svg-div w-100% xl:w-50% 2xl:w-50% flex flex-col items-center justify-center"
       >
         <div className="whatido-illustration">{MainSVG}</div>
       </Slide>

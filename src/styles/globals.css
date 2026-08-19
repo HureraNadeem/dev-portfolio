@@ -161,9 +161,14 @@ h1, h2, h3, h4, h5, h6, p {
    --------------------------------------------------------------------------- */
 
 /* The svg fills this wrapper, so capping the wrapper caps the artwork. Without
-   it the illustration spans the full column and dominates small viewports. */
+   a cap the illustration spans its whole column: half the page width, which on
+   a 1920px monitor is an ~860px-wide, ~670px-tall drawing per card. These are
+   supporting artwork repeated across four cards, not a page hero like the ones
+   on /experience or /projects, so hold them well under the text beside them.
+   The auto margins then centre the artwork in the column it no longer fills. */
 .whatido-illustration {
   width: 100%;
+  max-width: 400px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -175,7 +180,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 /* Laptops and below stack the card vertically, so the artwork competes with the
-   content for vertical space. Cap it progressively. */
+   content for vertical space. Keep narrowing it past the base cap. */
 @media (max-width: 1024px) {
   .whatido-illustration {
     max-width: 360px;
