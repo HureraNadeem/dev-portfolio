@@ -1,5 +1,5 @@
 # Netlify configuration for the static (SSG) export.
-# `next build` with `output: 'export'` (see next.config.js) pre-renders the
+# `next build` with `output: 'export'` (see next.config.ts) pre-renders the
 # whole site into `out/`, which Netlify serves as static files.
 [build]
   command = "npm run build"

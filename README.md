@@ -20,16 +20,62 @@ This repository contains the source code and for my personal dev portfolio websi
 - Tailwind CSS
 - React Awesome Reveal
 
+## Project structure
+
+All application code lives under `src/`, so the repository root holds nothing but
+tooling config. `src/app/` is kept purely as the routing layer — every non-route
+file lives in a dedicated top-level folder next to it.
+
+```
+public/                     Static files served as-is at the site root
+  assets/{fonts,images,resume}
+src/
+  app/                      Routing layer ONLY (App Router)
+    layout.tsx              Root layout: metadata, chrome, global styles
+    page.tsx                /
+    {contact,education,experience,projects}/page.tsx
+    not-found.tsx           404
+    robots.ts sitemap.ts    Metadata file conventions
+  components/               Shared, route-agnostic UI
+    icons/                  SVG illustrations & tech logos as React components
+    layout/                 Site chrome: navbar, footer, wrapper, scroll-to-top
+    ui/                     Small reusable primitives
+  features/                 Route-scoped composition, one folder per page
+    home/                   greeting, what-i-do (+ its card)
+    education/              education-view (+ course-card)
+    experience/             experience-view (+ experience-card)
+    projects/               projects-view (+ project-card)
+    contact/                contact-view
+  config/site.ts            Single source of truth for site metadata + routes
+  lib/                      Framework/third-party setup (Font Awesome)
+  styles/globals.css        Global stylesheet & @font-face declarations
+```
+
+Conventions:
+
+- **Files and folders are kebab-case**; components are `PascalCase` exports.
+- **A component lives in `features/` if exactly one route renders it**, and in
+  `components/` once it is shared. Cards are colocated with the view that uses
+  them rather than pooled in a global bucket.
+- **`public/` contains static files only** — never `.ts`/`.tsx`. SVGs that are
+  React components belong in `src/components/icons/`.
+- **Import aliases**: `@/*` resolves to `src/*`, `@public/*` to `public/*`
+  (used for statically imported images). No `../../..` climbing.
+- **`src/config/site.ts` is the single source of truth** for the site URL,
+  metadata and navigation; the navbar, sitemap, robots and JSON-LD all read
+  from it, so adding a route means editing one array.
+
 ## Architecture
 
 - **Static Site Generation (SSG)** — the site is fully pre-rendered to static
   HTML at build time via `output: 'export'`, so it can be served from any static
   host (Netlify, Vercel, GitHub Pages, S3, …) with no server runtime.
-- **App Router** — routes live under `app/`, each page is a server component
-  that exposes SEO metadata through the Next.js **Metadata API**.
+- **App Router** — routes live under `src/app/`, each page is a server component
+  that exposes SEO metadata through the Next.js **Metadata API** and delegates
+  its markup to the matching slice in `src/features/`.
 - **SEO built in** — per-page `<title>`/description, canonical URLs, Open Graph
   and Twitter cards, JSON-LD `Person` structured data, and generated
-  `robots.txt` (`app/robots.ts`) and `sitemap.xml` (`app/sitemap.ts`).
+  `robots.txt` (`src/app/robots.ts`) and `sitemap.xml` (`src/app/sitemap.ts`).
 
 ## Illustrations
 
@@ -40,7 +86,8 @@ This repository contains the source code and for my personal dev portfolio websi
 The website is deployed and accessible at [hurera-dev.netlify.app](https://hurera-dev.netlify.app)
 
 The production URL used for canonical tags, Open Graph and the sitemap can be
-overridden at build time with the `NEXT_PUBLIC_SITE_URL` environment variable.
+overridden at build time with the `NEXT_PUBLIC_SITE_URL` environment variable —
+see `.env.example` for the expected format.
 
 ## Run the project locally
 
