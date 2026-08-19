@@ -243,3 +243,80 @@ h1, h2, h3, h4, h5, h6, p {
 
 
 
+
+/* ---------------------------------------------------------------------------
+   404 illustration
+   Breakpoints mirror tailwind.config.js, which uses max-width ranges:
+   sm <= 480px, md 481-768px.
+   --------------------------------------------------------------------------- */
+.notfound-illustration {
+  width: 100%;
+  max-width: 380px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.notfound-illustration > svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .notfound-illustration {
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .notfound-illustration {
+    max-width: 220px;
+  }
+}
+
+/* Pivot on the fist gripping the bar rather than the centre of the artwork,
+   otherwise the figure orbits instead of swinging. */
+.notfound-swing {
+  transform-box: view-box;
+  transform-origin: 250px 63px;
+  animation: notfound-swing 3.6s ease-in-out infinite;
+}
+
+@keyframes notfound-swing {
+  0%,
+  100% {
+    transform: rotate(-5deg);
+  }
+
+  50% {
+    transform: rotate(5deg);
+  }
+}
+
+/* Half the swing's period: the figure crosses over the shadow twice per swing,
+   so the shadow tightens and darkens on each pass rather than once. */
+.notfound-shadow {
+  transform-box: view-box;
+  transform-origin: 238px 356px;
+  animation: notfound-shadow 1.8s ease-in-out infinite;
+}
+
+@keyframes notfound-shadow {
+  0%,
+  100% {
+    transform: scaleX(0.88);
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .notfound-swing,
+  .notfound-shadow {
+    animation: none;
+  }
+}
