@@ -23,9 +23,33 @@ var t=(s==='dark'||s==='light')?s:(window.matchMedia('(prefers-color-scheme: dar
 document.documentElement.dataset.theme=t;
 }catch(e){document.documentElement.dataset.theme='light';}})();`;
 
-/** The theme currently applied to the document. */
+/**
+ * What the theme *should* be: an explicit choice if one was made, otherwise the
+ * operating system's preference. Never reads the DOM, so it stays correct even
+ * when the attribute has gone missing.
+ */
+export function resolveTheme(): Theme {
+  try {
+    const stored = localStorage.getItem(THEME_STORAGE_KEY);
+    if (stored === 'dark' || stored === 'light') return stored;
+  } catch {
+    // Storage unavailable — fall through to the system preference.
+  }
+  return window.matchMedia?.('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+}
+
+/**
+ * The theme currently applied to the document.
+ *
+ * Falls back to `resolveTheme()` when the attribute is absent rather than
+ * assuming light: React drops `data-theme` from <html> whenever it re-renders
+ * the root layout, because the attribute is set imperatively and so is not one
+ * of the props it is reconciling.
+ */
 export function getTheme(): Theme {
-  return document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light';
+  const applied = document.documentElement.dataset.theme;
+  if (applied === 'dark' || applied === 'light') return applied;
+  return resolveTheme();
 }
 
 export function setTheme(theme: Theme) {

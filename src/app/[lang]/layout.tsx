@@ -7,6 +7,7 @@ import Navbar from '@/components/layout/navbar';
 import Footer from '@/components/layout/footer';
 import ScrollToTopButton from '@/components/layout/scroll-to-top-button';
 import FontAwesomeConfig from '@/lib/fontawesome';
+import ThemeGuard from '@/components/layout/theme-guard';
 import { LOCALES, LOCALE_META, isLocale, type Locale } from '@/config/i18n';
 import { OG_IMAGE, SITE_NAME, SITE_URL } from '@/config/site';
 import { getDictionary } from '@/dictionaries';
@@ -131,6 +132,7 @@ export default async function RootLayout({
       */}
       <body suppressHydrationWarning className="flex min-h-screen flex-col bg-main-bg-color">
         <FontAwesomeConfig />
+        <ThemeGuard />
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:m-3 focus:rounded-md focus:bg-text-color focus:px-4 focus:py-2 focus:text-main-bg-color"
