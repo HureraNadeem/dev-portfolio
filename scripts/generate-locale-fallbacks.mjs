@@ -14,7 +14,7 @@
  * so a crawler cannot read `/experience` as a thin duplicate of
  * `/en/experience`.
  */
-import { copyFile, readdir, stat, writeFile } from 'node:fs/promises';
+import { readdir, stat, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 
 const OUT = 'out';
@@ -67,22 +67,6 @@ for (const entry of entries) {
 
   await writeFile(fallback, page(destination));
   written.push(`/${slug}`);
-}
-
-// Static hosts serve /404.html for anything they cannot match, so that file has
-// to be the real 404 page. Next writes its own framework default there, because
-// a global not-found needs a root layout at app/layout.tsx and the locale
-// segment owns <html> instead. Overwrite it with the built English 404.
-const custom404 = join(OUT, DEFAULT_LOCALE, '404.html');
-const rootHas404 = await stat(custom404).then(
-  () => true,
-  () => false,
-);
-if (rootHas404) {
-  await copyFile(custom404, join(OUT, '404.html'));
-  written.push('404.html');
-} else {
-  throw new Error(`${custom404} not found — the localised 404 route may have moved.`);
 }
 
 console.log(`  locale fallbacks: ${written.join(', ')}`);

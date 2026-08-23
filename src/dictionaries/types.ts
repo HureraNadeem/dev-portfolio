@@ -45,7 +45,6 @@ export type Dictionary = {
     experience: PageMeta;
     projects: PageMeta;
     contact: PageMeta;
-    notFound: PageMeta;
   };
   home: {
     greetingTitle: string;
@@ -101,13 +100,5 @@ export type Dictionary = {
     reachOut: string[];
     emailNote: string;
     cta: string;
-  };
-  notFound: {
-    eyebrow: string;
-    title: string;
-    body: string;
-    cta: string;
-    suggestionsLabel: string;
-    suggestedPages: string;
   };
 };

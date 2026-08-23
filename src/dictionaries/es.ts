@@ -48,7 +48,6 @@ const es: Dictionary = {
       description:
         'Ponte en contacto con Hurera Nadeem: conecta por GitHub, LinkedIn, Instagram y Facebook, o escríbeme por correo electrónico.',
     },
-    notFound: { title: '404 — Página no encontrada', description: 'Esta página no existe.' },
   },
   home: {
     greetingTitle: '¡Hola! Soy Hurera',
@@ -393,14 +392,6 @@ const es: Dictionary = {
     emailNote:
       'El correo electrónico es la vía más segura para localizarme; suelo responder en un par de días.',
     cta: 'Escríbeme por correo 📧',
-  },
-  notFound: {
-    eyebrow: '404',
-    title: 'Esta página anda por ahí, colgada',
-    body: 'Que es una forma divertida de decir que no existe. O el enlace está roto, o moví algo y olvidé dejar una dirección de reenvío. En cualquier caso, aquí no hay nada que ver. 🙃',
-    cta: 'Llévame al inicio 🏠',
-    suggestionsLabel: 'O retoma por donde querías ir:',
-    suggestedPages: 'Páginas sugeridas',
   },
 };
 
