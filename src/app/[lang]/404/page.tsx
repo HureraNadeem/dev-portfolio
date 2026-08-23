@@ -6,13 +6,18 @@ import { getDictionary } from '@/dictionaries';
 import NotFoundView from '@/features/not-found/not-found-view';
 
 /**
- * A real, pre-rendered 404 page per locale.
+ * The real 404 page, pre-rendered per locale.
  *
  * `not-found.tsx` alone is not enough for a static export: that boundary only
- * renders when something calls `notFound()`, and since `generateStaticParams`
- * only ever produces valid locales, nothing does — so the export fell back to
- * the framework's built-in 404. Netlify serves this page (with a real 404
- * status) for unmatched paths; see the catch-all in netlify.toml.
+ * renders when something calls `notFound()`, and generateStaticParams only ever
+ * produces valid locales, so nothing does. This is a normal route, so it is
+ * actually built — and the build step copies the English one to /404.html,
+ * which is the file every static host serves for a path it cannot match.
+ *
+ * A catch-all route cannot improve on this. With `output: export` the dev
+ * server enforces the same rule as the export — every dynamic param must appear
+ * in generateStaticParams — so a catch-all answers 500 rather than 404 for the
+ * arbitrary paths it was meant to cover.
  */
 type Props = { params: Promise<{ lang: string }> };
 

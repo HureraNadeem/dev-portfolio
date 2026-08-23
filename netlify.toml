@@ -54,11 +54,3 @@
   status = 301
   force = true
 
-# Anything that matches no file. Netlify only reaches a redirect once a static
-# file has failed to match, so this cannot shadow a real page. `status = 404`
-# serves the branded page with a genuine 404 rather than a 200, which would
-# otherwise invite search engines to index every mistyped URL as a real page.
-[[redirects]]
-  from = "/*"
-  to = "/en/404"
-  status = 404
