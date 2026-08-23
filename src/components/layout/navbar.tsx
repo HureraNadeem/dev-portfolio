@@ -35,23 +35,23 @@ export default function Navbar({ locale, dict }: { locale: Locale; dict: Diction
 
   return (
     <>
-      <nav className="navbar flex h-28 flex-row items-center justify-between bg-main-bg-color py-2 sm:hidden md:hidden lg:px-8 xl:px-12 2xl:px-20">
+      <nav className="navbar flex h-28 flex-row items-center justify-between bg-main-bg-color py-2 sm:hidden md:hidden lg:hidden xl:px-6 2xl:px-12 3xl:px-20">
         <div className="logo-div whitespace-nowrap">
           <Link href={localePath(locale, '/')}>
-            <span className="underline lg:text-xl xl:text-2xl 2xl:text-3xl">&lt;</span>
-            <span className="font-AgustinaRegular pl-1 pr-1 underline lg:text-xl xl:text-2xl 2xl:text-3xl">
+            <span className="underline xl:text-xl 2xl:text-3xl">&lt;</span>
+            <span className="font-AgustinaRegular pl-1 pr-1 underline xl:text-xl 2xl:text-3xl">
               {' '}
               Hurera Nadeem{' '}
             </span>
-            <span className="underline lg:text-xl xl:text-2xl 2xl:text-3xl">/&gt;</span>
+            <span className="underline xl:text-xl 2xl:text-3xl">/&gt;</span>
           </Link>
         </div>
         <div className="nav-links div">
-          <ul className="flex flex-row items-center justify-around lg:gap-4 xl:gap-6 2xl:gap-8">
+          <ul className="flex flex-row items-center justify-around xl:gap-4 2xl:gap-8">
             {ROUTES.map(({ href }) => (
               <Link key={href} href={localePath(locale, href)}>
                 <li
-                  className={`whitespace-nowrap lg:text-16px xl:text-18px 2xl:text-19px ${isActive(href) ? styles.activeLink : ''} ${styles.underlineTransition}`}
+                  className={`whitespace-nowrap xl:text-16px 2xl:text-19px ${isActive(href) ? styles.activeLink : ''} ${styles.underlineTransition}`}
                 >
                   {navLabel(href)}
                 </li>
@@ -69,7 +69,7 @@ export default function Navbar({ locale, dict }: { locale: Locale; dict: Diction
         </div>
       </nav>
 
-      <nav className="navbar flex flex-col bg-main-bg-color py-10 sm:px-10 md:px-10 lg:hidden xl:hidden 2xl:hidden">
+      <nav className="navbar flex flex-col bg-main-bg-color py-10 sm:px-10 md:px-10 lg:px-14 xl:hidden 2xl:hidden">
         <div className="logo-div flex flex-row items-center justify-between">
           <div className="logo-div-1">
             <Link href={localePath(locale, '/')}>

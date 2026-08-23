@@ -167,6 +167,13 @@ module.exports = {
 
       // Extra large screens
       '2xl': { min: '1201px' },
+
+      // Very wide screens. 2xl has no upper bound, so its styles have to suit
+      // its narrowest case (1201px); this hands the roomier treatment back once
+      // there is space for it. A named screen rather than a `min-[...]`
+      // arbitrary variant, which Tailwind ignores alongside an object-based
+      // screens config — it warns and silently drops the class.
+      '3xl': { min: '1500px' },
     },
   },
   plugins: [],
