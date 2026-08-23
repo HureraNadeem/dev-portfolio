@@ -7,11 +7,14 @@
    Channels are space-separated RGB so Tailwind can apply opacity modifiers to
    them (see tailwind.config.js).
 
-   The dark palette is deliberately not black. The light theme is a soft
-   off-white (#f5f5f5) rather than pure white, so its counterpart is an elevated
-   warm charcoal rather than #000 — the same one step in from the extreme. Pure
-   black next to off-white text produces the halation that makes long passages
-   hard to read, and this site is mostly long passages.
+   The dark palette stops just short of black. Pure #000 behind off-white text
+   produces halation that makes long passages hard to read, and this site is
+   mostly long passages — but #15181a is dark enough to read as a true dark
+   theme rather than a dimmed one.
+
+   Surfaces climb in deliberate steps so depth survives the darkness:
+   page 21 -> card 30 -> fills 38 -> borders 51. Without that ladder everything
+   collapses into one flat sheet once the background gets this low.
    --------------------------------------------------------------------------- */
 :root {
   color-scheme: light;
@@ -36,26 +39,26 @@
   :root:not([data-theme='light']) {
     color-scheme: dark;
 
-    --color-text: 230 232 231; /* #e6e8e7 — off-white, not #fff */
-    --color-bg: 36 40 43; /* #24282b */
-    --color-bg-secondary: 47 52 56; /* #2f3438 */
-    --color-card: 42 47 51; /* #2a2f33 */
-    --color-muted: 164 170 173; /* #a4aaad */
-    --color-line: 59 65 69; /* #3b4145 */
-    --color-shadow: 12 14 16; /* #0c0e10 */
+    --color-text: 232 234 233; /* #e8eae9 — off-white, not #fff */
+    --color-bg: 21 24 26; /* #15181a — the page itself */
+    --color-card: 30 34 38; /* #1e2226 — raised surfaces */
+    --color-bg-secondary: 38 43 47; /* #262b2f — headers, fills */
+    --color-line: 51 58 62; /* #333a3e — borders */
+    --color-muted: 153 161 165; /* #99a1a5 */
+    --color-shadow: 0 0 0; /* #000000 */
   }
 }
 
 :root[data-theme='dark'] {
   color-scheme: dark;
 
-  --color-text: 230 232 231;
-  --color-bg: 36 40 43;
-  --color-bg-secondary: 47 52 56;
-  --color-card: 42 47 51;
-  --color-muted: 164 170 173;
-  --color-line: 59 65 69;
-  --color-shadow: 12 14 16;
+  --color-text: 232 234 233;
+  --color-bg: 21 24 26;
+  --color-card: 30 34 38;
+  --color-bg-secondary: 38 43 47;
+  --color-line: 51 58 62;
+  --color-muted: 153 161 165;
+  --color-shadow: 0 0 0;
 }
 
 /* Only the surfaces that actually change colour, so switching themes fades
