@@ -4,7 +4,7 @@ function ProjectsPageSVG() {
   return (
     <>
       <svg
-        className="sm:80vw pl-55px md:w-70vw lg:w-65vw xl:w-35vw 2xl:w-37vw"
+        className="sm:80vw ps-55px md:w-70vw lg:w-65vw xl:w-35vw 2xl:w-37vw"
         id="a6dc9487-50e2-4fb9-af91-bf1b7118d463"
         data-name="Layer 1"
         xmlns="http://www.w3.org/2000/svg"

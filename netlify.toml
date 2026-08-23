@@ -9,3 +9,39 @@
   # Next.js 16 requires Node >= 20.9; pin a modern LTS so Netlify doesn't fall
   # back to an older default that fails the build.
   NODE_VERSION = "22"
+
+# --- Locale routing ----------------------------------------------------------
+# Every page lives under a language prefix (/en, /es, /fr, /ar), so the bare
+# root has nothing to serve. A static export cannot redirect on its own — there
+# is no server — so the CDN does it.
+#
+# Deliberately NOT language-negotiated: Netlify can branch on Accept-Language,
+# but Googlebot crawls mostly from US addresses with an English header, so
+# sniffing here would mean the Spanish, French and Arabic versions were never
+# crawled. Everyone lands on /en and chooses from the switcher.
+[[redirects]]
+  from = "/"
+  to = "/en"
+  status = 302
+
+# Pre-i18n URLs. 301 so whatever ranking or inbound links they accumulated
+# carry over to the English version rather than dying at a 404.
+[[redirects]]
+  from = "/education"
+  to = "/en/education"
+  status = 301
+
+[[redirects]]
+  from = "/experience"
+  to = "/en/experience"
+  status = 301
+
+[[redirects]]
+  from = "/projects"
+  to = "/en/projects"
+  status = 301
+
+[[redirects]]
+  from = "/contact"
+  to = "/en/contact"
+  status = 301

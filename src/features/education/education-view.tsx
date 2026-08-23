@@ -1,52 +1,19 @@
 'use client';
 
-import Wrapper from '@/components/layout/wrapper';
-import EducationPageSvg from '@/components/icons/education-illustration';
 import Image from 'next/image';
+import Link from 'next/link';
+import { Flip, Slide } from 'react-awesome-reveal';
+
+import EducationPageSvg from '@/components/icons/education-illustration';
+import Wrapper from '@/components/layout/wrapper';
+import { COURSES } from '@/content/courses';
+import type { Dictionary } from '@/dictionaries';
 import NustLogo from '@public/assets/images/nust-logo.png';
 import CourseCard from './course-card';
-import { Flip, Slide } from 'react-awesome-reveal';
-import Link from 'next/link';
 
-function EducationView() {
-  const coursesData = [
-    {
-      name: 'Complete Vue3 Developer Bootcamp (Pinia, Vitest)',
-      instructor: 'Andrei Neagoie',
-      imgsrc: 'udemy_dark.png',
-      link: 'http://coursera.org',
-    },
-    {
-      name: 'Next.js & React - The Complete Guide (incl. Two Paths!)',
-      instructor: 'Maximilian Schwarzmüller',
-      imgsrc: 'udemy_dark.png',
-      link: 'http://coursera.org',
-    },
-    {
-      name: 'Supervised Machine Learning: Regression and Classification',
-      instructor: 'Andrew Ng',
-      imgsrc: 'coursera.png',
-      link: 'http://coursera.org',
-    },
-    {
-      name: 'Node.js, Express, MongoDB & More: The Complete Bootcamp',
-      instructor: 'Jonas Schmedtmann',
-      imgsrc: 'udemy_dark.png',
-      link: 'http://coursera.org',
-    },
-    {
-      name: 'Understanding TypeScript',
-      instructor: 'Maximilian Schwarzmüller',
-      imgsrc: 'udemy_dark.png',
-      link: 'http://coursera.org',
-    },
-    {
-      name: 'Front-End Web Development with React',
-      instructor: 'The Hong Kong University',
-      imgsrc: 'coursera.png',
-      link: 'http://coursera.org',
-    },
-  ];
+function EducationView({ dict }: { dict: Dictionary }) {
+  const { education } = dict;
+
   return (
     <>
       <Wrapper>
@@ -54,18 +21,16 @@ function EducationView() {
           <Slide
             triggerOnce
             direction="left"
-            className="svg-div mt-4 w-100% self-start sm:flex sm:flex-col sm:items-center sm:justify-center md:flex md:flex-col md:items-center md:justify-center lg:flex lg:flex-col lg:items-center lg:justify-center xl:w-50% 2xl:ml-6 2xl:w-50%"
+            className="svg-div flex w-100% flex-col items-center justify-center xl:w-50% 2xl:w-50%"
           >
             <EducationPageSvg />
           </Slide>
           <div className="flex flex-col items-center justify-center pt-14 sm:mb-2 md:mb-2 lg:mb-2 xl:w-50% xl:pt-12 2xl:w-50% 2xl:pt-0">
             <Slide triggerOnce direction="right">
-              <h1 className="primary-heading justify-self-center text-center">{`Education`}</h1>
-              <p className="primary-text justify-self-center text-center">
-                My Qualifications and Certifications
-              </p>
+              <h1 className="primary-heading justify-self-center text-center">{education.title}</h1>
+              <p className="primary-text justify-self-center text-center">{education.subtitle}</p>
               <p className="tertiary-text justify-self-center py-1 text-center">
-                Here&apos;s what you need to know about my academic background 🙃
+                {education.intro}
               </p>
             </Slide>
           </div>
@@ -76,7 +41,9 @@ function EducationView() {
         <h2
           style={{ marginBottom: '50px' }}
           className="primary-heading justify-self-center text-center"
-        >{`{ Degree Received }`}</h2>
+        >
+          {education.degreeSection}
+        </h2>
         <div className="degree-card flex flex-row items-center justify-between sm:flex-col sm:gap-7 md:flex-col md:gap-7 lg:flex-col lg:gap-3 xl:gap-3 2xl:gap-3">
           <div
             style={{ borderRadius: '50%' }}
@@ -107,43 +74,19 @@ function EducationView() {
               className="flex flex-row justify-between gap-2 border sm:flex-col sm:p-15px md:flex-col md:p-15px lg:p-20px xl:p-20px 2xl:p-20px"
             >
               <div className="flex flex-col justify-between">
-                <h3 className="mb-4 mt-2 text-23px font-semibold">
-                  National University of Sciences and Technology, Islamabad
-                </h3>
-                <h4 className="text-18px font-semibold">Bachelor&apos;s in Software Engineering</h4>
+                <h3 className="mb-4 mt-2 text-23px font-semibold">{education.university}</h3>
+                <h4 className="text-18px font-semibold">{education.degree}</h4>
               </div>
               <div>
-                <p className="my-4 text-16px font-normal">Islamabad, Pakistan</p>
+                <p className="my-4 text-16px font-normal">{education.location}</p>
               </div>
             </div>
-            <div className="bg-card-bg-color pr-20px sm:p-15px md:p-15px lg:p-20px xl:p-20px 2xl:p-20px">
-              <p className="my-3 text-[17px]">
-                ⚡ Gained extensive knowledge and insights through rigorous Computer Science courses
-                covering areas such as Data Structures, Algorithms, Database Management Systems,
-                Operating Systems, Machine Learning.
-              </p>
-              <p className="my-3 text-[17px]">
-                ⚡ Got the inside scoop on the entire software development cycle and the
-                industry&apos;s processes by some specialized software engineering courses like
-                Software Requirements Engineering, Software Design &amp; Architecture, and Software
-                Construction etc.
-              </p>
-              <p className="my-3 text-[17px]">
-                ⚡ In addition to my academic pursuits, I have pursued courses in MERN Stack
-                Development and explored the www world :)
-              </p>
-              <p className="my-3 text-[17px]">
-                ⚡ The supportive environment at NUST have played a crucial role in my personal
-                development, fostering diversity and building confidence. Additionally, the emphasis
-                on community bonding techniques has greatly contributed to my growth.
-              </p>
-              <p className="my-3 text-[17px]">
-                ⚡ One of my most fulfilling extracurricular activities has been leading and
-                managing tech communities including HackClub NUST, Google Developers Student Club
-                (GDSC) NUST, IEEE-NUST, NUST Media Club, and Orientation of NUST. These experiences
-                have been incredibly fulfilling, allowing me to connect with like-minded individuals
-                and contribute to the vibrant tech and non-tech ecosystem at NUST.
-              </p>
+            <div className="bg-card-bg-color pe-20px sm:p-15px md:p-15px lg:p-20px xl:p-20px 2xl:p-20px">
+              {education.bullets.map((bullet, index) => (
+                <p key={index} className="my-3 text-[17px]">
+                  {bullet}
+                </p>
+              ))}
             </div>
           </div>
         </div>
@@ -153,15 +96,17 @@ function EducationView() {
         <h2
           style={{ marginBottom: '50px' }}
           className="primary-heading justify-self-center text-center"
-        >{`{ Online Courses }`}</h2>
+        >
+          {education.coursesSection}
+        </h2>
         <div className="certificates-container flex flex-row flex-wrap items-center justify-center gap-10">
-          {coursesData.map((element, index) => (
+          {COURSES.map((course) => (
             <CourseCard
-              key={index}
-              name={element.name}
-              instructor={element.instructor}
-              imgsrc={element.imgsrc}
-              link={element.link}
+              key={course.name}
+              name={course.name}
+              instructor={course.instructor}
+              imgsrc={course.imgsrc}
+              link={course.link}
             />
           ))}
         </div>

@@ -320,3 +320,38 @@ p {
     animation: none;
   }
 }
+
+/* ---------------------------------------------------------------------------
+   Right-to-left / Arabic
+   --------------------------------------------------------------------------- */
+
+/* GoogleSans-Regular and Agustina carry no Arabic glyphs, so Arabic text falls
+   through to whatever the OS happens to offer — which differs per platform and
+   occasionally lands on a decorative face. Name a real stack so the Arabic
+   build looks deliberate everywhere, and let the Latin fonts keep handling the
+   technology names that stay in Latin script. */
+[lang='ar'] body,
+[lang='ar'] .font-GoogleSans-Regular {
+  font-family:
+    'Noto Naskh Arabic', 'Geeza Pro', 'Segoe UI', Tahoma, 'Arabic Typesetting', sans-serif;
+}
+
+/* The script logo is a Latin display face; keep it Latin even on the Arabic
+   build, where it renders the name as written. */
+[lang='ar'] .font-AgustinaRegular {
+  font-family: 'Agustina Regular', sans-serif;
+}
+
+/* Arabic script sits taller than Latin at the same size and gets cramped at the
+   line heights tuned for Latin copy. */
+[dir='rtl'] .tertiary-text,
+[dir='rtl'] .secondary-text,
+[dir='rtl'] .primary-text {
+  line-height: 1.9;
+}
+
+/* The reveal animations slide in from a physical direction. Mirroring them
+   keeps content entering from the same side it reads from. */
+[dir='rtl'] .svg-div {
+  direction: rtl;
+}

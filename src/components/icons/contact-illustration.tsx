@@ -4,7 +4,7 @@ function ContactPageSVG() {
   return (
     <>
       <svg
-        className="sm:80vw pl-55px md:w-70vw lg:w-65vw xl:w-35vw 2xl:w-37vw"
+        className="sm:80vw ps-55px md:w-70vw lg:w-65vw xl:w-35vw 2xl:w-37vw"
         id="aaafdec0-95c8-49a3-a8f8-64216c6da511"
         data-name="Layer 1"
         xmlns="http://www.w3.org/2000/svg"

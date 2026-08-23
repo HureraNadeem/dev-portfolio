@@ -20,6 +20,7 @@ This repository contains the source code and for my personal dev portfolio websi
 - Tailwind CSS
 - React Awesome Reveal
 - ESLint + Prettier
+- Multilingual (en / es / fr / ar) with RTL support
 
 ## Project structure
 
@@ -32,11 +33,13 @@ public/                     Static files served as-is at the site root
   assets/{fonts,images,resume}
 src/
   app/                      Routing layer ONLY (App Router)
-    layout.tsx              Root layout: metadata, chrome, global styles
-    page.tsx                /
-    {contact,education,experience,projects}/page.tsx
-    not-found.tsx           404
+    [lang]/                 Every page lives under a locale prefix
+      layout.tsx            Root layout: <html lang/dir>, metadata, chrome
+      page.tsx              /{lang}
+      {contact,education,experience,projects}/page.tsx
+      not-found.tsx         404
     robots.ts sitemap.ts    Metadata file conventions
+    llms.txt/route.ts       Curated index for answer engines
   components/               Shared, route-agnostic UI
     icons/                  SVG illustrations & tech logos as React components
     layout/                 Site chrome: navbar, footer, wrapper, scroll-to-top
@@ -49,6 +52,9 @@ src/
     contact/                contact-view
     not-found/              not-found-view (the 404)
   config/site.ts            Single source of truth for site metadata + routes
+  config/i18n.ts            Locales, text direction, path helpers
+  content/                  Locale-independent facts (companies, projects, courses)
+  dictionaries/             One file per locale + the shared Dictionary type
   lib/                      Framework/third-party setup (Font Awesome)
   styles/globals.css        Global stylesheet & @font-face declarations
 ```
@@ -102,6 +108,45 @@ locally it is one command per clone:
 ```bash
 git config blame.ignoreRevsFile .git-blame-ignore-revs
 ```
+
+## Internationalisation
+
+The site is published in English, Spanish, French and Arabic. Everything a
+reader sees is translated — nothing falls back to English mid-page, because a
+partially translated page reads as thin content to a search engine and as
+broken to a person.
+
+**How it is wired.** `src/app/[lang]/` holds every route, so each locale gets
+real URLs (`/es/experience`, `/ar/projects`) rather than a query string or a
+cookie. Translatable prose lives in `src/dictionaries/<locale>.ts`; facts that
+are the same in every language — company names, logos, tech stacks, course
+titles — live in `src/content/` and are never duplicated per locale.
+
+**Adding a locale** means adding it to `LOCALES` in `src/config/i18n.ts` and
+writing one dictionary file. Everything else — routing, hreflang, the sitemap,
+the switcher, `llms.txt` — is derived from that list. Because each dictionary
+must satisfy the `Dictionary` type, a missing translation is a compile error
+rather than an English string leaking into a Spanish page.
+
+**Search and answer engines.** The three ways multilingual sites usually lose
+traffic are all handled structurally rather than by remembering:
+
+- **hreflang** is generated in one place (`src/lib/seo.ts`) from the locale
+  list, so every cluster is reciprocal, self-referencing and carries
+  `x-default`. A single missing return link makes Google discard the entire
+  cluster, so this is not left to hand-maintained tags. The same alternates are
+  repeated in `sitemap.xml`.
+- **No language sniffing.** There is no IP or `Accept-Language` redirect
+  anywhere. Googlebot crawls mostly from US addresses, so sniffing would hide
+  every non-English version from it. Readers choose from the switcher, which
+  keeps them on the page they are already reading.
+- **Human-reviewed translations.** Unedited machine translation is treated as
+  scaled content abuse and can suppress rankings across _all_ locales including
+  the English original, so translations here are written, not piped through an
+  API.
+
+`dir="rtl"` on `<html>` drives the Arabic build; spacing uses logical
+properties (`ps-`/`pe-`/`me-`) so it mirrors without a parallel stylesheet.
 
 ## Architecture
 

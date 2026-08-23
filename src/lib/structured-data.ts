@@ -1,9 +1,10 @@
+import { LOCALES, LOCALE_META, localePath, type Locale } from '@/config/i18n';
 import {
   ALMA_MATER,
   CONTACT_EMAIL,
   OG_IMAGE,
+  RESUME_URL,
   ROUTES,
-  SITE_DESCRIPTION,
   SITE_NAME,
   SITE_ROLE,
   SITE_URL,
@@ -13,9 +14,14 @@ import {
 
 /**
  * JSON-LD is the one part of a page an answer engine can read without having to
- * interpret prose, so it is where the facts about who this is, what they do and
- * where else they exist online belong. Everything is derived from
- * `@/config/site` so the graph cannot contradict the rendered page.
+ * interpret prose, so it carries the facts about who this is and what they do.
+ *
+ * The Person is a single entity across every locale — the same human, described
+ * in different languages — so its `@id` is deliberately locale-independent and
+ * every localised page points at it. Only the page-level nodes (`WebPage`,
+ * `ProfilePage`) are per-locale, each declaring `inLanguage` and listing its
+ * translations via `workTranslation`, so a crawler can tell a translation from
+ * a duplicate.
  */
 
 const PERSON_ID = `${SITE_URL}/#person`;
@@ -27,78 +33,82 @@ const person = {
   name: SITE_NAME,
   url: SITE_URL,
   jobTitle: SITE_ROLE,
-  description: SITE_DESCRIPTION,
   image: `${SITE_URL}${OG_IMAGE}`,
   email: `mailto:${CONTACT_EMAIL}`,
   sameAs: SOCIAL_LINKS,
   knowsAbout: SKILLS,
+  knowsLanguage: LOCALES.map((l) => LOCALE_META[l].htmlLang),
   alumniOf: {
     '@type': 'CollegeOrUniversity',
     name: ALMA_MATER.name,
     url: ALMA_MATER.url,
   },
   nationality: { '@type': 'Country', name: 'Pakistan' },
+  subjectOf: { '@type': 'DigitalDocument', name: 'Resume', url: RESUME_URL },
 };
 
-const website = {
-  '@type': 'WebSite',
-  '@id': WEBSITE_ID,
-  url: SITE_URL,
-  name: SITE_TITLE_FALLBACK(),
-  description: SITE_DESCRIPTION,
-  inLanguage: 'en',
-  publisher: { '@id': PERSON_ID },
-  about: { '@id': PERSON_ID },
-};
-
-function SITE_TITLE_FALLBACK() {
-  return `${SITE_NAME} — Portfolio`;
+/** Sibling locales of a page, so translations are declared rather than inferred. */
+function translationsOf(locale: Locale, path: string) {
+  return LOCALES.filter((l) => l !== locale).map((l) => ({
+    '@type': 'WebPage',
+    '@id': `${SITE_URL}${localePath(l, path)}#webpage`,
+    inLanguage: LOCALE_META[l].htmlLang,
+  }));
 }
 
-/**
- * One graph on the home page rather than a separate blob per entity: `@id`
- * references let a consumer resolve Person, WebSite and the site's pages as a
- * single connected description instead of three unrelated fragments.
- */
-export const homeJsonLd = {
-  '@context': 'https://schema.org',
-  '@graph': [
-    person,
-    website,
-    {
-      '@type': 'ProfilePage',
-      '@id': `${SITE_URL}/#profilepage`,
-      url: SITE_URL,
-      name: `${SITE_NAME} — ${SITE_ROLE}`,
-      isPartOf: { '@id': WEBSITE_ID },
-      about: { '@id': PERSON_ID },
-      mainEntity: { '@id': PERSON_ID },
-      inLanguage: 'en',
-    },
-    {
-      '@type': 'SiteNavigationElement',
-      '@id': `${SITE_URL}/#nav`,
-      name: ROUTES.map(({ label }) => label),
-      url: ROUTES.map(({ href }) => `${SITE_URL}${href === '/' ? '' : href}`),
-    },
-  ],
-};
+export function homeJsonLd(locale: Locale, description: string) {
+  const url = `${SITE_URL}${localePath(locale, '/')}`;
+  const lang = LOCALE_META[locale].htmlLang;
 
-/**
- * Per-page graph: states what the page is, that it belongs to the site, and
- * that it is about the same person — so a page reached directly still carries
- * the identity the home page establishes.
- */
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      { ...person, description },
+      {
+        '@type': 'WebSite',
+        '@id': WEBSITE_ID,
+        url: SITE_URL,
+        name: `${SITE_NAME} — Portfolio`,
+        description,
+        inLanguage: LOCALES.map((l) => LOCALE_META[l].htmlLang),
+        publisher: { '@id': PERSON_ID },
+        about: { '@id': PERSON_ID },
+      },
+      {
+        '@type': 'ProfilePage',
+        '@id': `${url}#profilepage`,
+        url,
+        name: `${SITE_NAME} — ${SITE_ROLE}`,
+        isPartOf: { '@id': WEBSITE_ID },
+        about: { '@id': PERSON_ID },
+        mainEntity: { '@id': PERSON_ID },
+        inLanguage: lang,
+        workTranslation: translationsOf(locale, '/'),
+      },
+      {
+        '@type': 'SiteNavigationElement',
+        '@id': `${url}#nav`,
+        inLanguage: lang,
+        url: ROUTES.map(({ href }) => `${SITE_URL}${localePath(locale, href)}`),
+      },
+    ],
+  };
+}
+
 export function pageJsonLd({
+  locale,
   path,
   name,
   description,
 }: {
+  locale: Locale;
   path: string;
   name: string;
   description: string;
 }) {
-  const url = `${SITE_URL}${path}`;
+  const url = `${SITE_URL}${localePath(locale, path)}`;
+  const home = `${SITE_URL}${localePath(locale, '/')}`;
+
   return {
     '@context': 'https://schema.org',
     '@graph': [
@@ -110,13 +120,14 @@ export function pageJsonLd({
         description,
         isPartOf: { '@id': WEBSITE_ID },
         about: { '@id': PERSON_ID },
-        inLanguage: 'en',
+        inLanguage: LOCALE_META[locale].htmlLang,
+        workTranslation: translationsOf(locale, path),
       },
       {
         '@type': 'BreadcrumbList',
         '@id': `${url}#breadcrumb`,
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+          { '@type': 'ListItem', position: 1, name: SITE_NAME, item: home },
           { '@type': 'ListItem', position: 2, name, item: url },
         ],
       },

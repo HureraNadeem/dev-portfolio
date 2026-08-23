@@ -5,7 +5,6 @@ import Image from 'next/image';
 import { Fade } from 'react-awesome-reveal';
 
 interface Props {
-  key: number;
   name: string;
   instructor: string;
   imgsrc: string;
