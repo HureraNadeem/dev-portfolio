@@ -14,41 +14,49 @@
 export default function NotFoundIllustration() {
   return (
     <svg
+      /* Inherits the themed text colour rather than a baked-in ink value. */
       viewBox="0 0 480 400"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
       focusable="false"
     >
       {/* Floor, far below the dangling feet, to sell the height. */}
-      <ellipse className="notfound-shadow" cx="238" cy="356" rx="78" ry="13" fill="#E6E6E6" />
+      <ellipse
+        className="notfound-shadow notfound-ground"
+        cx="238"
+        cy="356"
+        rx="78"
+        ry="13"
+        fill="currentColor"
+      />
 
       {/* The bar stays put; only the figure below it swings. */}
-      <rect x="52" y="56" width="376" height="14" rx="7" fill="#313638" />
+      <rect x="52" y="56" width="376" height="14" rx="7" fill="currentColor" />
 
       <g className="notfound-swing">
         <rect x="194" y="164" width="58" height="82" rx="29" fill="#fca311" />
 
         <path
           d="M214 240 L206 300"
-          stroke="#313638"
+          stroke="currentColor"
           strokeWidth="14"
           strokeLinecap="round"
           fill="none"
         />
         <path
           d="M234 240 L246 302"
-          stroke="#313638"
+          stroke="currentColor"
           strokeWidth="14"
           strokeLinecap="round"
           fill="none"
         />
-        <ellipse cx="203" cy="306" rx="13" ry="8" fill="#313638" />
-        <ellipse cx="249" cy="308" rx="13" ry="8" fill="#313638" />
+        <ellipse cx="203" cy="306" rx="13" ry="8" fill="currentColor" />
+        <ellipse cx="249" cy="308" rx="13" ry="8" fill="currentColor" />
 
         {/* Free arm, hanging as uselessly as the page it illustrates. */}
         <path
           d="M202 184 L184 232"
-          stroke="#313638"
+          stroke="currentColor"
           strokeWidth="13"
           strokeLinecap="round"
           fill="none"
@@ -59,12 +67,12 @@ export default function NotFoundIllustration() {
         {/* Gripping arm last so it sits in front of the head and body. */}
         <path
           d="M243 178 L250 70"
-          stroke="#313638"
+          stroke="currentColor"
           strokeWidth="13"
           strokeLinecap="round"
           fill="none"
         />
-        <circle cx="250" cy="63" r="13" fill="#313638" />
+        <circle cx="250" cy="63" r="13" fill="currentColor" />
       </g>
     </svg>
   );

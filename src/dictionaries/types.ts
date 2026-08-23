@@ -33,6 +33,9 @@ export type Dictionary = {
     madeWith: string;
     scrollToTop: string;
     toggleMenu: string;
+    theme: string;
+    switchToLight: string;
+    switchToDark: string;
   };
   meta: {
     siteTitle: string;

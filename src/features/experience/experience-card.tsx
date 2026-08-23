@@ -30,7 +30,7 @@ const ExperienceCard: FC<Props> = ({
     <>
       <Fade triggerOnce direction="up" style={{ width: '100%' }}>
         <div
-          className={`employement-card my-[15px] flex flex-row items-start justify-start gap-[2%] rounded-lg border-[1px] border-neutral-400 px-5 py-3 shadow-sm sm:flex-col sm:items-center sm:px-[15px] sm:py-[25px] md:flex-col md:items-center md:px-[15px] md:py-[25px] ${lastOne ? 'mb-[50px]' : ''}`}
+          className={`employement-card my-[15px] flex flex-row items-start justify-start gap-[2%] rounded-lg border-[1px] border-line-color px-5 py-3 shadow-sm sm:flex-col sm:items-center sm:px-[15px] sm:py-[25px] md:flex-col md:items-center md:px-[15px] md:py-[25px] ${lastOne ? 'mb-[50px]' : ''}`}
         >
           {/* <div className="company-logo pb-3 min-w-min max-w-min sm:self-center md:self-center">
                         <Image className='w-70px h-70px min-w-min max-w-min' src={require(`../../public/assets/images/${logo}`)} alt='company_logo' />

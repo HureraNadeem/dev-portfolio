@@ -41,7 +41,7 @@ const ProjectCard: FC<Props> = ({
           font-size: 13px;
           z-index: 100;
           white-space: nowrap;
-          box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+          box-shadow: 0 2px 8px rgb(var(--color-shadow) / 0.55);
           pointer-events: none;
           opacity: 0;
           transition: opacity 0.2s;

@@ -21,6 +21,9 @@ const en: Dictionary = {
     madeWith: 'Made with 🖤 by',
     scrollToTop: 'Scroll to top',
     toggleMenu: 'Toggle navigation menu',
+    theme: 'Theme',
+    switchToLight: 'Switch to light mode',
+    switchToDark: 'Switch to dark mode',
   },
   meta: {
     siteTitle: 'Hurera Nadeem — Full-Stack Developer',

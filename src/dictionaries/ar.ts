@@ -23,6 +23,9 @@ const ar: Dictionary = {
     madeWith: 'صُنع بـ 🖤 بواسطة',
     scrollToTop: 'العودة إلى الأعلى',
     toggleMenu: 'فتح قائمة التنقل أو إغلاقها',
+    theme: 'المظهر',
+    switchToLight: 'التبديل إلى الوضع الفاتح',
+    switchToDark: 'التبديل إلى الوضع الداكن',
   },
   meta: {
     siteTitle: 'حريرة نديم — مطوّر ويب متكامل',

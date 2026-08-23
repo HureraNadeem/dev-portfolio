@@ -19,6 +19,9 @@ const es: Dictionary = {
     madeWith: 'Hecho con 🖤 por',
     scrollToTop: 'Volver arriba',
     toggleMenu: 'Abrir o cerrar el menú de navegación',
+    theme: 'Tema',
+    switchToLight: 'Cambiar al modo claro',
+    switchToDark: 'Cambiar al modo oscuro',
   },
   meta: {
     siteTitle: 'Hurera Nadeem — Desarrollador Full-Stack',

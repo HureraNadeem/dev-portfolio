@@ -11,6 +11,7 @@ import { LOCALES, LOCALE_META, isLocale, type Locale } from '@/config/i18n';
 import { OG_IMAGE, SITE_NAME, SITE_URL } from '@/config/site';
 import { getDictionary } from '@/dictionaries';
 import { localeAlternates } from '@/lib/seo';
+import { THEME_INIT_SCRIPT } from '@/lib/theme';
 
 /**
  * This is the root layout — there is deliberately no `app/layout.tsx` above it.
@@ -104,7 +105,12 @@ export default async function RootLayout({
   const { dir } = LOCALE_META[locale];
 
   return (
-    <html lang={LOCALE_META[locale].htmlLang} dir={dir}>
+    <html lang={LOCALE_META[locale].htmlLang} dir={dir} suppressHydrationWarning>
+      <head>
+        {/* Blocking and inline on purpose — see THEME_INIT_SCRIPT. Anything
+            deferred would paint the wrong palette first. */}
+        <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
+      </head>
       {/*
         Sticky-footer shell. The page background only ever came from the navbar,
         each Wrapper and the footer, so a short page left the footer floating

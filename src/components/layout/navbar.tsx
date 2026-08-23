@@ -10,6 +10,7 @@ import { ROUTES } from '@/config/site';
 import { localePath, type Locale } from '@/config/i18n';
 import type { Dictionary } from '@/dictionaries';
 import LanguageSwitcher from './language-switcher';
+import ThemeToggle from './theme-toggle';
 
 export default function Navbar({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   const pathname = usePathname();
@@ -34,8 +35,8 @@ export default function Navbar({ locale, dict }: { locale: Locale; dict: Diction
 
   return (
     <>
-      <nav className="navbar flex h-28 flex-row items-center justify-between bg-main-bg-color py-2 sm:hidden md:hidden lg:px-14 xl:px-24 2xl:px-36">
-        <div className="logo-div">
+      <nav className="navbar flex h-28 flex-row items-center justify-between bg-main-bg-color py-2 sm:hidden md:hidden lg:px-8 xl:px-12 2xl:px-20">
+        <div className="logo-div whitespace-nowrap">
           <Link href={localePath(locale, '/')}>
             <span className="underline lg:text-xl xl:text-2xl 2xl:text-3xl">&lt;</span>
             <span className="font-AgustinaRegular pl-1 pr-1 underline lg:text-xl xl:text-2xl 2xl:text-3xl">
@@ -46,11 +47,11 @@ export default function Navbar({ locale, dict }: { locale: Locale; dict: Diction
           </Link>
         </div>
         <div className="nav-links div">
-          <ul className="flex flex-row items-center justify-around lg:gap-5 xl:gap-7 2xl:gap-11">
+          <ul className="flex flex-row items-center justify-around lg:gap-4 xl:gap-6 2xl:gap-8">
             {ROUTES.map(({ href }) => (
               <Link key={href} href={localePath(locale, href)}>
                 <li
-                  className={`lg:text-16px xl:text-18px 2xl:text-19px ${isActive(href) ? styles.activeLink : ''} ${styles.underlineTransition}`}
+                  className={`whitespace-nowrap lg:text-16px xl:text-18px 2xl:text-19px ${isActive(href) ? styles.activeLink : ''} ${styles.underlineTransition}`}
                 >
                   {navLabel(href)}
                 </li>
@@ -58,7 +59,14 @@ export default function Navbar({ locale, dict }: { locale: Locale; dict: Diction
             ))}
           </ul>
         </div>
-        <LanguageSwitcher locale={locale} label={dict.common.languageLabel} />
+        <div className="flex flex-row items-center gap-3">
+          <LanguageSwitcher locale={locale} label={dict.common.languageLabel} />
+          <ThemeToggle
+            label={dict.common.theme}
+            toLight={dict.common.switchToLight}
+            toDark={dict.common.switchToDark}
+          />
+        </div>
       </nav>
 
       <nav className="navbar flex flex-col bg-main-bg-color py-10 sm:px-10 md:px-10 lg:hidden xl:hidden 2xl:hidden">
@@ -106,7 +114,14 @@ export default function Navbar({ locale, dict }: { locale: Locale; dict: Diction
               </Link>
             ))}
           </ul>
-          <LanguageSwitcher locale={locale} label={dict.common.languageLabel} className="mt-4" />
+          <div className="mt-4 flex flex-row items-center gap-3">
+            <LanguageSwitcher locale={locale} label={dict.common.languageLabel} />
+            <ThemeToggle
+              label={dict.common.theme}
+              toLight={dict.common.switchToLight}
+              toDark={dict.common.switchToDark}
+            />
+          </div>
         </div>
       </nav>
     </>

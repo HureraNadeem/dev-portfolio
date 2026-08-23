@@ -21,6 +21,7 @@ This repository contains the source code and for my personal dev portfolio websi
 - React Awesome Reveal
 - ESLint + Prettier
 - Multilingual (en / es / fr / ar) with RTL support
+- Light / dark theme with system preference support
 
 ## Project structure
 
@@ -108,6 +109,32 @@ locally it is one command per clone:
 ```bash
 git config blame.ignoreRevsFile .git-blame-ignore-revs
 ```
+
+## Theming
+
+Light and dark, with the reader's choice remembered and the system preference
+respected until they make one.
+
+**One set of tokens, no `dark:` sprinkled through components.** The palette in
+`tailwind.config.js` resolves through CSS variables, so the utilities already in
+the markup (`bg-main-bg-color`, `text-text-color`, …) are theme-aware on their
+own. Only a handful of places — the toggle knob, the 404 illustration — need an
+explicit `dark:` variant. Channels are stored space-separated so Tailwind's
+opacity modifiers still work (`bg-card-bg-color/60`).
+
+**The dark palette is deliberately not black.** The light theme is a soft
+off-white rather than pure white, so its counterpart is an elevated charcoal
+(`#24282b`) rather than `#000`. Pure black behind off-white text produces
+halation that makes long passages harder to read, and this site is mostly long
+passages.
+
+**Three states, in precedence order:** no stored choice follows
+`prefers-color-scheme`; an explicit choice wins in either direction; and the
+`data-theme` attribute on `<html>` is what both the tokens and Tailwind's
+`dark:` variant key off. A blocking inline script in `<head>` resolves and
+stamps that attribute before first paint — an effect would run after paint and
+flash the wrong palette. If the OS theme changes while the page is open, it is
+followed only when the reader has not chosen for themselves.
 
 ## Internationalisation
 

@@ -47,7 +47,7 @@ function EducationView({ dict }: { dict: Dictionary }) {
         <div className="degree-card flex flex-row items-center justify-between sm:flex-col sm:gap-7 md:flex-col md:gap-7 lg:flex-col lg:gap-3 xl:gap-3 2xl:gap-3">
           <div
             style={{ borderRadius: '50%' }}
-            className="degree-logo-div border-dee2e6 rounded-50% border-2 border-solid p-10px shadow-lg sm:w-50vw md:w-35vw lg:w-30vw"
+            className="degree-logo-div rounded-50% border-2 border-solid border-line-color p-10px shadow-lg sm:w-50vw md:w-35vw lg:w-30vw"
           >
             <Flip direction="vertical" triggerOnce>
               <Link href={'https://www.linkedin.com/school/nustofficial/'} target="_blank">
@@ -63,16 +63,8 @@ function EducationView({ dict }: { dict: Dictionary }) {
               </Link>
             </Flip>
           </div>
-          <div className="degree-details-div border-dee2e6 rounded-lg border-2 border-solid shadow-lg">
-            <div
-              style={{
-                background: 'rgba(255, 255, 255, 0.1)',
-                boxShadow:
-                  'inset 43.3667px -43.3667px 43.3667px rgba(173, 173, 173, 0.1), inset -43.3667px 43.3667px 43.3667px rgba(255, 255, 255, 0.1)',
-                backdropFilter: 'blur(43.3667px)',
-              }}
-              className="flex flex-row justify-between gap-2 border sm:flex-col sm:p-15px md:flex-col md:p-15px lg:p-20px xl:p-20px 2xl:p-20px"
-            >
+          <div className="degree-details-div rounded-lg border-2 border-solid border-line-color shadow-lg">
+            <div className="degree-header flex flex-row justify-between gap-2 border border-line-color sm:flex-col sm:p-15px md:flex-col md:p-15px lg:p-20px xl:p-20px 2xl:p-20px">
               <div className="flex flex-col justify-between">
                 <h3 className="mb-4 mt-2 text-23px font-semibold">{education.university}</h3>
                 <h4 className="text-18px font-semibold">{education.degree}</h4>
