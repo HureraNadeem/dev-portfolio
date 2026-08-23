@@ -1,11 +1,17 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Wrapper from '@/components/layout/wrapper';
-import { GithubSVG, LinkedInSVG, InstagramSVG, FacebookSVG } from '@/components/icons/social-icons';
+import {
+  GithubSVG,
+  LinkedInSVG,
+  UpworkSVG,
+  InstagramSVG,
+  FacebookSVG,
+} from '@/components/icons/social-icons';
 import ProfilePicture from '@public/assets/images/dp.png';
 import SocialIconBadge from '@/components/ui/social-icon-badge';
 import type { Dictionary } from '@/dictionaries';
-import { RESUME_URL } from '@/config/site';
+import { CALENDLY_URL, RESUME_URL } from '@/config/site';
 
 export default function Greeting({ dict }: { dict: Dictionary }) {
   return (
@@ -26,6 +32,15 @@ export default function Greeting({ dict }: { dict: Dictionary }) {
                   <LinkedInSVG />
                 </SocialIconBadge>
               </Link>
+              <Link
+                href="https://www.upwork.com/freelancers/~01604935e54f0437cf"
+                passHref={true}
+                target="_blank"
+              >
+                <SocialIconBadge bgcolor={'#14A800'}>
+                  <UpworkSVG />
+                </SocialIconBadge>
+              </Link>
               <Link href="https://www.instagram.com/iamhurera/" passHref={true} target="_blank">
                 <SocialIconBadge bgcolor={'rgb(214,41,118)'}>
                   <InstagramSVG />
@@ -42,16 +57,27 @@ export default function Greeting({ dict }: { dict: Dictionary }) {
                 </SocialIconBadge>
               </Link>
             </div>
-            <div
-              className={`resume-div font-GoogleSans-Regular mr-0 mt-5 block max-w-max cursor-pointer rounded-md bg-text-color px-6 py-3 text-center font-sans text-lg font-medium leading-tight tracking-wide text-main-bg-color no-underline`}
-            >
+            {/* Resume and booking as a pair: one is the artefact to read,
+                  the other the next step to take. Resume keeps the filled
+                  treatment because it is what most visitors arrive for, and
+                  booking is an outline so the two read as a choice — the same
+                  pairing the contact page uses. */}
+            <div className="mt-5 flex flex-row flex-wrap items-center gap-3 sm:justify-center md:justify-center">
               <Link
                 href={RESUME_URL}
                 target="_blank"
                 rel="noreferrer"
-                className="font-GoogleSans-Regular"
+                className="font-GoogleSans-Regular block max-w-max cursor-pointer rounded-md bg-text-color px-6 py-3 text-center font-sans text-lg font-medium leading-tight tracking-wide text-main-bg-color no-underline transition-transform duration-300 hover:scale-105"
               >
                 {dict.common.resume}
+              </Link>
+              <Link
+                href={CALENDLY_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="font-GoogleSans-Regular block max-w-max cursor-pointer rounded-md border border-text-color px-6 py-3 text-center font-sans text-lg font-medium leading-tight tracking-wide text-text-color no-underline transition-transform duration-300 hover:scale-105"
+              >
+                {dict.common.bookCall}
               </Link>
             </div>
           </div>
@@ -59,7 +85,12 @@ export default function Greeting({ dict }: { dict: Dictionary }) {
           {/* <Fade> */}
           <div className="animate-fade-in flex items-center justify-center sm:mb-8 md:mb-8 lg:w-50% xl:w-50% 2xl:w-50%">
             <div className="img-div flex items-center sm:h-80vw sm:w-80vw md:h-65vw md:w-65vw lg:h-432px lg:w-432px xl:h-432px xl:w-432px 2xl:h-432px 2xl:w-432px">
-              <Image src={ProfilePicture} alt="hurera.jpeg" style={{ borderRadius: '50%' }} />
+              <Image
+                src={ProfilePicture}
+                alt={dict.home.greetingTitle}
+                priority
+                style={{ borderRadius: '50%' }}
+              />
             </div>
           </div>
           {/* </Fade> */}

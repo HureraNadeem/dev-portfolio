@@ -26,11 +26,15 @@ export const SITE_ROLE = 'Full-Stack Software Engineer';
 export const SOCIAL_LINKS = [
   'https://github.com/HureraNadeem',
   'https://www.linkedin.com/in/iamhurera/',
+  'https://www.upwork.com/freelancers/~01604935e54f0437cf',
   'https://www.instagram.com/iamhurera/',
   'https://www.facebook.com/iamhurera',
 ];
 
 export const CONTACT_EMAIL = 'muhammadhureran8@gmail.com';
+
+/** Booking link, offered next to email on the contact page. */
+export const CALENDLY_URL = 'https://calendly.com/iamhurera/30min';
 
 /** Publicly shared CV. Kept here so the button and llms.txt cannot disagree. */
 export const RESUME_URL =

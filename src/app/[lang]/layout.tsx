@@ -7,10 +7,12 @@ import Navbar from '@/components/layout/navbar';
 import Footer from '@/components/layout/footer';
 import ScrollToTopButton from '@/components/layout/scroll-to-top-button';
 import FontAwesomeConfig from '@/lib/fontawesome';
+import ThemeGuard from '@/components/layout/theme-guard';
 import { LOCALES, LOCALE_META, isLocale, type Locale } from '@/config/i18n';
 import { OG_IMAGE, SITE_NAME, SITE_URL } from '@/config/site';
 import { getDictionary } from '@/dictionaries';
 import { localeAlternates } from '@/lib/seo';
+import { THEME_INIT_SCRIPT } from '@/lib/theme';
 
 /**
  * This is the root layout — there is deliberately no `app/layout.tsx` above it.
@@ -104,7 +106,24 @@ export default async function RootLayout({
   const { dir } = LOCALE_META[locale];
 
   return (
-    <html lang={LOCALE_META[locale].htmlLang} dir={dir}>
+    <html lang={LOCALE_META[locale].htmlLang} dir={dir} suppressHydrationWarning>
+      <head>
+        {/*
+          A real inline <script>, deliberately not next/script.
+
+          `beforeInteractive` does not emit an inline tag — it pushes the source
+          onto Next's `self.__next_s` queue, which its runtime drains once
+          hydration is under way. That is far too late: the page paints in the
+          wrong palette first and the toggle renders in the wrong position until
+          the queue is flushed.
+
+          React logs an error for script tags a component renders, because they
+          do not execute on client-side navigation. That is dev-only noise and
+          harmless here — this only ever needs to run on a hard load — whereas
+          a mistimed theme is visible to every reader on every refresh.
+        */}
+        <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
+      </head>
       {/*
         Sticky-footer shell. The page background only ever came from the navbar,
         each Wrapper and the footer, so a short page left the footer floating
@@ -113,6 +132,7 @@ export default async function RootLayout({
       */}
       <body suppressHydrationWarning className="flex min-h-screen flex-col bg-main-bg-color">
         <FontAwesomeConfig />
+        <ThemeGuard />
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:m-3 focus:rounded-md focus:bg-text-color focus:px-4 focus:py-2 focus:text-main-bg-color"

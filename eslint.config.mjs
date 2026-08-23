@@ -38,6 +38,14 @@ const eslintConfig = [
     },
   },
 
+  {
+    // no-console exists because the app is a static export with no server to
+    // log to, so a stray log ships to a visitor's devtools. Build scripts run
+    // in a terminal, where printing what they did is the point.
+    files: ['scripts/**/*.{js,mjs,ts}'],
+    rules: { 'no-console': 'off' },
+  },
+
   // Must come last: switches off every stylistic rule Prettier already owns,
   // so the two never disagree about the same line.
   prettier,

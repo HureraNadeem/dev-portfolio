@@ -18,11 +18,15 @@ const ar: Dictionary = {
   },
   common: {
     resume: 'السيرة الذاتية 📄',
+    bookCall: 'احجز مكالمة مدتها ٣٠ دقيقة 📅',
     languageLabel: 'اللغة',
     skipToContent: 'تخطَّ إلى المحتوى',
-    madeWith: 'صُنع بـ 🖤 بواسطة',
+    madeWith: 'صُنع بـ {heart} بواسطة',
     scrollToTop: 'العودة إلى الأعلى',
     toggleMenu: 'فتح قائمة التنقل أو إغلاقها',
+    theme: 'المظهر',
+    switchToLight: 'التبديل إلى الوضع الفاتح',
+    switchToDark: 'التبديل إلى الوضع الداكن',
   },
   meta: {
     siteTitle: 'حريرة نديم — مطوّر ويب متكامل',
@@ -48,7 +52,6 @@ const ar: Dictionary = {
       description:
         'تواصل مع حريرة نديم — عبر GitHub أو LinkedIn أو Instagram أو Facebook، أو راسلني بالبريد الإلكتروني.',
     },
-    notFound: { title: '٤٠٤ — الصفحة غير موجودة', description: 'هذه الصفحة غير موجودة.' },
   },
   home: {
     greetingTitle: 'أهلًا! أنا حريرة',
@@ -391,14 +394,6 @@ const ar: Dictionary = {
     ],
     emailNote: 'البريد الإلكتروني أضمن وسيلة للوصول إليّ، وعادةً ما أردّ خلال يومين.',
     cta: 'راسلني بالبريد الإلكتروني 📧',
-  },
-  notFound: {
-    eyebrow: '٤٠٤',
-    title: 'هذه الصفحة معلّقة في مكان ما',
-    body: 'وهي طريقة طريفة للقول إنها غير موجودة. فإمّا أن الرابط معطّل، وإمّا أنني نقلت شيئًا ونسيت ترك عنوان جديد. في الحالتين، لا شيء هنا لتراه. 🙃',
-    cta: 'خذني إلى الرئيسية 🏠',
-    suggestionsLabel: 'أو تابع من حيث أردت الذهاب:',
-    suggestedPages: 'صفحات مقترحة',
   },
 };
 

@@ -1,6 +1,7 @@
 import { DEFAULT_LOCALE, LOCALES, LOCALE_META, localePath } from '@/config/i18n';
 import {
   ALMA_MATER,
+  CALENDLY_URL,
   CONTACT_EMAIL,
   RESUME_URL,
   ROUTES,
@@ -78,6 +79,7 @@ ${SOCIAL_LINKS.map((url) => `- ${url}`).join('\n')}
 
 - Email: ${CONTACT_EMAIL}
 - Resume/CV: ${RESUME_URL}
+- Book a 30-minute call: ${CALENDLY_URL}
 
 ## Notes
 

@@ -9,6 +9,7 @@ const SocialIconBadge: FC<SocialIconBadgeProps> = ({ children, bgcolor }: Social
   return (
     <>
       <span
+        className="social-badge"
         style={{
           borderRadius: '2.6rem',
           cursor: 'pointer',

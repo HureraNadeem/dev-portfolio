@@ -27,13 +27,19 @@ type LocaleMeta = {
   dir: 'ltr' | 'rtl';
   /** Used by Open Graph, which wants `language_TERRITORY`. */
   ogLocale: string;
+  /**
+   * Shown in the language menu. Flags stand for countries, not languages —
+   * Arabic is not Saudi and English is not British — so these are decoration
+   * beside the name, never the only thing identifying an option.
+   */
+  flag: string;
 };
 
 export const LOCALE_META: Record<Locale, LocaleMeta> = {
-  en: { label: 'English', htmlLang: 'en', dir: 'ltr', ogLocale: 'en_US' },
-  es: { label: 'Español', htmlLang: 'es', dir: 'ltr', ogLocale: 'es_ES' },
-  fr: { label: 'Français', htmlLang: 'fr', dir: 'ltr', ogLocale: 'fr_FR' },
-  ar: { label: 'العربية', htmlLang: 'ar', dir: 'rtl', ogLocale: 'ar_AR' },
+  en: { label: 'English', htmlLang: 'en', dir: 'ltr', ogLocale: 'en_US', flag: '🇬🇧' },
+  es: { label: 'Español', htmlLang: 'es', dir: 'ltr', ogLocale: 'es_ES', flag: '🇪🇸' },
+  fr: { label: 'Français', htmlLang: 'fr', dir: 'ltr', ogLocale: 'fr_FR', flag: '🇫🇷' },
+  ar: { label: 'العربية', htmlLang: 'ar', dir: 'rtl', ogLocale: 'ar_AR', flag: '🇸🇦' },
 };
 
 export function isLocale(value: string): value is Locale {

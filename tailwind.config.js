@@ -1,16 +1,28 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
+
+  // The resolved theme is stamped onto <html> as a data attribute by the
+  // pre-paint script, so `dark:` has to key off that attribute. Left at the
+  // default, Tailwind compiles `dark:` against prefers-color-scheme, which
+  // means the toggle changes the palette but every `dark:` utility keeps
+  // following the OS — the knob would never move.
+  darkMode: ['selector', '[data-theme="dark"]'],
   theme: {
     extend: {
+      // Every colour resolves through a CSS variable so the existing utilities
+      // (bg-main-bg-color, text-text-color, ...) become theme-aware without a
+      // single `dark:` variant in the components. The channels are stored
+      // space-separated so Tailwind's opacity modifiers still work, e.g.
+      // `bg-card-bg-color/60`.
       colors: {
-        'text-color': '#313638',
-        // 'text-color': '#313638',
-        // 'main-bg-color': "#f2f2f2",
-        'main-bg-color': '#f5f5f5',
-        'secondary-bg-color': '#eef0eb',
-        // 'secondary-bg-color': '#dee2e6',
-        'card-bg-color': '#fff',
+        'text-color': 'rgb(var(--color-text) / <alpha-value>)',
+        'main-bg-color': 'rgb(var(--color-bg) / <alpha-value>)',
+        'secondary-bg-color': 'rgb(var(--color-bg-secondary) / <alpha-value>)',
+        'card-bg-color': 'rgb(var(--color-card) / <alpha-value>)',
+        'muted-color': 'rgb(var(--color-muted) / <alpha-value>)',
+        'line-color': 'rgb(var(--color-line) / <alpha-value>)',
+        accent: 'rgb(var(--color-accent) / <alpha-value>)',
       },
       fontFamily: {
         'main-font': ['GoogleSans-Regular', 'sans-serif'],
@@ -155,6 +167,13 @@ module.exports = {
 
       // Extra large screens
       '2xl': { min: '1201px' },
+
+      // Very wide screens. 2xl has no upper bound, so its styles have to suit
+      // its narrowest case (1201px); this hands the roomier treatment back once
+      // there is space for it. A named screen rather than a `min-[...]`
+      // arbitrary variant, which Tailwind ignores alongside an object-based
+      // screens config — it warns and silently drops the class.
+      '3xl': { min: '1500px' },
     },
   },
   plugins: [],

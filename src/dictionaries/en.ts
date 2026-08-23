@@ -16,11 +16,15 @@ const en: Dictionary = {
   },
   common: {
     resume: 'Resume 📄',
+    bookCall: 'Book a 30-min call 📅',
     languageLabel: 'Language',
     skipToContent: 'Skip to content',
-    madeWith: 'Made with 🖤 by',
+    madeWith: 'Made with {heart} by',
     scrollToTop: 'Scroll to top',
     toggleMenu: 'Toggle navigation menu',
+    theme: 'Theme',
+    switchToLight: 'Switch to light mode',
+    switchToDark: 'Switch to dark mode',
   },
   meta: {
     siteTitle: 'Hurera Nadeem — Full-Stack Developer',
@@ -46,7 +50,6 @@ const en: Dictionary = {
       description:
         'Get in touch with Hurera Nadeem — connect on GitHub, LinkedIn, Instagram and Facebook, or reach out via email.',
     },
-    notFound: { title: '404 — Page Not Found', description: 'This page does not exist.' },
   },
   home: {
     greetingTitle: 'Wassup! this is Hurera',
@@ -390,14 +393,6 @@ const en: Dictionary = {
     ],
     emailNote: 'Email is the surest way to reach me; I usually reply within a couple of days.',
     cta: 'Reach me via email 📧',
-  },
-  notFound: {
-    eyebrow: '404',
-    title: 'This page is just hangin’ around',
-    body: 'Which is a fun way of saying it doesn’t exist. Either the link is broken, or I moved something and forgot to leave a forwarding address. Either way — nothing to see here. 🙃',
-    cta: 'Take me home 🏠',
-    suggestionsLabel: 'Or pick up where you meant to go:',
-    suggestedPages: 'Suggested pages',
   },
 };
 

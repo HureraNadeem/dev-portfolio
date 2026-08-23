@@ -2,10 +2,122 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ---------------------------------------------------------------------------
+   Theme tokens
+   Channels are space-separated RGB so Tailwind can apply opacity modifiers to
+   them (see tailwind.config.js).
+
+   The dark palette stops just short of black. Pure #000 behind off-white text
+   produces halation that makes long passages hard to read, and this site is
+   mostly long passages — but #0e1011 sits close enough to it to read as a true
+   dark theme.
+
+   Surfaces climb in deliberate steps so depth survives the darkness:
+   page 14 -> card 22 -> fills 30 -> borders 45. Without that ladder everything
+   collapses into one flat sheet at this range, and the steps have to stay wide
+   as the page darkens or the card edges stop being visible at all.
+   --------------------------------------------------------------------------- */
 :root {
-  --text-color: '#313638';
-  --main-bg-color: '#f5f5f5';
-  --secondary-bg-color: '#eef0eb', /* --secondary-bg-color: '#F2F2F2', */ --card-bg-color: '#fff';
+  color-scheme: light;
+
+  --color-text: 49 54 56; /* #313638 */
+  --color-bg: 245 245 245; /* #f5f5f5 */
+  --color-bg-secondary: 238 240 235; /* #eef0eb */
+  --color-card: 255 255 255; /* #ffffff */
+  --color-muted: 92 99 102; /* #5c6366 */
+  --color-line: 217 219 223; /* #d9dbdf */
+  --color-shadow: 217 219 223; /* #d9dbdf */
+  --color-accent: 252 163 17; /* #fca311 — unchanged across themes */
+}
+
+/* Three states, in precedence order.
+
+   1. No stored choice: follow the operating system. Guarded with
+      `:not([data-theme='light'])` so a reader who explicitly picked light is
+      not overridden by their OS being dark.
+   2. An explicit choice always wins, in either direction. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
+
+    --color-text: 232 234 233; /* #e8eae9 — off-white, not #fff */
+    --color-bg: 14 16 17; /* #0e1011 — the page itself */
+    --color-card: 22 25 27; /* #16191b — raised surfaces */
+    --color-bg-secondary: 30 34 37; /* #1e2225 — headers, fills */
+    --color-line: 45 51 55; /* #2d3337 — borders */
+    --color-muted: 143 151 155; /* #8f979b */
+    --color-shadow: 0 0 0; /* #000000 */
+  }
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+
+  --color-text: 232 234 233;
+  --color-bg: 14 16 17;
+  --color-card: 22 25 27;
+  --color-bg-secondary: 30 34 37;
+  --color-line: 45 51 55;
+  --color-muted: 143 151 155;
+  --color-shadow: 0 0 0;
+}
+
+/* ---------------------------------------------------------------------------
+   Illustration palette
+
+   The Undraw artwork was drawn against this site's own neutrals — its ink is
+   literally #313638, the light theme's text colour — so its greys can be
+   pointed at the theme tokens instead of being frozen. Defined in terms of the
+   existing tokens, so they flip with the theme without a second set of values
+   to keep in sync, and light mode renders essentially unchanged.
+
+   Only neutrals are mapped. Every chromatic fill — the skin tones, the greens,
+   the #fca311 accent — stays exactly as the illustrator set it, because those
+   carry the artwork rather than sitting behind it.
+   --------------------------------------------------------------------------- */
+:root {
+  --art-ink: rgb(var(--color-text));
+  --art-paper: rgb(var(--color-card));
+  --art-muted: rgb(var(--color-bg-secondary));
+}
+
+/* A black brand mark on a near-black page is a black square. The badge keeps
+   its brand colour and gains an edge, so it stays a recognisable shape. */
+.social-badge {
+  box-shadow: inset 0 0 0 1px rgb(var(--color-line));
+}
+
+/* Only the surfaces that actually change colour, so switching themes fades
+   rather than snaps without putting a transition on every element on the page. */
+body,
+nav,
+footer,
+main,
+.wrapper,
+.employement-card,
+.employement-type-heading,
+.certificate-card,
+.degree-details-div,
+.degree-logo-div {
+  transition:
+    background-color 220ms ease,
+    color 220ms ease,
+    border-color 220ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body,
+  nav,
+  footer,
+  main,
+  .wrapper,
+  .employement-card,
+  .employement-type-heading,
+  .certificate-card,
+  .degree-details-div,
+  .degree-logo-div {
+    transition: none;
+  }
 }
 
 * {
@@ -18,6 +130,17 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+}
+
+/* Text colour was never actually applied: `--text-color` existed but nothing
+   consumed it, so light mode rendered pure UA black rather than the #313638 the
+   palette specifies, and dark mode only looked right because `color-scheme`
+   makes the UA flip its own default. Stating both ends explicitly means the
+   token is the single source of truth and `currentColor` — which the 404
+   illustration relies on — inherits something we control. */
+body {
+  background-color: rgb(var(--color-bg));
+  color: rgb(var(--color-text));
 }
 
 a {
@@ -245,83 +368,6 @@ p {
 }
 
 /* ---------------------------------------------------------------------------
-   404 illustration
-   Breakpoints mirror tailwind.config.js, which uses max-width ranges:
-   sm <= 480px, md 481-768px.
-   --------------------------------------------------------------------------- */
-.notfound-illustration {
-  width: 100%;
-  max-width: 380px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.notfound-illustration > svg {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-@media (max-width: 768px) {
-  .notfound-illustration {
-    max-width: 280px;
-  }
-}
-
-@media (max-width: 480px) {
-  .notfound-illustration {
-    max-width: 220px;
-  }
-}
-
-/* Pivot on the fist gripping the bar rather than the centre of the artwork,
-   otherwise the figure orbits instead of swinging. */
-.notfound-swing {
-  transform-box: view-box;
-  transform-origin: 250px 63px;
-  animation: notfound-swing 3.6s ease-in-out infinite;
-}
-
-@keyframes notfound-swing {
-  0%,
-  100% {
-    transform: rotate(-5deg);
-  }
-
-  50% {
-    transform: rotate(5deg);
-  }
-}
-
-/* Half the swing's period: the figure crosses over the shadow twice per swing,
-   so the shadow tightens and darkens on each pass rather than once. */
-.notfound-shadow {
-  transform-box: view-box;
-  transform-origin: 238px 356px;
-  animation: notfound-shadow 1.8s ease-in-out infinite;
-}
-
-@keyframes notfound-shadow {
-  0%,
-  100% {
-    transform: scaleX(0.88);
-    opacity: 0.6;
-  }
-
-  50% {
-    transform: scaleX(1);
-    opacity: 1;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .notfound-swing,
-  .notfound-shadow {
-    animation: none;
-  }
-}
-
-/* ---------------------------------------------------------------------------
    Right-to-left / Arabic
    --------------------------------------------------------------------------- */
 
@@ -330,7 +376,10 @@ p {
    occasionally lands on a decorative face. Name a real stack so the Arabic
    build looks deliberate everywhere, and let the Latin fonts keep handling the
    technology names that stay in Latin script. */
-[lang='ar'] body,
+/* `:lang(ar)` rather than `[lang='ar'] body`, so this also catches a single
+   Arabic label sitting inside an otherwise English page — the language menu
+   lists every language in its own script. */
+:lang(ar),
 [lang='ar'] .font-GoogleSans-Regular {
   font-family:
     'Noto Naskh Arabic', 'Geeza Pro', 'Segoe UI', Tahoma, 'Arabic Typesetting', sans-serif;
@@ -338,6 +387,7 @@ p {
 
 /* The script logo is a Latin display face; keep it Latin even on the Arabic
    build, where it renders the name as written. */
+:lang(ar) .font-AgustinaRegular,
 [lang='ar'] .font-AgustinaRegular {
   font-family: 'Agustina Regular', sans-serif;
 }
@@ -354,4 +404,11 @@ p {
    keeps content entering from the same side it reads from. */
 [dir='rtl'] .svg-div {
   direction: rtl;
+}
+
+/* The degree panel used a frosted-glass effect built from white overlays, which
+   reads as a bright slab once the page behind it is dark. A flat surface token
+   works in both themes and costs no backdrop-filter. */
+.degree-header {
+  background-color: rgb(var(--color-bg-secondary));
 }

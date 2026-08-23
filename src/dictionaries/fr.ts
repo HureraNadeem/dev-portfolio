@@ -14,11 +14,15 @@ const fr: Dictionary = {
   },
   common: {
     resume: 'CV 📄',
+    bookCall: 'Réserver un appel de 30 min 📅',
     languageLabel: 'Langue',
     skipToContent: 'Aller au contenu',
-    madeWith: 'Réalisé avec 🖤 par',
+    madeWith: 'Réalisé avec {heart} par',
     scrollToTop: 'Revenir en haut',
     toggleMenu: 'Ouvrir ou fermer le menu de navigation',
+    theme: 'Thème',
+    switchToLight: 'Passer au mode clair',
+    switchToDark: 'Passer au mode sombre',
   },
   meta: {
     siteTitle: 'Hurera Nadeem — Développeur Full-Stack',
@@ -44,7 +48,6 @@ const fr: Dictionary = {
       description:
         'Contactez Hurera Nadeem : retrouvez-moi sur GitHub, LinkedIn, Instagram et Facebook, ou écrivez-moi par e-mail.',
     },
-    notFound: { title: '404 — Page introuvable', description: 'Cette page n’existe pas.' },
   },
   home: {
     greetingTitle: 'Salut ! Moi, c’est Hurera',
@@ -390,14 +393,6 @@ const fr: Dictionary = {
     emailNote:
       'L’e-mail reste le moyen le plus sûr de me joindre ; je réponds généralement sous quelques jours.',
     cta: 'Écrivez-moi par e-mail 📧',
-  },
-  notFound: {
-    eyebrow: '404',
-    title: 'Cette page traîne quelque part',
-    body: 'Une façon amusante de dire qu’elle n’existe pas. Soit le lien est cassé, soit j’ai déplacé quelque chose en oubliant de laisser une adresse de réexpédition. Dans tous les cas, il n’y a rien à voir ici. 🙃',
-    cta: 'Retour à l’accueil 🏠',
-    suggestionsLabel: 'Ou reprenez là où vous vouliez aller :',
-    suggestedPages: 'Pages suggérées',
   },
 };
 

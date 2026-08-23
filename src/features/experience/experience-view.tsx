@@ -30,7 +30,7 @@ function Section({
         type="button"
         onClick={onToggle}
         aria-expanded={open}
-        className="employement-type-heading flex h-50px w-full flex-row items-center justify-between border border-secondary-bg-color bg-white px-20px py-10px font-medium"
+        className="employement-type-heading flex h-50px w-full flex-row items-center justify-between border border-line-color bg-card-bg-color px-20px py-10px font-medium"
       >
         <h2>{title}</h2>
         <span>

@@ -30,20 +30,27 @@ const ExperienceCard: FC<Props> = ({
     <>
       <Fade triggerOnce direction="up" style={{ width: '100%' }}>
         <div
-          className={`employement-card my-[15px] flex flex-row items-start justify-start gap-[2%] rounded-lg border-[1px] border-neutral-400 px-5 py-3 shadow-sm sm:flex-col sm:items-center sm:px-[15px] sm:py-[25px] md:flex-col md:items-center md:px-[15px] md:py-[25px] ${lastOne ? 'mb-[50px]' : ''}`}
+          className={`employement-card my-[15px] flex flex-row items-start justify-start gap-[2%] rounded-lg border-[1px] border-line-color px-5 py-3 shadow-sm sm:flex-col sm:items-center sm:px-[15px] sm:py-[25px] md:flex-col md:items-center md:px-[15px] md:py-[25px] ${lastOne ? 'mb-[50px]' : ''}`}
         >
           {/* <div className="company-logo pb-3 min-w-min max-w-min sm:self-center md:self-center">
                         <Image className='w-70px h-70px min-w-min max-w-min' src={require(`../../public/assets/images/${logo}`)} alt='company_logo' />
                     </div> */}
-          <Link href={`${link}`} target="_blank">
+          {/* shrink-0 sits on the link because the <a> is the flex item here.
+              Without it the card squeezed it to ~69px, and Tailwind's preflight
+              `max-width: 100%` dragged the logo down with it — width modified,
+              height still pinned at 70px, which is precisely the aspect-ratio
+              mismatch next/image warns about. */}
+          <Link href={`${link}`} target="_blank" className="shrink-0">
             <div className="company-logo pb-3 sm:self-center md:self-center">
-              <Image
-                className="h-70px w-70px"
-                src={`/assets/images/${logo}`}
-                width={70}
-                height={70}
-                alt={`${companyName} logo`}
-              />
+              <span className="block dark:rounded-lg dark:bg-[#eef0eb] dark:p-[5px]">
+                <Image
+                  className="h-70px w-70px"
+                  src={`/assets/images/${logo}`}
+                  width={70}
+                  height={70}
+                  alt={`${companyName} logo`}
+                />
+              </span>
             </div>
           </Link>
           <div className="employement-details w-94%">

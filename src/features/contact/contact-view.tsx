@@ -4,9 +4,15 @@ import Wrapper from '@/components/layout/wrapper';
 import ContactPageSVG from '@/components/icons/contact-illustration';
 import Link from 'next/link';
 import SocialIconBadge from '@/components/ui/social-icon-badge';
-import { GithubSVG, LinkedInSVG, FacebookSVG, InstagramSVG } from '@/components/icons/social-icons';
+import {
+  GithubSVG,
+  LinkedInSVG,
+  UpworkSVG,
+  FacebookSVG,
+  InstagramSVG,
+} from '@/components/icons/social-icons';
 import { Slide } from 'react-awesome-reveal';
-import { CONTACT_EMAIL } from '@/config/site';
+import { CALENDLY_URL, CONTACT_EMAIL } from '@/config/site';
 import type { Dictionary } from '@/dictionaries';
 
 type ContactFact = { term: string; value: React.ReactNode };
@@ -64,6 +70,15 @@ function ContactView({ dict }: { dict: Dictionary }) {
                   <LinkedInSVG />
                 </SocialIconBadge>
               </Link>
+              <Link
+                href="https://www.upwork.com/freelancers/~01604935e54f0437cf"
+                passHref={true}
+                target="_blank"
+              >
+                <SocialIconBadge bgcolor={'#14A800'}>
+                  <UpworkSVG />
+                </SocialIconBadge>
+              </Link>
               <Link href="https://www.instagram.com/iamhurera/" passHref={true} target="_blank">
                 <SocialIconBadge bgcolor={'rgb(214,41,118)'}>
                   <InstagramSVG />
@@ -102,9 +117,23 @@ function ContactView({ dict }: { dict: Dictionary }) {
 
             <p className="tertiary-text mt-6 text-center">{dict.contact.emailNote}</p>
 
-            <div className="resume-div font-GoogleSans-Regular mr-0 mt-5 block max-w-max cursor-pointer rounded-md bg-text-color px-6 py-3 text-center font-sans text-lg font-medium leading-tight tracking-wide text-main-bg-color no-underline">
-              <Link href={`mailto:${CONTACT_EMAIL}`} className="font-GoogleSans-Regular">
+            {/* Email stays the primary action and keeps the filled treatment;
+                booking sits beside it as an outline, so the two read as a
+                choice rather than competing for the same emphasis. */}
+            <div className="mt-5 flex flex-row flex-wrap items-center justify-center gap-3">
+              <Link
+                href={`mailto:${CONTACT_EMAIL}`}
+                className="font-GoogleSans-Regular block max-w-max cursor-pointer rounded-md bg-text-color px-6 py-3 text-center font-sans text-lg font-medium leading-tight tracking-wide text-main-bg-color no-underline transition-transform duration-300 hover:scale-105"
+              >
                 {dict.contact.cta}
+              </Link>
+              <Link
+                href={CALENDLY_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="font-GoogleSans-Regular block max-w-max cursor-pointer rounded-md border border-text-color px-6 py-3 text-center font-sans text-lg font-medium leading-tight tracking-wide text-text-color no-underline transition-transform duration-300 hover:scale-105"
+              >
+                {dict.common.bookCall}
               </Link>
             </div>
           </Slide>
