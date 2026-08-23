@@ -4,7 +4,7 @@ function ExperiencePageSVG() {
   return (
     <>
       <svg
-        className="sm:80vw pl-55px md:w-70vw lg:w-65vw xl:w-35vw 2xl:w-37vw"
+        className="sm:80vw ps-55px md:w-70vw lg:w-65vw xl:w-35vw 2xl:w-37vw"
         id="bf56719a-dd30-4b09-833f-7c41eeee086b"
         data-name="Layer 1"
         xmlns="http://www.w3.org/2000/svg"

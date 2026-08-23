@@ -11,10 +11,18 @@ interface Props {
   name: string;
   description: string;
   creationDate: string;
+  createdInLabel: string;
   stackSVGs: StackSVG[];
   link: string;
 }
-const ProjectCard: FC<Props> = ({ name, description, creationDate, stackSVGs, link }) => {
+const ProjectCard: FC<Props> = ({
+  name,
+  description,
+  creationDate,
+  createdInLabel,
+  stackSVGs,
+  link,
+}) => {
   const [tooltipIndex, setTooltipIndex] = React.useState<number | null>(null);
 
   const handleClick = () => {
@@ -52,15 +60,15 @@ const ProjectCard: FC<Props> = ({ name, description, creationDate, stackSVGs, li
         <Fade triggerOnce direction="up">
           <div className="flex h-full flex-col justify-between">
             <div>
-              <h3 className="text-left text-[22px] font-medium sm:text-center md:text-center">
+              <h3 className="text-start text-[22px] font-medium sm:text-center md:text-center">
                 {name}
               </h3>
-              <div className="overflow-hidden text-ellipsis text-left text-[17px] font-normal sm:text-center md:text-center">
+              <div className="overflow-hidden text-ellipsis text-start text-[17px] font-normal sm:text-center md:text-center">
                 {description}
               </div>
             </div>
             <div className="flex flex-row items-center justify-between sm:flex-col sm:gap-2 md:flex-col md:gap-2">
-              <p className="text-left text-[17px] font-light sm:text-left md:text-left">{`Created in ${creationDate}`}</p>
+              <p className="text-start text-[17px] font-light sm:text-start md:text-start">{`${createdInLabel} ${creationDate}`}</p>
               <div className="stack-logos-div flex flex-row flex-wrap justify-center gap-2">
                 {stackSVGs?.map((svgObj, index) => {
                   return (

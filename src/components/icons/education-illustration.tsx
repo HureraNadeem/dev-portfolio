@@ -3,7 +3,7 @@ function EducationPageSvg() {
     <>
       <svg
         style={{ paddingLeft: '3%' }}
-        className="!important sm:80vw pl-55px md:w-70vw lg:w-65vw xl:w-35vw 2xl:w-37vw"
+        className="!important sm:80vw ps-55px md:w-70vw lg:w-65vw xl:w-35vw 2xl:w-37vw"
         id="eb113788-f1f1-4c1f-be62-f1d0ea2e1eb6"
         data-name="Layer 1"
         xmlns="http://www.w3.org/2000/svg"

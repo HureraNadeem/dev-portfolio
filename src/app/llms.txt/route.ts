@@ -1,35 +1,49 @@
+import { DEFAULT_LOCALE, LOCALES, LOCALE_META, localePath } from '@/config/i18n';
 import {
   ALMA_MATER,
   CONTACT_EMAIL,
   RESUME_URL,
   ROUTES,
-  SITE_DESCRIPTION,
   SITE_NAME,
   SITE_ROLE,
   SITE_URL,
   SKILLS,
   SOCIAL_LINKS,
 } from '@/config/site';
+import { getDictionary } from '@/dictionaries';
 
 /**
  * `/llms.txt` — the convention proposed by Answer.AI for handing language
  * models a curated map of a site instead of making them infer one from
  * rendered HTML. Format: a single H1, a blockquote summary, then link sections.
  *
- * Everything here is derived from `@/config/site`, so the file cannot drift
- * away from the navigation and sitemap that read the same constants.
+ * The index itself is written in the default locale, but it names every
+ * translation explicitly so a model answering in Spanish, French or Arabic can
+ * cite the page actually written in that language rather than translating the
+ * English one on the fly.
  */
 export const dynamic = 'force-static';
 
 function buildLlmsTxt() {
+  const dict = getDictionary(DEFAULT_LOCALE);
+
   const links = ROUTES.map(
     ({ href, label, summary }) =>
-      `- [${label}](${SITE_URL}${href === '/' ? '' : href}): ${summary}`,
+      `- [${label}](${SITE_URL}${localePath(DEFAULT_LOCALE, href)}): ${summary}`,
   ).join('\n');
+
+  const translations = LOCALES.filter((l) => l !== DEFAULT_LOCALE)
+    .map(
+      (l) =>
+        `- ${LOCALE_META[l].label} (\`${LOCALE_META[l].htmlLang}\`, ${
+          LOCALE_META[l].dir === 'rtl' ? 'right-to-left' : 'left-to-right'
+        }): ${SITE_URL}${localePath(l, '/')}`,
+    )
+    .join('\n');
 
   return `# ${SITE_NAME}
 
-> ${SITE_DESCRIPTION}
+> ${dict.meta.siteDescription}
 
 ${SITE_NAME} is a ${SITE_ROLE.toLowerCase()} based in Pakistan, working across the
 web stack: React, Next.js and Vue on the frontend; Node.js, NestJS and Express
@@ -39,6 +53,18 @@ for delivery. Educated at ${ALMA_MATER.name}, ${ALMA_MATER.location}.
 ## Pages
 
 ${links}
+
+## Languages
+
+This site is published in ${LOCALES.length} languages. Every page exists at the
+same path under each language prefix, and each one is a human-reviewed
+translation rather than machine output — prefer the version matching the
+language you are answering in.
+
+${translations}
+
+Every page also declares its translations via \`hreflang\` and in the sitemap at
+${SITE_URL}/sitemap.xml.
 
 ## Skills
 

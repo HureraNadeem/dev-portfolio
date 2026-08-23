@@ -4,19 +4,17 @@ import Wrapper from '@/components/layout/wrapper';
 import { GithubSVG, LinkedInSVG, InstagramSVG, FacebookSVG } from '@/components/icons/social-icons';
 import ProfilePicture from '@public/assets/images/dp.png';
 import SocialIconBadge from '@/components/ui/social-icon-badge';
+import type { Dictionary } from '@/dictionaries';
 import { RESUME_URL } from '@/config/site';
 
-export default function Greeting() {
+export default function Greeting({ dict }: { dict: Dictionary }) {
   return (
     <>
       <Wrapper>
         <div className="header flex flex-row items-center justify-around bg-main-bg-color sm:flex-col-reverse md:flex-col-reverse">
           <div className="animate-slide-in-from-left info-div sm:flex sm:flex-col sm:items-center sm:justify-center md:flex md:flex-col md:items-center md:justify-center lg:w-50% xl:w-50% 2xl:ml-6 2xl:w-50%">
-            <h1 className="primary-heading">Wassup! this is Hurera</h1>
-            <p className="primary-text">
-              A Full-stack developer (MERN/MEVN) 💻 - DevOps and Cloud Enthusiast ☁️ - Problem
-              Solver 🤔
-            </p>
+            <h1 className="primary-heading">{dict.home.greetingTitle}</h1>
+            <p className="primary-text">{dict.home.greetingSubtitle}</p>
             <div className="socials mb-4 mt-5 flex flex-row gap-1 sm:justify-center md:justify-center">
               <Link href="https://github.com/HureraNadeem" passHref={true} target="_blank">
                 <SocialIconBadge bgcolor={'black'}>
@@ -53,7 +51,7 @@ export default function Greeting() {
                 rel="noreferrer"
                 className="font-GoogleSans-Regular"
               >
-                Resume 📄
+                {dict.common.resume}
               </Link>
             </div>
           </div>

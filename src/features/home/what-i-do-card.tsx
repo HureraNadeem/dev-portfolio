@@ -7,7 +7,6 @@ import 'react-tooltip/dist/react-tooltip.css';
 import { Tooltip as ReactTooltip } from 'react-tooltip';
 
 export interface Props {
-  key: number;
   skillName: string;
   MainSVG: React.JSX.Element;
   iconsArr: {

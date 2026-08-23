@@ -3,9 +3,10 @@
  * robots and structured data. Override the production URL at build time with
  * `NEXT_PUBLIC_SITE_URL` (e.g. in the hosting provider's env settings).
  */
-export const SITE_URL = (
-  process.env.NEXT_PUBLIC_SITE_URL ?? 'https://hurera.dev'
-).replace(/\/$/, '');
+export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://hurera.dev').replace(
+  /\/$/,
+  '',
+);
 
 export const SITE_NAME = 'Hurera Nadeem';
 

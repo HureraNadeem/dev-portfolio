@@ -6,33 +6,32 @@ import Link from 'next/link';
 import SocialIconBadge from '@/components/ui/social-icon-badge';
 import { GithubSVG, LinkedInSVG, FacebookSVG, InstagramSVG } from '@/components/icons/social-icons';
 import { Slide } from 'react-awesome-reveal';
-import { CONTACT_EMAIL, SITE_ROLE } from '@/config/site';
+import { CONTACT_EMAIL } from '@/config/site';
+import type { Dictionary } from '@/dictionaries';
 
 type ContactFact = { term: string; value: React.ReactNode };
 
-const CONTACT_FACTS: ContactFact[] = [
-  {
-    term: 'Email',
-    value: (
-      <Link href={`mailto:${CONTACT_EMAIL}`} className="underline underline-offset-4">
-        {CONTACT_EMAIL}
-      </Link>
-    ),
-  },
-  { term: 'Based in', value: 'Islamabad, Pakistan — working with teams across time zones' },
-  { term: 'Role', value: SITE_ROLE },
-  { term: 'Open to', value: 'Full-time roles, contract work and freelance projects' },
-];
+function contactFacts(dict: Dictionary): ContactFact[] {
+  const { facts } = dict.contact;
+  return [
+    {
+      term: facts.email,
+      value: (
+        <Link href={`mailto:${CONTACT_EMAIL}`} className="underline underline-offset-4">
+          {CONTACT_EMAIL}
+        </Link>
+      ),
+    },
+    { term: facts.basedIn, value: facts.basedInValue },
+    { term: facts.role, value: facts.roleValue },
+    { term: facts.openTo, value: facts.openToValue },
+  ];
+}
 
-const REACH_OUT_ABOUT = [
-  'Building web applications end to end — React, Next.js, Vue, Node.js, NestJS and Express, backed by PostgreSQL, MongoDB or Redis.',
-  'Taking an existing product further: new features, performance work, or untangling a codebase that has grown faster than its structure.',
-  'Deployment and infrastructure — AWS, Docker, CI/CD pipelines and getting a release process that people trust.',
-  'AI-assisted product work, from LLM integrations to internal tooling.',
-  'Speaking at or helping run a tech community event — I have organised plenty.',
-];
+function ContactView({ dict }: { dict: Dictionary }) {
+  const CONTACT_FACTS = contactFacts(dict);
+  const REACH_OUT_ABOUT = dict.contact.reachOut;
 
-function ContactView() {
   return (
     <Wrapper>
       <div className="flex flex-row items-start justify-around bg-main-bg-color py-7 pb-[18vh] sm:flex-col sm:items-center sm:px-0 sm:py-5 md:flex-col md:items-center md:px-0 md:py-5 lg:flex-col lg:items-center lg:px-0 lg:py-5 xl:gap-5 2xl:items-center 2xl:justify-center 2xl:gap-5">
@@ -48,12 +47,11 @@ function ContactView() {
             max-w-md list below ends up setting the page width instead of obeying it. */}
         <div className="flex w-100% flex-col items-center justify-center pt-14 sm:mb-2 md:mb-2 lg:mb-2 xl:w-50% xl:pt-12 2xl:w-50% 2xl:pt-0">
           <Slide triggerOnce direction="right">
-            <h1 className="primary-heading justify-self-center text-center">Contact Me</h1>
+            <h1 className="primary-heading justify-self-center text-center">
+              {dict.contact.title}
+            </h1>
             <p className="tertiary-text justify-self-center py-1 text-center">
-              I&apos;m practically the social media version of Batman, always lurking in the shadows
-              of every platform, ready to swoop in and save the day! So, whether you need some
-              industry wizardry or a tech talk virtuoso, just reach out to me. Let&apos;s connect
-              and sprinkle some laughter into the world of tech! 🤝
+              {dict.contact.intro}
             </p>
             <div className="socials mb-4 mt-5 flex flex-row gap-1 sm:justify-center md:justify-center">
               <Link href="https://github.com/HureraNadeem" passHref={true} target="_blank">
@@ -89,10 +87,10 @@ function ContactView() {
               ))}
             </dl>
 
-            <h2 className="secondary-text mt-10 text-center">What to reach out about</h2>
+            <h2 className="secondary-text mt-10 text-center">{dict.contact.reachOutTitle}</h2>
             <ul className="mx-auto mt-3 flex w-full max-w-md flex-col gap-3">
               {REACH_OUT_ABOUT.map((topic) => (
-                <li key={topic} className="tertiary-text flex flex-row gap-3 text-left">
+                <li key={topic} className="tertiary-text flex flex-row gap-3 text-start">
                   {/* Decorative: a bullet, not a word to be read out before every item. */}
                   <span aria-hidden="true" className="shrink-0 leading-relaxed">
                     ⚡
@@ -102,13 +100,11 @@ function ContactView() {
               ))}
             </ul>
 
-            <p className="tertiary-text mt-6 text-center">
-              Email is the surest way to reach me; I usually reply within a couple of hours.
-            </p>
+            <p className="tertiary-text mt-6 text-center">{dict.contact.emailNote}</p>
 
             <div className="resume-div font-GoogleSans-Regular mr-0 mt-5 block max-w-max cursor-pointer rounded-md bg-text-color px-6 py-3 text-center font-sans text-lg font-medium leading-tight tracking-wide text-main-bg-color no-underline">
               <Link href={`mailto:${CONTACT_EMAIL}`} className="font-GoogleSans-Regular">
-                Reach me via email 📧
+                {dict.contact.cta}
               </Link>
             </div>
           </Slide>

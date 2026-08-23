@@ -6,6 +6,8 @@ import { Slide } from 'react-awesome-reveal';
 import NotFoundIllustration from '@/components/icons/not-found-illustration';
 import Wrapper from '@/components/layout/wrapper';
 import { ROUTES } from '@/config/site';
+import { localePath, type Locale } from '@/config/i18n';
+import type { Dictionary } from '@/dictionaries';
 
 /**
  * A dead end should still offer a way out, so alongside the primary "home" call
@@ -14,7 +16,14 @@ import { ROUTES } from '@/config/site';
  */
 const SUGGESTED_ROUTES = ROUTES.filter(({ href }) => href !== '/');
 
-function NotFoundView() {
+function NotFoundView({ dict, locale }: { dict: Dictionary; locale: Locale }) {
+  const navLabel: Record<string, string> = {
+    '/education': dict.nav.education,
+    '/experience': dict.nav.experience,
+    '/projects': dict.nav.projects,
+    '/contact': dict.nav.contact,
+  };
+
   return (
     <Wrapper>
       <div className="flex flex-row items-center justify-around bg-main-bg-color py-7 sm:flex-col sm:px-0 sm:py-5 md:flex-col md:px-0 md:py-5 lg:flex-col lg:px-0 lg:py-5 xl:gap-5 2xl:gap-5">
@@ -36,38 +45,34 @@ function NotFoundView() {
               aria-hidden="true"
               className="font-AgustinaRegular select-none text-center text-55px leading-none text-text-color opacity-40 sm:text-40px"
             >
-              404
+              {dict.notFound.eyebrow}
             </p>
 
-            <h1 className="primary-heading text-center">This page is just hangin&apos; around</h1>
+            <h1 className="primary-heading text-center">{dict.notFound.title}</h1>
 
-            <p className="tertiary-text py-1 text-center">
-              Which is a fun way of saying it doesn&apos;t exist. Either the link is broken, or I
-              moved something and forgot to leave a forwarding address. Either way - nothing to see
-              here. 🙃
-            </p>
+            <p className="tertiary-text py-1 text-center">{dict.notFound.body}</p>
 
             <div className="flex flex-row justify-center sm:justify-center md:justify-center">
               <Link
-                href="/"
+                href={localePath(locale, '/')}
                 className="font-GoogleSans-Regular mt-6 block max-w-max rounded-md bg-text-color px-6 py-3 text-center text-lg font-medium leading-tight tracking-wide text-main-bg-color no-underline transition-transform duration-500 hover:scale-105 sm:text-16px md:text-17px"
               >
-                Take me home 🏠
+                {dict.notFound.cta}
               </Link>
             </div>
 
             <p className="tertiary-text mb-2 mt-8 text-center opacity-70">
-              Or pick up where you meant to go:
+              {dict.notFound.suggestionsLabel}
             </p>
-            <nav aria-label="Suggested pages">
+            <nav aria-label={dict.notFound.suggestedPages}>
               <ul className="flex flex-row flex-wrap items-center justify-center gap-x-6 gap-y-2">
-                {SUGGESTED_ROUTES.map(({ href, label }) => (
+                {SUGGESTED_ROUTES.map(({ href }) => (
                   <li key={href}>
                     <Link
-                      href={href}
+                      href={localePath(locale, href)}
                       className="tertiary-text underline decoration-1 underline-offset-4 opacity-80 transition-opacity duration-300 hover:opacity-100"
                     >
-                      {label}
+                      {navLabel[href] ?? href}
                     </Link>
                   </li>
                 ))}
