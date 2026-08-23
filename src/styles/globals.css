@@ -9,12 +9,13 @@
 
    The dark palette stops just short of black. Pure #000 behind off-white text
    produces halation that makes long passages hard to read, and this site is
-   mostly long passages — but #15181a is dark enough to read as a true dark
-   theme rather than a dimmed one.
+   mostly long passages — but #0e1011 sits close enough to it to read as a true
+   dark theme.
 
    Surfaces climb in deliberate steps so depth survives the darkness:
-   page 21 -> card 30 -> fills 38 -> borders 51. Without that ladder everything
-   collapses into one flat sheet once the background gets this low.
+   page 14 -> card 22 -> fills 30 -> borders 45. Without that ladder everything
+   collapses into one flat sheet at this range, and the steps have to stay wide
+   as the page darkens or the card edges stop being visible at all.
    --------------------------------------------------------------------------- */
 :root {
   color-scheme: light;
@@ -40,11 +41,11 @@
     color-scheme: dark;
 
     --color-text: 232 234 233; /* #e8eae9 — off-white, not #fff */
-    --color-bg: 21 24 26; /* #15181a — the page itself */
-    --color-card: 30 34 38; /* #1e2226 — raised surfaces */
-    --color-bg-secondary: 38 43 47; /* #262b2f — headers, fills */
-    --color-line: 51 58 62; /* #333a3e — borders */
-    --color-muted: 153 161 165; /* #99a1a5 */
+    --color-bg: 14 16 17; /* #0e1011 — the page itself */
+    --color-card: 22 25 27; /* #16191b — raised surfaces */
+    --color-bg-secondary: 30 34 37; /* #1e2225 — headers, fills */
+    --color-line: 45 51 55; /* #2d3337 — borders */
+    --color-muted: 143 151 155; /* #8f979b */
     --color-shadow: 0 0 0; /* #000000 */
   }
 }
@@ -53,11 +54,11 @@
   color-scheme: dark;
 
   --color-text: 232 234 233;
-  --color-bg: 21 24 26;
-  --color-card: 30 34 38;
-  --color-bg-secondary: 38 43 47;
-  --color-line: 51 58 62;
-  --color-muted: 153 161 165;
+  --color-bg: 14 16 17;
+  --color-card: 22 25 27;
+  --color-bg-secondary: 30 34 37;
+  --color-line: 45 51 55;
+  --color-muted: 143 151 155;
   --color-shadow: 0 0 0;
 }
 
