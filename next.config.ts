@@ -31,7 +31,15 @@ const nextConfig: NextConfig = {
   ...(process.env.NODE_ENV === 'development'
     ? {
         async redirects() {
-          return [{ source: '/', destination: '/en', permanent: false }];
+          const routes = ['education', 'experience', 'projects', 'contact'];
+          return [
+            { source: '/', destination: '/en', permanent: false },
+            ...routes.map((route) => ({
+              source: `/${route}`,
+              destination: `/en/${route}`,
+              permanent: true,
+            })),
+          ];
         },
       }
     : {}),

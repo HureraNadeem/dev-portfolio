@@ -34,21 +34,25 @@
   from = "/education"
   to = "/en/education"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/experience"
   to = "/en/experience"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/projects"
   to = "/en/projects"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/contact"
   to = "/en/contact"
   status = 301
+  force = true
 
 # Anything that matches no file. Netlify only reaches a redirect once a static
 # file has failed to match, so this cannot shadow a real page. `status = 404`
