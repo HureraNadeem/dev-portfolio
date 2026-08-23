@@ -11,7 +11,7 @@ import {
 import ProfilePicture from '@public/assets/images/dp.png';
 import SocialIconBadge from '@/components/ui/social-icon-badge';
 import type { Dictionary } from '@/dictionaries';
-import { RESUME_URL } from '@/config/site';
+import { CALENDLY_URL, RESUME_URL } from '@/config/site';
 
 export default function Greeting({ dict }: { dict: Dictionary }) {
   return (
@@ -57,16 +57,27 @@ export default function Greeting({ dict }: { dict: Dictionary }) {
                 </SocialIconBadge>
               </Link>
             </div>
-            <div
-              className={`resume-div font-GoogleSans-Regular mr-0 mt-5 block max-w-max cursor-pointer rounded-md bg-text-color px-6 py-3 text-center font-sans text-lg font-medium leading-tight tracking-wide text-main-bg-color no-underline`}
-            >
+            {/* Resume and booking as a pair: one is the artefact to read,
+                  the other the next step to take. Resume keeps the filled
+                  treatment because it is what most visitors arrive for, and
+                  booking is an outline so the two read as a choice — the same
+                  pairing the contact page uses. */}
+            <div className="mt-5 flex flex-row flex-wrap items-center gap-3 sm:justify-center md:justify-center">
               <Link
                 href={RESUME_URL}
                 target="_blank"
                 rel="noreferrer"
-                className="font-GoogleSans-Regular"
+                className="font-GoogleSans-Regular block max-w-max cursor-pointer rounded-md bg-text-color px-6 py-3 text-center font-sans text-lg font-medium leading-tight tracking-wide text-main-bg-color no-underline transition-transform duration-300 hover:scale-105"
               >
                 {dict.common.resume}
+              </Link>
+              <Link
+                href={CALENDLY_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="font-GoogleSans-Regular block max-w-max cursor-pointer rounded-md border border-text-color px-6 py-3 text-center font-sans text-lg font-medium leading-tight tracking-wide text-text-color no-underline transition-transform duration-300 hover:scale-105"
+              >
+                {dict.common.bookCall}
               </Link>
             </div>
           </div>

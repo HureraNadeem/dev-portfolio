@@ -18,6 +18,7 @@ const ar: Dictionary = {
   },
   common: {
     resume: 'السيرة الذاتية 📄',
+    bookCall: 'احجز مكالمة مدتها ٣٠ دقيقة 📅',
     languageLabel: 'اللغة',
     skipToContent: 'تخطَّ إلى المحتوى',
     madeWith: 'صُنع بـ {heart} بواسطة',
@@ -394,7 +395,6 @@ const ar: Dictionary = {
     ],
     emailNote: 'البريد الإلكتروني أضمن وسيلة للوصول إليّ، وعادةً ما أردّ خلال يومين.',
     cta: 'راسلني بالبريد الإلكتروني 📧',
-    bookCall: 'احجز مكالمة مدتها ٣٠ دقيقة 📅',
   },
   notFound: {
     eyebrow: '٤٠٤',

@@ -28,6 +28,7 @@ export type Dictionary = {
   };
   common: {
     resume: string;
+    bookCall: string;
     languageLabel: string;
     skipToContent: string;
     madeWith: string;
@@ -100,7 +101,6 @@ export type Dictionary = {
     reachOut: string[];
     emailNote: string;
     cta: string;
-    bookCall: string;
   };
   notFound: {
     eyebrow: string;

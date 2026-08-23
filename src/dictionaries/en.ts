@@ -16,6 +16,7 @@ const en: Dictionary = {
   },
   common: {
     resume: 'Resume 📄',
+    bookCall: 'Book a 30-min call 📅',
     languageLabel: 'Language',
     skipToContent: 'Skip to content',
     madeWith: 'Made with {heart} by',
@@ -393,7 +394,6 @@ const en: Dictionary = {
     ],
     emailNote: 'Email is the surest way to reach me; I usually reply within a couple of days.',
     cta: 'Reach me via email 📧',
-    bookCall: 'Book a 30-min call 📅',
   },
   notFound: {
     eyebrow: '404',

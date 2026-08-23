@@ -133,7 +133,7 @@ function ContactView({ dict }: { dict: Dictionary }) {
                 rel="noreferrer"
                 className="font-GoogleSans-Regular block max-w-max cursor-pointer rounded-md border border-text-color px-6 py-3 text-center font-sans text-lg font-medium leading-tight tracking-wide text-text-color no-underline transition-transform duration-300 hover:scale-105"
               >
-                {dict.contact.bookCall}
+                {dict.common.bookCall}
               </Link>
             </div>
           </Slide>

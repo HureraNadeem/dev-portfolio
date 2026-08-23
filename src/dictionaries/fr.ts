@@ -14,6 +14,7 @@ const fr: Dictionary = {
   },
   common: {
     resume: 'CV 📄',
+    bookCall: 'Réserver un appel de 30 min 📅',
     languageLabel: 'Langue',
     skipToContent: 'Aller au contenu',
     madeWith: 'Réalisé avec {heart} par',
@@ -393,7 +394,6 @@ const fr: Dictionary = {
     emailNote:
       'L’e-mail reste le moyen le plus sûr de me joindre ; je réponds généralement sous quelques jours.',
     cta: 'Écrivez-moi par e-mail 📧',
-    bookCall: 'Réserver un appel de 30 min 📅',
   },
   notFound: {
     eyebrow: '404',
