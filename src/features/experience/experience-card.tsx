@@ -35,7 +35,12 @@ const ExperienceCard: FC<Props> = ({
           {/* <div className="company-logo pb-3 min-w-min max-w-min sm:self-center md:self-center">
                         <Image className='w-70px h-70px min-w-min max-w-min' src={require(`../../public/assets/images/${logo}`)} alt='company_logo' />
                     </div> */}
-          <Link href={`${link}`} target="_blank">
+          {/* shrink-0 sits on the link because the <a> is the flex item here.
+              Without it the card squeezed it to ~69px, and Tailwind's preflight
+              `max-width: 100%` dragged the logo down with it — width modified,
+              height still pinned at 70px, which is precisely the aspect-ratio
+              mismatch next/image warns about. */}
+          <Link href={`${link}`} target="_blank" className="shrink-0">
             <div className="company-logo pb-3 sm:self-center md:self-center">
               <Image
                 className="h-70px w-70px"
