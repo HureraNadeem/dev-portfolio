@@ -392,6 +392,7 @@ const es: Dictionary = {
     emailNote:
       'El correo electrónico es la vía más segura para localizarme; suelo responder en un par de días.',
     cta: 'Escríbeme por correo 📧',
+    bookCall: 'Reserva una llamada de 30 min 📅',
   },
   notFound: {
     eyebrow: '404',

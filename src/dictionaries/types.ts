@@ -100,6 +100,7 @@ export type Dictionary = {
     reachOut: string[];
     emailNote: string;
     cta: string;
+    bookCall: string;
   };
   notFound: {
     eyebrow: string;

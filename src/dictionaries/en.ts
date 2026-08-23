@@ -393,6 +393,7 @@ const en: Dictionary = {
     ],
     emailNote: 'Email is the surest way to reach me; I usually reply within a couple of days.',
     cta: 'Reach me via email 📧',
+    bookCall: 'Book a 30-min call 📅',
   },
   notFound: {
     eyebrow: '404',
