@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { notFound } from 'next/navigation';
+import Script from 'next/script';
 import '@/styles/globals.css';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 
@@ -107,9 +108,11 @@ export default async function RootLayout({
   return (
     <html lang={LOCALE_META[locale].htmlLang} dir={dir} suppressHydrationWarning>
       <head>
-        {/* Blocking and inline on purpose — see THEME_INIT_SCRIPT. Anything
-            deferred would paint the wrong palette first. */}
-        <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
+        <Script
+          id="theme-init"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }}
+        />
       </head>
       {/*
         Sticky-footer shell. The page background only ever came from the navbar,
