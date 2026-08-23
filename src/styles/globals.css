@@ -427,7 +427,10 @@ p {
    occasionally lands on a decorative face. Name a real stack so the Arabic
    build looks deliberate everywhere, and let the Latin fonts keep handling the
    technology names that stay in Latin script. */
-[lang='ar'] body,
+/* `:lang(ar)` rather than `[lang='ar'] body`, so this also catches a single
+   Arabic label sitting inside an otherwise English page — the language menu
+   lists every language in its own script. */
+:lang(ar),
 [lang='ar'] .font-GoogleSans-Regular {
   font-family:
     'Noto Naskh Arabic', 'Geeza Pro', 'Segoe UI', Tahoma, 'Arabic Typesetting', sans-serif;
@@ -435,6 +438,7 @@ p {
 
 /* The script logo is a Latin display face; keep it Latin even on the Arabic
    build, where it renders the name as written. */
+:lang(ar) .font-AgustinaRegular,
 [lang='ar'] .font-AgustinaRegular {
   font-family: 'Agustina Regular', sans-serif;
 }
