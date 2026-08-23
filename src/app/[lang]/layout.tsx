@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from 'next';
 import { notFound } from 'next/navigation';
-import Script from 'next/script';
 import '@/styles/globals.css';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 
@@ -108,11 +107,21 @@ export default async function RootLayout({
   return (
     <html lang={LOCALE_META[locale].htmlLang} dir={dir} suppressHydrationWarning>
       <head>
-        <Script
-          id="theme-init"
-          strategy="beforeInteractive"
-          dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }}
-        />
+        {/*
+          A real inline <script>, deliberately not next/script.
+
+          `beforeInteractive` does not emit an inline tag — it pushes the source
+          onto Next's `self.__next_s` queue, which its runtime drains once
+          hydration is under way. That is far too late: the page paints in the
+          wrong palette first and the toggle renders in the wrong position until
+          the queue is flushed.
+
+          React logs an error for script tags a component renders, because they
+          do not execute on client-side navigation. That is dev-only noise and
+          harmless here — this only ever needs to run on a hard load — whereas
+          a mistimed theme is visible to every reader on every refresh.
+        */}
+        <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
       </head>
       {/*
         Sticky-footer shell. The page background only ever came from the navbar,
