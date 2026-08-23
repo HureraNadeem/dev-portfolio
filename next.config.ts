@@ -13,6 +13,28 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
+
+  /**
+   * Every page lives under a locale prefix, so `/` matches no route.
+   *
+   * Three surfaces need covering and each needs its own mechanism:
+   *   - `next dev`      this redirect
+   *   - Netlify         the forced 302 in netlify.toml
+   *   - any other host  public/index.html, which ships in the export
+   *
+   * Gated to development because `redirects()` needs a server and a static
+   * export has none; leaving it on unconditionally just makes `next build`
+   * warn three times that it is being ignored.
+   *
+   * Deliberately not language-negotiated — see the note in netlify.toml.
+   */
+  ...(process.env.NODE_ENV === 'development'
+    ? {
+        async redirects() {
+          return [{ source: '/', destination: '/en', permanent: false }];
+        },
+      }
+    : {}),
 };
 
 export default nextConfig;

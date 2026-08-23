@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <!--
+      The site has no page at `/` — every route lives under a locale prefix.
+      Netlify redirects `/` before this file is ever reached (see netlify.toml);
+      this exists so the exported build still lands somewhere sensible on a host
+      that does not read that config.
+
+      noindex because this is plumbing, not a page: without it a crawler could
+      treat `/` as a thin duplicate of `/en`.
+    -->
+    <meta name="robots" content="noindex" />
+    <meta http-equiv="refresh" content="0; url=/en" />
+    <link rel="canonical" href="/en" />
+    <title>Hurera Nadeem</title>
+    <script>
+      window.location.replace('/en');
+    </script>
+  </head>
+  <body>
+    <p>Redirecting to <a href="/en">the English site</a>.</p>
+  </body>
+</html>

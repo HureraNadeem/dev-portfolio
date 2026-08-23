@@ -19,10 +19,14 @@
 # but Googlebot crawls mostly from US addresses with an English header, so
 # sniffing here would mean the Spanish, French and Arabic versions were never
 # crawled. Everyone lands on /en and chooses from the switcher.
+# force = true so the real 302 wins over public/index.html, which exists as a
+# fallback for hosts that do not read this file. A redirect at the edge beats a
+# meta-refresh page for both speed and how search engines read it.
 [[redirects]]
   from = "/"
   to = "/en"
   status = 302
+  force = true
 
 # Pre-i18n URLs. 301 so whatever ranking or inbound links they accumulated
 # carry over to the English version rather than dying at a 404.
