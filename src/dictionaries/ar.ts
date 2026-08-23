@@ -20,7 +20,7 @@ const ar: Dictionary = {
     resume: 'السيرة الذاتية 📄',
     languageLabel: 'اللغة',
     skipToContent: 'تخطَّ إلى المحتوى',
-    madeWith: 'صُنع بـ 🖤 بواسطة',
+    madeWith: 'صُنع بـ {heart} بواسطة',
     scrollToTop: 'العودة إلى الأعلى',
     toggleMenu: 'فتح قائمة التنقل أو إغلاقها',
     theme: 'المظهر',

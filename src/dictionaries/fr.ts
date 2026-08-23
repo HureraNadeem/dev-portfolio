@@ -16,7 +16,7 @@ const fr: Dictionary = {
     resume: 'CV 📄',
     languageLabel: 'Langue',
     skipToContent: 'Aller au contenu',
-    madeWith: 'Réalisé avec 🖤 par',
+    madeWith: 'Réalisé avec {heart} par',
     scrollToTop: 'Revenir en haut',
     toggleMenu: 'Ouvrir ou fermer le menu de navigation',
     theme: 'Thème',

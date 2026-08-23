@@ -18,7 +18,7 @@ const en: Dictionary = {
     resume: 'Resume 📄',
     languageLabel: 'Language',
     skipToContent: 'Skip to content',
-    madeWith: 'Made with 🖤 by',
+    madeWith: 'Made with {heart} by',
     scrollToTop: 'Scroll to top',
     toggleMenu: 'Toggle navigation menu',
     theme: 'Theme',

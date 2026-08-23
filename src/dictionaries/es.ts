@@ -16,7 +16,7 @@ const es: Dictionary = {
     resume: 'Currículum 📄',
     languageLabel: 'Idioma',
     skipToContent: 'Saltar al contenido',
-    madeWith: 'Hecho con 🖤 por',
+    madeWith: 'Hecho con {heart} por',
     scrollToTop: 'Volver arriba',
     toggleMenu: 'Abrir o cerrar el menú de navegación',
     theme: 'Tema',
