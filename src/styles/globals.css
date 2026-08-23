@@ -62,6 +62,31 @@
   --color-shadow: 0 0 0;
 }
 
+/* ---------------------------------------------------------------------------
+   Illustration palette
+
+   The Undraw artwork was drawn against this site's own neutrals — its ink is
+   literally #313638, the light theme's text colour — so its greys can be
+   pointed at the theme tokens instead of being frozen. Defined in terms of the
+   existing tokens, so they flip with the theme without a second set of values
+   to keep in sync, and light mode renders essentially unchanged.
+
+   Only neutrals are mapped. Every chromatic fill — the skin tones, the greens,
+   the #fca311 accent — stays exactly as the illustrator set it, because those
+   carry the artwork rather than sitting behind it.
+   --------------------------------------------------------------------------- */
+:root {
+  --art-ink: rgb(var(--color-text));
+  --art-paper: rgb(var(--color-card));
+  --art-muted: rgb(var(--color-bg-secondary));
+}
+
+/* A black brand mark on a near-black page is a black square. The badge keeps
+   its brand colour and gains an edge, so it stays a recognisable shape. */
+.social-badge {
+  box-shadow: inset 0 0 0 1px rgb(var(--color-line));
+}
+
 /* Only the surfaces that actually change colour, so switching themes fades
    rather than snaps without putting a transition on every element on the page. */
 body,
