@@ -42,13 +42,15 @@ const ExperienceCard: FC<Props> = ({
               mismatch next/image warns about. */}
           <Link href={`${link}`} target="_blank" className="shrink-0">
             <div className="company-logo pb-3 sm:self-center md:self-center">
-              <Image
-                className="h-70px w-70px"
-                src={`/assets/images/${logo}`}
-                width={70}
-                height={70}
-                alt={`${companyName} logo`}
-              />
+              <span className="block dark:rounded-lg dark:bg-[#eef0eb] dark:p-[5px]">
+                <Image
+                  className="h-70px w-70px"
+                  src={`/assets/images/${logo}`}
+                  width={70}
+                  height={70}
+                  alt={`${companyName} logo`}
+                />
+              </span>
             </div>
           </Link>
           <div className="employement-details w-94%">
