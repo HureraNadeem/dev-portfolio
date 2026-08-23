@@ -59,7 +59,12 @@ export default function Greeting({ dict }: { dict: Dictionary }) {
           {/* <Fade> */}
           <div className="animate-fade-in flex items-center justify-center sm:mb-8 md:mb-8 lg:w-50% xl:w-50% 2xl:w-50%">
             <div className="img-div flex items-center sm:h-80vw sm:w-80vw md:h-65vw md:w-65vw lg:h-432px lg:w-432px xl:h-432px xl:w-432px 2xl:h-432px 2xl:w-432px">
-              <Image src={ProfilePicture} alt="hurera.jpeg" style={{ borderRadius: '50%' }} />
+              <Image
+                src={ProfilePicture}
+                alt={dict.home.greetingTitle}
+                priority
+                style={{ borderRadius: '50%' }}
+              />
             </div>
           </div>
           {/* </Fade> */}
