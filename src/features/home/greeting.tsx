@@ -1,7 +1,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Wrapper from '@/components/layout/wrapper';
-import { GithubSVG, LinkedInSVG, InstagramSVG, FacebookSVG } from '@/components/icons/social-icons';
+import {
+  GithubSVG,
+  LinkedInSVG,
+  UpworkSVG,
+  InstagramSVG,
+  FacebookSVG,
+} from '@/components/icons/social-icons';
 import ProfilePicture from '@public/assets/images/dp.png';
 import SocialIconBadge from '@/components/ui/social-icon-badge';
 import type { Dictionary } from '@/dictionaries';
@@ -24,6 +30,15 @@ export default function Greeting({ dict }: { dict: Dictionary }) {
               <Link href="https://www.linkedin.com/in/iamhurera/" passHref={true} target="_blank">
                 <SocialIconBadge bgcolor={'rgb(0, 119, 181)'}>
                   <LinkedInSVG />
+                </SocialIconBadge>
+              </Link>
+              <Link
+                href="https://www.upwork.com/freelancers/~01604935e54f0437cf"
+                passHref={true}
+                target="_blank"
+              >
+                <SocialIconBadge bgcolor={'#14A800'}>
+                  <UpworkSVG />
                 </SocialIconBadge>
               </Link>
               <Link href="https://www.instagram.com/iamhurera/" passHref={true} target="_blank">
